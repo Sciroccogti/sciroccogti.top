@@ -1,0 +1,183 @@
+baseURL = "/"
+title = "无风引漩的小站"
+
+# Language
+DefaultContentLanguage = "zh-CN"
+hasCJKLanguage = true
+
+# Theme
+theme="ztyblog"
+
+# Code Highlight Setting
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = false
+pygmentsStyle = "colorful"
+
+# Folder Location
+archetypeDir = "archetypes"
+contentDir   = "content"
+dataDir      = "data"
+layoutDir    = "layouts"
+publishDir   = "public"
+
+# Building Options
+buildDrafts  = false
+buildFuture  = false
+buildExpored = false
+canonifyURLs = true
+enableRobotsTXT = true
+enableGitInfo   = false
+enableEmoji     = true
+#assetDir=["/assets", "/themes/zty/assets"]
+enableMissingTranslationPlaceholders = false
+disableRSS     = false
+disableSitemap = false
+disable404     = false
+disableHugoGeneratorInject = false
+rssLimit  = 10 # Maximum number of items in the RSS feed.
+Paginate = 10 # Number of Posts per page for blog
+copyright="CC BY-NC 4.0" # Copyright Protocol for your site
+
+[author]
+    name = "无风引漩"
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# Markdown Render Settings
+[markup]
+    defaultMarkdownHandler = "goldmark"
+    [markup.goldmark]
+        [markup.goldmark.extensions]
+        definitionList = true
+        footnote = true
+        linkify = true
+        strikethrough = true
+        table = true
+        taskList = true
+        typographer = false
+        [markup.goldmark.parser]
+        attribute = true
+        autoHeadingID = true
+        autoHeadingIDType = "github"
+        [markup.goldmark.renderer]
+        hardWraps = false
+        unsafe = false
+        xHTML = false
+    # blackfriday for legacy
+    [markup.blackfriday]
+        hrefTargetBlank = true
+        smartypants = false
+        tabSizeDefault = 2
+    [markup.tableOfContents]
+        endLevel = 3
+        ordered = false
+        startLevel = 2
+    [markup.highlight]
+        codeFences = true
+        guessSyntax = false
+        hl_Lines = ""
+        lineNoStart = 1
+        lineNos = false
+        lineNumbersInTable = true
+        noClasses = true
+        style = "monokai"
+        tabWidth = 4
+
+[params]
+    dateformFull = "2006-01-02 15:04 CST" # Date Formata
+    description = "无风引漩的小站"
+    keywords = "blog" # Keyworks for searching engine
+
+    # Home Page
+    homeimage = "/img/leifengta.jpeg" # Image URL for home page
+    homeblend = "blank" # Image blend color: blank, blue, green, red, white
+    themecommitinfo = true
+    gitinfo = false
+    copyright = "2020, 无风引漩. All rights reserved." # Copyright
+    icp = "苏ICP备20000268号-1"
+    security = "waiting"
+    leonsans = true # Enable animate Welcome
+
+    # Notes
+    updatelisturl = ""
+    mail = "scirocco_gti@yeah.net"
+    
+    # Bangumi
+    bangumiseasonstart = "2018"
+
+    # 404 Page
+    notfoundimage = "/images/dessert.jpg"
+    notfoundblend = "red"
+
+    # Markdown Render
+    mathmode = true # Enable "_" render in mathmode in markdown
+    linkicon = true # Add link icon for h1-h6
+    tablecenter = false # Correct text-center table align
+
+    [[params.social]]
+        identifier = "github"
+        name = "Github"
+        icon = "icon-github"
+        url = "https://github.com/Sciroccogti"
+    [[params.social]]
+        identifier = "email"
+        name = "email"
+        icon = "icon-email"
+        url = "mailto:scirocco_gti@yeah.net"
+    [params.pagination]
+        class = "pagination justify-content-center"
+        showFirst = true
+        showPrevious = true
+        showBeginEnd = true
+        previousIndicator = "Previous"
+        nextIndicator = "Next"
+        pagesBetweenActive = 2
+        #firstIndicator = '<i class="iconfont icon-back-arrow-"></i>'
+        #lastIndicator = '<i class="iconfont icon-back-arrow-reverse"></i>'
+
+[menus]
+    [[menu.main]]
+        identifier = "blog"
+        name = "blog"
+        url = "/blog/"
+        pre = "icon-blog"
+        post = "博客"
+        weight = 1
+    [[menu.main]]
+        identifier = "notes"
+        name = "notes"
+        url = "/notes/"
+        pre = "icon-Notes"
+        post = "笔记"
+        weight = 2
+    [[menu.main]]
+        identifier = "about"
+        name = "about"
+        url = "/about/"
+        pre = "icon-aboutus"
+        post = "关于我"
+        weight = 3
+    [[menu.second]]
+        identifier = "bangumi"
+        name = "bangumi"
+        url = "/bangumis/"
+        pre = "icon-bilibili-line"
+        post = "追番列表"
+    [[menu.second]]
+        identifier = "friends"
+        name = "friends"
+        url = "/friends/"
+        pre = "icon-friend"
+        post = "友链"
+    [[menu.second]]
+        identifier = "teiba"
+        name = "tieba"
+        url = "http://tieba.sciroccogti.top"
+        pre = "icon-tieba"
+        post = "贴吧云签到"
+    [[menu.second]]
+        identifier = "search"
+        name = "Search"
+        url = "/search/"
+        pre = "icon-search"
+        post = "站内搜索"
