@@ -28,7 +28,6 @@ canonifyURLs = true
 enableRobotsTXT = true
 enableGitInfo   = false
 enableEmoji     = true
-#assetDir=["/assets", "/themes/zty/assets"]
 enableMissingTranslationPlaceholders = false
 disableRSS     = false
 disableSitemap = false
@@ -43,7 +42,7 @@ copyright="CC BY-NC 4.0" # Copyright Protocol for your site
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
-# Markdown Render Settings
+# Markdown Render Settings, see https://gohugo.io/getting-started/configuration-markup for detailed explanation
 [markup]
     defaultMarkdownHandler = "goldmark"
     [markup.goldmark]
@@ -61,7 +60,7 @@ copyright="CC BY-NC 4.0" # Copyright Protocol for your site
         autoHeadingIDType = "github"
         [markup.goldmark.renderer]
         hardWraps = false
-        unsafe = false
+        unsafe = true # Render HTML in Markdown
         xHTML = false
     # blackfriday for legacy
     [markup.blackfriday]
@@ -74,19 +73,25 @@ copyright="CC BY-NC 4.0" # Copyright Protocol for your site
         startLevel = 2
     [markup.highlight]
         codeFences = true
-        guessSyntax = false
+        guessSyntax = true
         hl_Lines = ""
         lineNoStart = 1
         lineNos = false
         lineNumbersInTable = true
         noClasses = true
-        style = "monokai"
+        style = "tango"
         tabWidth = 4
 
 [params]
-    dateformFull = "2006-01-02 15:04 CST" # Date Formata
+    dateformFull = "2006-01-02 15:04 CST" # Date Format
     description = "无风引漩的小站"
     keywords = "blog" # Keyworks for searching engine
+    useCDN = true # whether use CDN for css/js, true Recommended, if not, use npm and ./load.js to add static file
+
+    # Markdown Render
+    mathmode = true # Enable "_" render in mathmode in markdown
+    linkicon = true # Add link icon for h1-h6
+    tablecenter = true # Correct text-center table align
 
     # Home Page
     homeimage = "/img/leifengta.jpeg" # Image URL for home page
@@ -98,21 +103,25 @@ copyright="CC BY-NC 4.0" # Copyright Protocol for your site
     security = "waiting"
     leonsans = true # Enable animate Welcome
 
-    # Notes
-    updatelisturl = ""
-    mail = "scirocco_gti@yeah.net"
-    
-    # Bangumi
-    bangumiseasonstart = "2018"
-
     # 404 Page
     notfoundimage = "/images/dessert.jpg"
     notfoundblend = "red"
 
-    # Markdown Render
-    mathmode = true # Enable "_" render in mathmode in markdown
-    linkicon = true # Add link icon for h1-h6
-    tablecenter = false # Correct text-center table align
+    # Comments
+    comments = false # whether use disqus comment plugin
+    disqusname = "your site name on disqus"
+
+    # Notes
+    updatelist = false
+    updatelisturl = ""
+    sendcorrect = true
+    sendcorrecturl = "scirocco_gti@yeah.net"
+    
+    # Bangumi
+    bangumiseasonstart = "2018" # After which year, group by season instead of year
+
+    # Search
+    enablesearch = true # Enable Search Module; Also add search in menu
 
     [[params.social]]
         identifier = "github"
@@ -125,15 +134,13 @@ copyright="CC BY-NC 4.0" # Copyright Protocol for your site
         icon = "icon-email"
         url = "mailto:scirocco_gti@yeah.net"
     [params.pagination]
-        class = "pagination justify-content-center"
+        #class = "pagination justify-content-center"
         showFirst = true
         showPrevious = true
         showBeginEnd = true
-        previousIndicator = "Previous"
-        nextIndicator = "Next"
+        #previousIndicator = "Previous"
+        #nextIndicator = "Next"
         pagesBetweenActive = 2
-        #firstIndicator = '<i class="iconfont icon-back-arrow-"></i>'
-        #lastIndicator = '<i class="iconfont icon-back-arrow-reverse"></i>'
 
 [menus]
     [[menu.main]]
@@ -157,6 +164,13 @@ copyright="CC BY-NC 4.0" # Copyright Protocol for your site
         pre = "icon-aboutus"
         post = "关于我"
         weight = 3
+    [[menu.main]]
+        identifier = "MC"
+        name = "MC"
+        url = "/mc/"
+        #pre = "icon-aboutus"
+        post = "我的世界"
+        weight = 4
     [[menu.second]]
         identifier = "bangumi"
         name = "bangumi"
@@ -175,6 +189,7 @@ copyright="CC BY-NC 4.0" # Copyright Protocol for your site
         url = "http://tieba.sciroccogti.top"
         pre = "icon-tieba"
         post = "贴吧云签到"
+        weight = 1
     [[menu.second]]
         identifier = "search"
         name = "Search"

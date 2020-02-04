@@ -2,14 +2,11 @@
 layout:     article
 title:      Markdown For SEUITE
 date:       2019-03-29T13:30:00+08:00
-updated:    2019-03-29T13:30:00+08:00
-abstract:    为SEUITE翻译的markdown手册
+lastmod:    2019-03-29T13:30:00+08:00
+summary:    为SEUITE翻译的markdown手册
 tags:       ["学习"]
 show_author_profile: true
 ---
-为SEUITE翻译的markdown手册
-
-<!--more-->
 
 # Markdown For SEUITE
 

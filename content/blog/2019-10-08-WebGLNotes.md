@@ -1,16 +1,13 @@
 ---
 layout:     article
 title:      WebGL笔记
-date:       2019-10-08 8:00
-updated:    2019-10-23 9:00
-abstract:   学得一塌糊涂
+date:       2019-10-08T08:00:00+08:00
+lastmod:    2019-10-23T08:00:00+08:00
+summary:   学得一塌糊涂
 tags:       ["学习", "编程"]
-#cascade:
-#   banner:
 show_author_profile: true
 ---
-计算机图形学笔记系列
-<!--more-->
+
 # WebGL
 
 1.	现在不再支持立即绘制
