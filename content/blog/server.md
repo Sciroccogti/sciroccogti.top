@@ -230,3 +230,15 @@ docker run -d --name bitwarden   -e WEBSOCKET_ENABLED=true   -v /bw-data/:/data/
 
 ！友情提示：使用https的时候记得开启服务器的443端口！
 （我搞了一整天没开启https，结果发现是443没开。。其实 *apache* 配置容错度没那么小的）
+
+### Nginx
+
+最近需要使用 gzip 功能，但是 Apache 配置实在太难了！
+
+#### 安装
+
+`sudo apt install nginx`
+
+配置文件位于：`/etc/nginx`
+
+修改完配置后：`sudo nginx -s reload`
