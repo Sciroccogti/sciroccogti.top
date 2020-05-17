@@ -17,9 +17,9 @@ Two important network-layer functions to move packets:
 *   **Forwarding (switching)**: when a packet arrives at a router’s input link, the router must move the packet to the appropriate output link. A packet might also be blocked from exiting a router, or might be duplicated and sent over multiple outgoing links.
 *   **Routing**: determine the route or path taken by packets as they flow from a sender to a receiver using **routing algorithms**.
 
-Forwarding refers to the router-local action of transferring a packet from input link to output link, takes place at very short timescales, thus is typically implemented in hardware.
+**Forwarding** refers to the **router-local** action of transferring a packet from input link to output link, takes place at very short timescales, thus is typically implemented in hardware.
 
-Routing refers to the network-wide process that determines the end-to-end paths that packets take, takes place on much longer timescales and often implemented in software.
+**Routing** refers to the **network-wide** process that determines the end-to-end paths that packets take, takes place on much longer timescales and often implemented in software.
 
 **Forwarding table**: a router forwards a packet by examining the value of one or more fields in the arriving packet’s header, then using these header values to index into its forwarding table. The value in the forwarding table entry for thoes values indicates the outgoing link interface at that router to which the packet is to be forwarded.
 
@@ -52,7 +52,38 @@ The **network service model** defines the characteristics of end-to-end delivery
 
 The Internet’s network layer provides a single service, known as **best-effort service**. Packets are neither guaranteed to be received in order nor is their eventual delivery even guaranteed. There is no guarantee on delay not there is a minimal bandwidth guarantee. (best-effort service = no service at all)
 
-## 4.2 What’s Inside a Router?
+## 4.2 Virtual Circuit and Datagram Network
+
+**Virtual Circuit** is a computer network that provides connectionless service, 
+and **Datagram Network** is one provides connectivity service.
+
+### 4.2.1 Virtual Circuit
+
+Virtual-Circuit is used in ATM, which is dumped:)
+
+The VC number of the packet might be changed. Why not keep the VC number as same? 
+Cause that needs a rearrangement through the whole network.
+
+### 4.2.2 Datagram Network
+
+The address of the destination end system is stamped onto the packet in a datagram network.
+
+虚电路：预先建立好路线；数据报：每个报文单独走
+
+#### longest prefix matching 最长前缀匹配
+
+Prefix Match|Link Interface
+|---|---|
+11001000 00010111 00010*** ********|0
+11001000 00010111 00011000 ********|1
+11001000 00010111 00011*** ********|2
+otherwise |3
+
+Ex：11001000 00010111 00011000 00011000 10101010 -> 1
+
+一般而言，路由器仅需将部分地址转发至内网，其它的统统指向外网即可，于是不用记忆四十亿地址
+
+## 4.3 What’s Inside a Router?
 
 ![Router Architecture](router-architecture.png)
 
@@ -68,7 +99,7 @@ The Internet’s network layer provides a single service, known as **best-effort
 
 Input ports, output ports and switching fabric are almost always implemented in hardware. The control plane functions are usually implemented in software and execute on the routing processor.
 
-### 4.2.1 Input Port Processing and Destination-Based Forwarding
+### 4.3.1 Input Port Processing and Destination-Based Forwarding
 
 ![Input Processing](input-processing.png)
 
@@ -82,33 +113,37 @@ Other important actions:
 *   version number, checksum and time-to-live field must be checked and the latter two fields rewritten
 *   counters used for network management must be updated
 
-### 4.2.2 Switching
+Line termination | Data link processing | Lookup, fowarding, queuing|
+---|---|---
+物理层|链路层|---
+
+### 4.3.2 Switching
 
 ![Via Memory](switch-memory.png)
 
-**Switching via memory**: simplest, earliest method, where input and output ports functioned as traditional I/O devices in a traditional operating system. If memory bandwidth allows a maximum of BBB packets per second to be written into or read from memory, then the overall forwarding throughput must be less then B/2B/2B/2. Two packets cannot be forwarded at the same time.
+**Switching via memory**: simplest, earliest method, where input and output ports functioned as traditional I/O devices in a traditional operating system. If memory bandwidth allows a maximum of $B$ packets per second to be written into or read from memory, then the overall forwarding throughput must be less then $B/2$. Two packets cannot be forwarded at the same time.（受限于内存速度）
 
 ![Via Bus](switch-bus.png)
 
-**Switching via a bus**: an input port transfers a packet directly to the output port over a shared bus, without intervention by the routing processor. This is typically done by having the input port pre-pend a switch a switch-internal label (header) to the packet indicating the local output port. All output port receive the packet, but only the port that matches the label will keep the packet. The label is then removed at the output port. Only one packet can cross the bus at a time.
+**Switching via a bus**: an input port transfers a packet directly to the output port over a shared bus, without intervention by the routing processor. This is typically done by having the input port pre-pend a switch a switch-internal label (header) to the packet indicating the local output port. All output port receive the packet, but only the port that matches the label will keep the packet. The label is then removed at the output port. Only one packet can cross the bus at a time.（受限于总线带宽）
 
 ![Via CrossBar](switch-crossbar.png)
 
-**Switching via an interconnection network**: A crossbar switch is an interconnection network consisting of 2N2N2N buses that connect NNN input ports to NNN output ports. Crossbar switches are capable of forwardning multiple packets in parallel, which is **non-blocking** (not blocked as long as no other packet is being forwarded to the same output port).
+**Switching via an interconnection network**: A crossbar switch is an interconnection network consisting of $2N$ buses that connect $N$ input ports to $N$ output ports. Crossbar switches are capable of forwardning multiple packets in parallel, which is **non-blocking** (not blocked as long as no other packet is being forwarded to the same output port).
 
-### 4.2.3 Output Port Processing
+### 4.3.3 Output Port Processing
 
 ![Output Processing](output-processing.png)
 
 Output port takes packets from output port’s memory and transmits them over the output link. This includes selecting and de-queueing packets for transmission, and performing the needed link-layer and physical-layer transmission functions.
 
-### 4.2.4 Where Does Queuing Occur?
+### 4.3.4 Where Does Queuing Occur?
 
-Suppose input and output line speeds (transmission rates) all have an identical transmission rate of RlineR\_{\\text{line}}Rline​ packets per seconds, and there are NNN input ports and NNN output ports.
+Suppose input and output line speeds (transmission rates) all have an identical transmission rate of $R_{line​}$ packets per seconds, and there are NNN input ports and NNN output ports.
 
 All packets have the same fixed length and arrive to input ports in a synchronous manner (the time to send a packet on any link is equal to the time to receive a packet on any link, during this interval, either zero or one packets can arrive on an input link).
 
-Define RswitchR\_{\\text{switch}}Rswitch​ as the rate at which packets can be moved from input port to output port. If RswitchR\_{\\text{switch}}Rswitch​ is NNN times faster than RlineR\_{\\text{line}}Rline​, then only negligible queueing will occur at the input ports. (In the worst case NNN input lines are receiving packets and all packets are to be forwarded to the same output port, each batch of NNN packets can be cleared before the next batch arrives.)
+Define $R_{switch}$ as the rate at which packets can be moved from input port to output port. If $R_{switch}$​ is $N$ times faster than $R_{line}$, then only negligible queueing will occur at the input ports. (In the worst case $N$ input lines are receiving packets and all packets are to be forwarded to the same output port, each batch of $N$ packets can be cleared before the next batch arrives.)
 
 #### Input Queueing
 
@@ -126,7 +161,9 @@ When the output port cannot transmit all packets, the rest packets must be queue
 
 When there is no enough memory to buffer, a decision must be made to either drop the arriving packet (**drop-tail**) or remove one or more already-ququed packets to make room for new packet.
 
-### 4.2.5 Packet Scheduling
+recommended buffer size with N flows: $\frac{RTT\cdot{C}}{\sqrt{N}}$
+
+### 4.3.5 Packet Scheduling
 
 #### First-In-First-Out (FIFO)
 
@@ -148,27 +185,33 @@ A round robin scheduler alternates service among priority classes. The work-cons
 
 WFQ differs from RR that each class may receive a differential amount of service in any interval of time. (partition of service equals to wi/∑wjw\_i/\\sum w\_jwi​/∑wj​ where wiw\_iwi​ is the weight of class iii.)
 
-## 4.3 The Internet Protocol (IP)
+## 4.4 The Internet Protocol (IP)
 
-### 4.3.1 IPv4 Datagram Format
+### 4.4.1 IPv4 Datagram Format
 
 ![IPv4](ipv4.png)
 
 *   **Version number**: IP protocol version of datagram.
 *   **Header length**: determine where in the IP datagram the payload actually begins (typical IP datagram has a 20-byte header).
-*   **Type of service (TOS)**: allow different types of IP datagrams to be distinguished from each other.
+*   **Type of service (TOS)**: allow different types of IP datagrams to be distinguished from each other.（告诉路由器该数据需要时间敏感或是可靠敏感）
 *   **Datagram length**: total length of IP datagram (header plus data), measured in bytes.
 *   **Identifier, flags, fragmentation offset**: related to fragmentation (IPv6 does not allow for fragmentation)
-*   **Time-to-live (TTL)**: ensure that datagrams do not circulate forever in the network. This field is decremented by one each time the datagram is processed by a router. If TTL reaches 0, a router must drop that datagram.
+*   **Time-to-live (TTL)**: ensure that datagrams do not circulate forever in the network. This field is **decremented by one** each time the datagram is processed by a router. If TTL reaches 0, a router must drop that datagram.
 *   **Protocol**: used only when an datagram reaches its final destination. (6=TCP, 17=UDP) The protocol number is the glue that binds the network and transport layers together, whereas the port number is the glue that binds the transport and application layers together.
 *   **Header checksum**
 *   **Source and destination IP addresses**
 *   **Options**
 *   **Data (payload)**
 
-### 4.3.2 IPv4 Datagram Fragmentation
+头：
+- TCP：20 字节（不含option）
+- IP：20 字节（不含 option）
 
-The maximum amout of data that a link-layer frame can carry is called the **maximum transmission unit (MTU)**.
+### 4.4.2 IPv4 Datagram Fragmentation
+
+分片可能在任一个节点进行，还可能出现多次分片
+
+The maximum amout of data that a link-layer frame can carry is called the **maximum transmission unit (MTU)**.（硬件限制）
 
 Because each IP datagram is encapsulated within the link-layer frame for transport from one router to the next router, the MTU of the link-layer protocol places a hard limit on the length of an IP datagram.
 
@@ -178,9 +221,14 @@ When a destination host receives a series of datagrams from the same source, it 
 
 The sending host increments the identification number for each datagram it sends. When a router needs to fragment a datagram, each resulting fragment is stamped with the source address, destination address and identification number of the origin datagram. The last fragment has a flag bit set to 0, whereas all other fragments have this bit set to 1 (has more fragments). The offset field is used to specify where the fragments fits within the original IP datagram.
 
-### 4.3.3 IPv4 Addressing
+- length：含 ip 头 的字节长度
+- id：同一个分组的分片有相同 id
+- flag：是否还有后续片
+- offset：之前的所有片的字节长度除以 8（不含 ip 头）
 
-_An IP address is technically associated with an interface, rather than with the host or router containing that interface._
+### 4.4.3 IPv4 Addressing
+
+_An IP address is technically associated with an interface, rather than with the host or router containing that interface._（地址分给网卡而不是主机）
 
 Each IP address is 32 bits long (4 bytes), are written in so-called **dotted-decimal notation**. Each interface on every host and router in the global Internet must have an IP address that is globally unique (except behind NATs).
 
@@ -194,9 +242,35 @@ The Internet’s address assignment strategy is known as **Classless Interdomain
 
 The xxx most significant bits of an address constitude the network portion of the IP address (referred to as **prefix** of the address). IP addresses of devices within the organization will share the common prefix. The remaining 32−x32-x32−x bits can be thought of as distinguishing among devices within the organization, all of which have the same prefix.
 
+![](ipv4-addr.jpg)
+
 Before CIDR was adopted, the network portions of an IP address were constrained to be 8, 16, or 24 bits in length, an addressing scheme known as **classful addressing**. Subnets with 8, 16, and 24-bit subnet addresses were known as class A, B, and C networks respectively.
 
 The IP broadcast address is `255.255.255.255`. When a host sends a datagram with destination address `255.255.255.255`, the message is delivered to all hsots on the same subnet.
+
+A 类 126个，127专用；B 类 $2^{14}-2$ 个；C 类主机号只有8位
+
+- 主机全 0 为网络地址，路由器路由表现
+- 全 0 为该网络的该主机
+- 网络全 0 为本网络的某主机
+- 主机全 1 为直接广播地址，某网络全部主机
+- 全 1 为受限广播地址，本网络全部主机
+- 127 开头为环回地址
+
+- 子网：将主机位中的前几位设为子网号
+- 子网掩码：将标准地址与掩码按位与得到子网号（故默认掩码为 255.255.255.0）
+- 例如 255.255.240.0 （240=11110000）从B类网络的16位主机号借了4位作为子网号，即
+- 子网号中全0全1保留，故子网至少要2位，主机号也至少2位
+
+![](addr-loose.png)
+
+Addresses are loose by subnet
+
+分子网只会减少能用的主机！子网只是方便路由器进行管理
+
+VLSM：变长子网号。选取规模更大的子网的子网号时要注意不能与规模更小的子网号的头部相同。
+
+**CIDR**：CIDR表示法： IP地址 ::= {<网络前缀>， <主机号>} / 网络前缀所占位数，例如128.14.35.7/20
 
 #### Obtaining a Block of Addresses
 
@@ -210,12 +284,12 @@ DHCP is referred to as a **plug-and-play** or **zeroconf** protocol.
 
 ![DHCP](dhcp.png)
 
-*   **DHCP server discovery**: a newly arriving host finds a DHCP server using a **DHCP discover message**, which sends (broadcasts) within a UDP packet to port 67.
+*   **DHCP server discovery**: a newly arriving host finds a DHCP server using a **DHCP discover message**, which sends (broadcasts) within a UDP packet to port `67`.
 *   **DHCP server offer**: A DHCP server receiving a DHCP discover message responds to the client with a **DHCP offer message** that is broadcast to all nodes on the subnet, containing the transaction ID, the proposed IP address, network mask and an IP **address lease time** (the amount of time for which the IP address will be valid).
 *   **DHCP request**: the newly arriving client will choose from one or more offers and respond to its selected offer with a **DHCP request message**, echoing back the configuration parameters.
 *   **DHCP ACK**: the server responds with a **DHCP ACK message** confirming the requested parameters.
 
-### 4.3.4 Network Address Translation (NAT)
+### 4.4.4 Network Address Translation (NAT)
 
 ![NAT](nat.png)
 
@@ -225,7 +299,26 @@ When NAT router receives a datagram, it generates a new source port number for t
 
 When NAT router receives a response, it indexes the NAT translation table using the destination IP address and port number to obtain the appropriate IP address and port in the NAT network, and rewrite the destination into the datagram.
 
-### 4.3.5 IPv6
+用端口号表示内网连接
+
+穿越NAT方法：
+1. 静态配置：绑定路由器某端口与内网设备的某端口
+2. UPnP：动态配置
+3. 中继：将NAT信息登记到应用提供商的服务器
+
+### 4.4.5 ICMP
+
+internet control message protocol，主要通知报错信息
+
+ICMP 报文包含一个类型字段和一个编码字段
+
+ICMP通常被认为是IP的一部分，但从体系结构看是在IP之上，是3.5层。
+
+traceroute就基于ICMP
+
+![](icmp.png)
+
+### 4.4.6 IPv6
 
 #### IPv6 Datagram Format
 
@@ -233,10 +326,12 @@ When NAT router receives a response, it indexes the NAT translation table using 
 *   **A streamlined 40-byte header**: a fixed-length header allows for faster processing by a router.
 *   **Flow labeling**: IPv6 has an elusive definition of a **flow**, allows labeling of packets belonging to particular flows for which the sender requests special handling.
 
+> in ipv4: Datagram: five turple: {ip_src, ip_des, port_src, port_des, protocol_transport}
+
 ![IPv6 Datagram](ipv6.png)
 
 *   **Version**: value `6`.
-*   **Traffic class**: 8 bits, like TOS in IPv4.
+*   **Traffic class**: 8 bits, priority, like TOS in IPv4 but more precise.
 *   **Flow label**: 20 bits, identify a flow of datagrams.
 *   **Payload length**: 16 bits, giving the number of bytes of payload.
 *   **Next header**: identifies the protocol to which the contents in this datagram will delivered (TCP/UDP/etc.) like protocol field in IPv4.
@@ -248,15 +343,15 @@ Several fields in IPv4 are no longer present in IPv6 datagram:
 
 *   **Fragmentation**: IPv6 does not allow fragmentation. If an IPv6 datagram is too big, then the router drops the datagram and sends a “Packet Too Big” ICMP error message back to the sender.
 *   **Header checksum**: the checksum is redundant.
-*   **Options**: options can be pointed to by next header field in IPv6.
+*   **Options**: options is sotred in data, can be pointed to by next header field in IPv6.
 
 #### Transitioning from IPv4 to IPv6
 
-Tunneling:
+Tunneling:把ipv6的报文封装在ipv4的里，需要人工配置隧道
 
 ![Tunneling](tunnel.png)
 
-## 4.4 Generalized Forwarding and SDN
+## 4.5 Generalized Forwarding and SDN
 
 ![Generalized Forwarding](generalized-forwarding.png)
 

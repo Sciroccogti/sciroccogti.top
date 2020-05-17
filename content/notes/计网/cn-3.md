@@ -277,9 +277,12 @@ Connection closement:
 
 ## 3.6 Principles of Congestion Control
 
-（略）
+- 端到端拥塞控制
+- 网络辅助的拥塞控制
 
 ## 3.7 TCP Congestion Control
+
+加性增加，乘性减少
 
 ![Slow Start](slow-start.jpg)
 
@@ -287,6 +290,29 @@ Connection closement:
 
 **TCP congestion-control algorithm**: (cwnd = congestion window, ssthresh = slow start threshold)
 
-*   (1) slow start：初始状态或出现超时时将发送窗口长度设置为1，此后每收到一个ACK则窗口长度+1（也就是每一轮之后翻倍）
-*   (2) congestion avoidance：出现3个重复ACK（丢包/拥塞）则慢启动阈值和发送窗口长度减半，进入快速恢复状态
-*   (3) fast recovery：每收到一个重复的ACK则恢复1个发送窗口长度，如果收到了新的ACK则恢复正常状态，若丢包则进入慢启动状态
+*   slow start：（指数）
+    *   初始状态或出现超时时将发送窗口长度设置为1，此后每收到一个ACK则窗口长度+1（也就是每一轮之后翻倍）
+    *   若窗口大小达到慢启动阈值则进入拥塞避免
+
+> 窗口1+1=2后，发送的数据数也变为2，于是会收到2个ACK，则该RTT下窗口长度2+2=4，实现指数增长
+
+*   congestion avoidance：（线性）
+    *   收到新ACK时 cwnd = cwnd + MSS/cwnd
+
+> MSS：最大报文段长度
+
+*   fast recovery：（三个重复ACK时进入，以窗口锐减为开始）
+    *   每收到一个重复的ACK则恢复1个发送窗口长度（指数）
+    *   收到了新的ACK则恢复拥塞避免
+    *   若超时则进入慢启动状态，阈值设为窗口的一半，窗口设为1
+
+- Tahoe：有重复三个 ACK 时将窗口设置为1（旧版）
+- Reno：有重复三个 ACK 时将阈值减半，窗口为阈值+3MSS（常用）
+
+TCP 平均吞吐率：3 / 4 W，W 为拥塞窗口大小
+
+TCP 公平性：
+
+![](tcp-fairness.jpg)
+
+从 A 开始，到 B 时丢包，减半至 C（C 为 B 与原点的中点），如此反复不断逼近最优点
