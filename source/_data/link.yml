@@ -1,0 +1,9 @@
+- class_name:
+  link_list:
+    - name:   doowzs
+      avatar: link/doowzs.png
+      link:   "https://doowzs.com"
+
+    - name:   scp10086
+      avatar: link/scp10086.jpg
+      link:   "https://scp10086.github.io/"
