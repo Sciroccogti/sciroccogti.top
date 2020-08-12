@@ -34,7 +34,7 @@ PN结的形成：参见 [1-2 PN结](https://www.sciroccogti.top/notes/模电/AC-
 
 #### BJT
 
-![](cad-2/三极管三区.jpg)
+![](三极管三区.jpg)
 
 饱和区、放大区、截止区
 
@@ -55,11 +55,11 @@ PN结的形成：参见 [1-2 PN结](https://www.sciroccogti.top/notes/模电/AC-
 2. N+ 埋层（buried layer）
 3. N 型外延
 
-![](cad-2/wafer.png)
+![](wafer.png)
 
 #### MOS
 
-![](cad-2/MOS.png)
+![](MOS.png)
 
 ||N沟道|P沟道|
 |---|---|---|
@@ -80,7 +80,7 @@ IGBT（Insulated Gate Bipolar Transistor）是一个非通即断的开关，相�
 - N 沟道 IGBT，N-IGBT，NMOS 驱动
 - P 沟道 IGBT，P-IGBT，PMOS 驱动
 
-![](cad-2/IGBT.png)
+![](IGBT.png)
 
 导通和截断由栅极 G 和发射极 E 间电压$V_{GE}$决定，当$V_{CE}$大于开启电压$V_{CE（th）}$时，NMOS 内形成沟道并为 PNP 双极型晶体管提供基极电流，驱动 IGBT 导通。
 
@@ -150,7 +150,7 @@ ASIC 可分为：ASCP 和 ASSP
 
 芯片中央为单元阵列和布线通道，芯片四周是输入输出
 
-![](cad-2/行式结构.png)
+![](行式结构.png)
 
 #### 积木块结构
 
@@ -158,13 +158,13 @@ ASIC 可分为：ASCP 和 ASSP
 构，也可以是一块优化门阵列，还可以是人工精心设计的电路单元或者存储器阵列。标准专用
 电路通常采用积木块结构。
 
-![](cad-2/积木块结构.png)
+![](积木块结构.png)
 
 单片机这种结构的布线通常将连线按数据流和控制流进
 行分类，采用面向线网的布线方法。所谓面向线网的布线方法是指布线的优化是按照线网顺
 序进行。
 
-![](cad-2/单片机.png)
+![](单片机.png)
 
 #### 规则阵列结构
 
@@ -232,7 +232,7 @@ ASIC 可分为：ASCP 和 ASSP
 引线具有上下出线的能力的目的是为了线网能够穿越单元，
 位置和间隔量化的目的是使CAD布线简洁，目标明确。
 
-![](cad-2/标准单元.png)
+![](标准单元.png)
 
 ### 2-2-4 可编程逻辑阵列 PLA
 
