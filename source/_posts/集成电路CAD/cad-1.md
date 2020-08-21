@@ -12,6 +12,8 @@ categories: 集成电路 CAD
 
 EDA：电子设计自动化（Electronic Design Automation）
 
+VLSI：Very Large Scale Integration，超大规模集成电路
+
 **VLSI 设计思想**：
 - 分层分级
 - 每层、级间均有严格的接口定义
