@@ -2,6 +2,7 @@
 title: 第二章 - 专用集成电路 CAD 设计
 date: 2020-07-18T00:30:00+08:00
 categories: 集成电路 CAD
+tags:		["学习"]
 ---
 
 ## 2-1 IC 分类

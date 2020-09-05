@@ -3,6 +3,7 @@ title: 计算机视觉
 katex: true
 date: 2020-02-27T10:00:00+08:00
 categories: 计算机视觉
+tags:		["学习"]
 ---
 
 # 计算机视觉

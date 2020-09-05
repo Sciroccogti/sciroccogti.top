@@ -2,6 +2,7 @@
 title: 集成电路 CAD 总复习
 date: 2020-08-18T20:30:00+08:00
 categories: 集成电路 CAD
+tags:		["学习"]
 ---
 
 # 1 绪论
