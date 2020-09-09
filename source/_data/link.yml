@@ -2,8 +2,12 @@
   link_list:
     - name:   doowzs
       avatar: link/doowzs.png
-      link:   "https://doowzs.com"
+      link:   "https://doowzs.com/"
 
     - name:   scp10086
       avatar: link/scp10086.jpg
       link:   "https://scp10086.github.io/"
+
+    - name:   Sphinxxx1984
+      avatar: link/Sphinxxx1984.png
+      link:   "https://Sphinxxx1984.github.io/"

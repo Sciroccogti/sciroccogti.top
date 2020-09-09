@@ -20,6 +20,9 @@ menu:
     # - Movie || /movies/ || fas fa-video
   About: /about/ || fas fa-heart
 
+# Hide the child menu items in mobile sidebar
+hide_sidebar_menu_child: false
+
 # Code Blocks (代碼相關)
 # --------------------------------------
 
@@ -33,7 +36,9 @@ code_word_wrap: true
 # copyright: Add the copyright information after copied content (複製的內容後面加上版權信息)
 copy:
   enable: true
-  copyright: false
+  copyright:
+    enable: false
+    limit_count: 50
 
 # social settings (社交圖標設置)
 # formal:
@@ -104,11 +109,11 @@ default_top_img:
 archive_img:
 
 # the banner image of tag page
-# tag page, look like https://xxxxxxxxx.com/tags/butterfly
+# note: tag page, not tags page
 tag_img:
 
 # the banner image of category page
-# category page, look like https://xxxxxxxxx.com/categories/butterfly
+#  note: category page, not categories page
 category_img:
 
 # If you are using hexo-douban, you can configure it (如果你有使用 hexo-douban,可配置這個)
@@ -127,7 +132,7 @@ cover:
   # left/right/both
   position: right
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
-  default_cover: 
+  default_cover:
     - ''
 
 # Replace Broken Images (替換無法顯示的圖片)
@@ -276,7 +281,6 @@ disqusjs:
   nocomment: # display when a blog post or an article has no comment attached
   admin:
   adminLabel:
-  count: false # dispaly comment count in top_img
 
 # livere (來必力)
 # https://www.livere.com/
@@ -534,9 +538,9 @@ click_heart: false
 ClickShowText:
   enable: false
   text:
-    - I
-    - LOVE
-    - YOU
+    # - I
+    # - LOVE
+    # - YOU
   fontSize: 15px
 
 # Default display mode (網站默認的顯示模式)
@@ -644,6 +648,25 @@ runtimeshow:
   enable: false
   publish_date:
 
+# Aside widget - Newest Comments
+newest_comments:
+  enable: false
+  limit: 6
+  avatar: true
+  leancloud:
+    enable: false
+    appId: # leancloud application app id
+    appKey: # leancloud application app key
+    serverURL: # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
+    default_avatar: # mp/identicon/monsterid/wavatar/retro/robohash/blank
+  github_issues:
+    enable: false
+    repo:
+  disqus:
+    enable: false
+    forum:
+    api_key:
+
 # Bottom right button (右下角按鈕)
 # --------------------------------------
 
@@ -717,7 +740,11 @@ note:
 # Pjax [Beta]
 # It may contain bugs and unstable, give feedback when you find the bugs.
 # https://github.com/MoOx/pjax
-pjax: false
+pjax:
+  enable: false
+  exclude:
+    # - xxxx
+    # - xxxx
 
 # Inject the css and script (aplayer/meting)
 aplayerInject:
@@ -801,7 +828,6 @@ CDN:
   pjax: https://cdn.jsdelivr.net/npm/pjax/pjax.min.js
 
   # comments
-  # blueimp_md5: https://cdn.jsdelivr.net/npm/blueimp-md5/js/md5.min.js
   gitalk: https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js
   gitalk_css: https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css
   valine: https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js
