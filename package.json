@@ -9,15 +9,16 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": "5.0.0"
+    "version": "5.2.0"
   },
   "dependencies": {
     "@upupming/hexo-renderer-markdown-it-plus": "^2.0.2",
     "gitalk": "^1.6.2",
     "gulp-htmlmin": "^5.0.1",
     "gulp-minify-css": "^1.2.4",
-    "hexo": "^5.0.0",
+    "hexo": "^5.2.0",
     "hexo-bilibili-bangumi": "^1.3.4",
+    "hexo-cli": "^4.2.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-feed": "^3.0.0",

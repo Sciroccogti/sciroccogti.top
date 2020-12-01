@@ -49,7 +49,7 @@ sudo apt install chrome-gnome-shell
 
 - [High Ubunterra](https://www.gnome-look.org/p/1207015/)
 
-其中的右键设为壁纸脚本似乎有问题，建议运行：
+~~其中的右键设为壁纸脚本似乎有问题，建议运行：~~实测好像没问题，别改了
 
 ```Bash
 mv your_picture ~/.cache/SetAsWallpaper/huwallpaper.jpg
@@ -61,7 +61,7 @@ gsettings set org.gnome.desktop.screensaver picture-uri "file:///usr/share/backg
 ***
 
 以上文件安装后均需在 *tweaks* 软件中设置，如图：
-![](/img/tweaks.png)
+![](tweaks.png)
 
 ### 启动动画
 
