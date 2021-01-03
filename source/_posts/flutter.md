@@ -1,0 +1,35 @@
+---
+title: "Flutter开坑笔记"
+date: 2021-01-03T13:00:00+08:00
+tags:		["编程"]
+---
+
+# Flutter 开坑笔记
+
+## 安装
+
+跟着官方教程走就行
+
+务必安装 *Android Studio*！不然就是自己找麻烦。
+
+
+### Ubuntu
+
+遇到`android license status unknown`则运行`flutter doctor --android-licenses`；
+
+注意：截至 2021-01-03 *flutter doctor* 尚不支持 `Java11`，须安装旧版本；而编译代码需要 `Java11` 及以上的版本。。吐了
+对于 Ubuntu：
+```Bash
+sudo apt install openjdk-8-jre openjdk-11-jdk
+sudo update-alternatives --config java
+```
+然后重启终端！（之前一直没重启终端卡了好久）
+
+若提示找不到 *sdkmanager* 则在 *Android Studio* 里安装 *Android SDK Command-line Tools*
+
+### Windows
+
+要设置三个环境变量：
+- `ANDROID_SDK_ROOT`
+- `FLUTTER_STORAGE_BASE_URL`
+- `PUB_HOSTED_URL`

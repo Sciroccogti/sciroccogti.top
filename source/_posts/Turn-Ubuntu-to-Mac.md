@@ -45,6 +45,12 @@ sudo apt install chrome-gnome-shell
 ### 更换 dock
 - [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 
+在 Ubuntu 20.04 上存在无法替换原有的 *Ubuntu-dash* 的问题。解决方法：
+```Bash
+cd /usr/share/gnome-shell/extensions/
+sudo mv ubuntu-dock@ubuntu.com{,.bak}
+```
+
 ### 锁屏
 
 - [High Ubunterra](https://www.gnome-look.org/p/1207015/)
