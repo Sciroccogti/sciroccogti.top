@@ -22,3 +22,8 @@ An HTML to Markdown converter written in JavaScript
 [Mooc_Downloader](https://github.com/PyJun/Mooc_Downloader)：
 学无止下载器，慕课下载器，Mooc下载，中国大学下载，爱课程下载，网易云课堂下载，学堂在线下载；
 支持视频，课件同时下载
+
+## 脚本类
+
+[run_fio.sh](https://gist.github.com/sennajox/3667757)
+Linux 下调用 fio 进行硬盘测速
