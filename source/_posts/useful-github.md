@@ -23,6 +23,9 @@ An HTML to Markdown converter written in JavaScript
 学无止下载器，慕课下载器，Mooc下载，中国大学下载，爱课程下载，网易云课堂下载，学堂在线下载；
 支持视频，课件同时下载
 
+[docker-easyconnect](https://github.com/Hagb/docker-easyconnect)：
+~~让该死的狗屎 EasyConnect 运行在无敌可爱的 docker 下的神器。~~使深信服（Sangfor）开发的非自由的代理软件 EasyConnect 运行在 docker 中，并提供 socks5 服务
+
 ## 脚本类
 
 [run_fio.sh](https://gist.github.com/sennajox/3667757)

@@ -8,7 +8,7 @@
 
 menu:
   Home: / || fas fa-home
-  Notes: /notes/ || fa fa-book
+  Categories: /categories/ || fa fa-book
   # Categories: /categories/ || fas fa-folder-open
   Friends: /link/ || fas fa-link
   Others ||fas fa-list:
@@ -586,7 +586,7 @@ beautify:
 # Global font settings
 # Don't modify the following settings unless you know how they work (非必要不要修改)
 font:
-  global-font-size:
+  global-font-size: 18px
   code-font-size:
   font-family:
   code-font-family:
