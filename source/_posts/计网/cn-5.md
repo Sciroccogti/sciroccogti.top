@@ -74,7 +74,7 @@ Each node xxx maintains the following routing information:
 
 *   For each neighbor vvv, the cost $c(x,v)$ from xxx to directly attached neighbor vvv,
 *   Node xxx's distance vector $D_x=[D_x(y)]$ , containing xxx's estimate of its cost to all destinations yyy,
-*   The distance vectors of each of its neighbors $D_y$​.
+*   The distance vectors of each of its neighbors $D_y$.
 
 ![](dv.png)
 

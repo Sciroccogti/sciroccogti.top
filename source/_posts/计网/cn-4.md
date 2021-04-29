@@ -140,11 +140,11 @@ Output port takes packets from output port’s memory and transmits them over th
 
 ### 4.3.4 Where Does Queuing Occur?
 
-Suppose input and output line speeds (transmission rates) all have an identical transmission rate of $R_{line​}$ packets per seconds, and there are NNN input ports and NNN output ports.
+Suppose input and output line speeds (transmission rates) all have an identical transmission rate of $R_{line}$ packets per seconds, and there are NNN input ports and NNN output ports.
 
 All packets have the same fixed length and arrive to input ports in a synchronous manner (the time to send a packet on any link is equal to the time to receive a packet on any link, during this interval, either zero or one packets can arrive on an input link).
 
-Define $R_{switch}$ as the rate at which packets can be moved from input port to output port. If $R_{switch}$​ is $N$ times faster than $R_{line}$, then only negligible queueing will occur at the input ports. (In the worst case $N$ input lines are receiving packets and all packets are to be forwarded to the same output port, each batch of $N$ packets can be cleared before the next batch arrives.)
+Define $R_{switch}$ as the rate at which packets can be moved from input port to output port. If $R_{switch}$ is $N$ times faster than $R_{line}$, then only negligible queueing will occur at the input ports. (In the worst case $N$ input lines are receiving packets and all packets are to be forwarded to the same output port, each batch of $N$ packets can be cleared before the next batch arrives.)
 
 #### Input Queueing
 
@@ -184,7 +184,7 @@ The priority queuing discipline will transmit a packet from the highest priority
 
 A round robin scheduler alternates service among priority classes. The work-conserving queuing discipline will never allow the link to remain idle whenever there are packets queued. A work-conversing round robin discipline looks for a packet of a given class but finds none will immediately check the next class in the round robin sequence.
 
-WFQ differs from RR that each class may receive a differential amount of service in any interval of time. (partition of service equals to wi/∑wjw\_i/\\sum w\_jwi​/∑wj​ where wiw\_iwi​ is the weight of class iii.)
+WFQ differs from RR that each class may receive a differential amount of service in any interval of time. (partition of service equals to wi/∑wjw\_i/\\sum w\_jwi/∑wj where wiw\_iwi is the weight of class iii.)
 
 ## 4.4 The Internet Protocol (IP)
 
