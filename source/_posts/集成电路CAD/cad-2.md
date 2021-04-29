@@ -83,7 +83,7 @@ IGBT（Insulated Gate Bipolar Transistor）是一个非通即断的开关，相�
 
 ![](IGBT.png)
 
-导通和截断由栅极 G 和发射极 E 间电压$V_{GE}$决定，当$V_{CE}$大于开启电压$V_{CE（th）}$时，NMOS 内形成沟道并为 PNP 双极型晶体管提供基极电流，驱动 IGBT 导通。
+导通和截断由栅极 G 和发射极 E 间电压$V_{GE}$决定，当$V_{CE}$大于开启电压$V_{CE(th)}$时，NMOS 内形成沟道并为 PNP 双极型晶体管提供基极电流，驱动 IGBT 导通。
 
 #### 特性对比
 

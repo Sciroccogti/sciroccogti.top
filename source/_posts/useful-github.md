@@ -26,6 +26,8 @@ An HTML to Markdown converter written in JavaScript
 [docker-easyconnect](https://github.com/Hagb/docker-easyconnect)：
 ~~让该死的狗屎 EasyConnect 运行在无敌可爱的 docker 下的神器。~~使深信服（Sangfor）开发的非自由的代理软件 EasyConnect 运行在 docker 中，并提供 socks5 服务
 
+[茉莉花](https://github.com/l0o0/jasminum)：一个简单的 Zotero 中文插件，能够让 Zotero 支持检索中文文献，非常强悍
+
 ## 脚本类
 
 [run_fio.sh](https://gist.github.com/sennajox/3667757)

@@ -73,11 +73,8 @@ Hough 变换原理：
 
 透视投影方程：（相似三角形）
 
-$$P,O,P'三点共线\Rightarrow\overrightarrow{OP'}=\lambda\overrightarrow{OP}\Rightarrow
-\begin{cases}x'={\lambda}x\\y'={\lambda}y\\f'={\lambda}z\end{cases}$$
-
-
-$$\Rrightarrow\begin{cases}x'=f'\frac{x}{z}\\y'=f'\frac{y}{z}\end{cases}$$
+$P,O,P'$ 三点共线 $\Rightarrow\overrightarrow{OP'}=\lambda\overrightarrow{OP}\Rightarrow\begin{cases}x'={\lambda}x\\y'={\lambda}y\\f'={\lambda}z\end{cases}$
+$\Rrightarrow\begin{cases}x'=f'\frac{x}{z}\\y'=f'\frac{y}{z}\end{cases}$
 
 ### 2-2 成像特点
 
@@ -183,7 +180,7 @@ w_{z} \\
 1
 \end{array}\right)$$
 
-$$像素坐标=尺度\cdot内参\cdot外参\cdot世界坐标$$
+像素坐标$=$尺度$\cdot$内参$\cdot$外参$\cdot$世界坐标
 
 注意：r 为三维列向量
 

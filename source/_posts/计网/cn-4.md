@@ -241,7 +241,7 @@ To determine the subnets, detach each interface from its host or router, creatin
 
 The Internet’s address assignment strategy is known as **Classless Interdomain Routing (CIDR)**, the 32-bit address is divided into two parts and has the form `a.b.c.d/x`, where xxx indicates the number of bits in the first part of the address.
 
-The xxx most significant bits of an address constitude the network portion of the IP address (referred to as **prefix** of the address). IP addresses of devices within the organization will share the common prefix. The remaining 32−x32-x32−x bits can be thought of as distinguishing among devices within the organization, all of which have the same prefix.
+The xxx most significant bits of an address constitude the network portion of the IP address (referred to as **prefix** of the address). IP addresses of devices within the organization will share the common prefix. The remaining 32-x32-x32-x bits can be thought of as distinguishing among devices within the organization, all of which have the same prefix.
 
 ![](ipv4-addr.jpg)
 
