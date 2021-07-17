@@ -2,6 +2,7 @@
 title:      "About me"
 publishdate:       2018-10-05T22:00:00+08:00
 lastmod:    2020-01-03T20:00:00+08:00
+comments: false
 ---
 
 [查看简历](https://onedrive.live.com/View.aspx?resid=C3D5F75DA67AC03A!8169&authkey=!AAqzWjX3Wwncgok)

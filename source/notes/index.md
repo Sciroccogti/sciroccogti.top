@@ -1,5 +1,5 @@
 ---
-title: "Notes"
+title: "笔记"
 date: 2020-01-26T20:59:40+08:00
 comments: false
 ---

@@ -220,7 +220,7 @@ ServerName sciroccogti.top
 
 ```Bash
 docker pull bitwardenrs/server:latest
-docker run -d --name bitwarden   -e WEBSOCKET_ENABLED=true   -v /bw-data/:/data/   -p xxx:80   -p 3012:3012   bitwardenrs/server:latest
+docker run -d --name bitwarden   -e WEBSOCKET_ENABLED=true   -v /path/to/bw-data/:/data/   -p xxx:80   -p 3012:3012   bitwardenrs/server:latest
 # xxx：自定义端口，一般为80；3012：开启浏览器推送功能
 ```
 
@@ -230,6 +230,19 @@ docker run -d --name bitwarden   -e WEBSOCKET_ENABLED=true   -v /bw-data/:/data/
 
 ！友情提示：使用https的时候记得开启服务器的443端口！
 （我搞了一整天没开启https，结果发现是443没开。。其实 *apache* 配置容错度没那么小的）
+
+#### 更新：Bitwarden_rs 已更名为 vaultwarden
+
+相关公告见此：[Project renamed to vaultwarden](https://github.com/dani-garcia/vaultwarden/discussions/1642)
+
+因此启动命令改为
+
+```Bash
+sudo docker run -d --name vaultwarden -e WEBSOCKET_ENABLED=true -v /path/to/bw-data/:/data/ -p xxx:80  -p 3012:3012  vaultwarden/server:latest
+# /path/to/bw-data/：自定义数据路径，一般为/bw-data/
+# xxx：自定义端口，一般为80
+# 3012：开启浏览器推送功能
+```
 
 ### Nginx
 

@@ -8,8 +8,8 @@
 
 menu:
   Home: / || fas fa-home
-  Categories: /categories/ || fa fa-book
-  # Categories: /categories/ || fas fa-folder-open
+  Notes: /notes/ || fa fa-book
+  Categories: /categories/ || fas fa-folder-open
   Friends: /link/ || fas fa-link
   Others ||fas fa-list:
     Minecraft: https://mc.sciroccogti.top || iconfont icon-minecraft
