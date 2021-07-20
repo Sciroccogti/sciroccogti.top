@@ -2,7 +2,7 @@
 title: 模电上
 date: 2020-01-26T21:12:31+08:00
 categories: 模电
-tags:		["学习"]
+# tags:		["学习"]
 ---
 
 **电流方向**
@@ -141,7 +141,7 @@ $V=Ir_S+nV_Tln(1+\frac{I}{I_S})$
 *   $\begin{cases}V+\Delta{V}=V_{DD}+\Delta{V}_{DD}-(I+\Delta{I})R\\I+{\Delta}I=f(V+\Delta{V})\end{cases}$，其中$V_{DD}$为直流电源
 *   作出两方程所对应的曲线，求其交点
 
-![](../index/1/12.png)
+![](./index/1/12.png)
 
 **等效电路分析法**：使用对应的电路模型
 
@@ -161,23 +161,23 @@ $V=Ir_S+nV_Tln(1+\frac{I}{I_S})$
 
 下门限$V_{IL}=-(V_2+V_{D(on)})$
 
-![](../index/1/13.png)
+![](./index/1/13.png)
 
 #### 钳位电路
 
 用于将周期性信号的峰值固定在某直流电位上
 
-![](../index/1/16.png)
+![](./index/1/16.png)
 
 正峰钳位电路
 
 #### 与门
 
-![](../index/1/14.png)
+![](./index/1/14.png)
 
 #### 或门
 
-![](../index/1/15.png)
+![](./index/1/15.png)
 
 ### 1-5 其它二极管
 
@@ -200,7 +200,7 @@ $V=Ir_S+nV_Tln(1+\frac{I}{I_S})$
 
 使用小信号模型分析输入电压变化量对输出电压的影响
 
-![](../index/1/00.png)
+![](./index/1/00.png)
 
 #### 光电二极管
 
@@ -220,17 +220,17 @@ $V=Ir_S+nV_Tln(1+\frac{I}{I_S})$
 
 #### 三极管结构
 
-![](../index/2/00.png)
+![](./index/2/00.png)
 
 发射极Emitter，基极Base，集电极Collector
 
 **NPN型**
 
-![](../index/2/01.png)
+![](./index/2/01.png)
 
 **PNP型**
 
-![](../index/2/02.png)
+![](./index/2/02.png)
 
 发射区掺杂浓度大，集电区掺杂浓度小，且基区很薄，集电结面积大，
 
@@ -261,7 +261,7 @@ $I_E=I_C+I_B$
 
 >   只有发射极和基极可作输入，只有发射极和集电极可作输出，公共端除外
 
-![](../index/2/12.png)
+![](./index/2/12.png)
 
 ==令$\bar{\alpha}=\frac{I_C-I_{CBO}}{I_E}\approx\frac{I_C}{I_E}$==，称为**共基极直流电流放大系数**，表示$I_E$转化为$I_{Cn1}$的能力，有$\bar{\alpha}<1$但接近1
 
@@ -287,7 +287,7 @@ $I_F$(Forward)表示（与发射极电流同向的）流过发射结的电流，
 
 **截止模式**：三极管两个结均反偏，此时所有等效元件断路
 
-![](../index/2/13.png)
+![](./index/2/13.png)
 
 #### 共射等效电路大信号模型
 
@@ -307,7 +307,7 @@ $I_F$(Forward)表示（与发射极电流同向的）流过发射结的电流，
 
 **有$g_m=\frac{\alpha}{r_e}=\frac{αI_{EQ}}{V_T}\approx\frac{I_{CQ}}{V_T}$**
 
-![](../index/2/14.png)
+![](./index/2/14.png)
 
 即π型等效电路
 
@@ -315,7 +315,7 @@ $I_F$(Forward)表示（与发射极电流同向的）流过发射结的电流，
 
 若不考虑基极引线电阻和基区体电阻$r_{bb'}$时
 
-![](../index/2/15.png)
+![](./index/2/15.png)
 
 NPN和PNP的小信号电路模型一样
 
@@ -325,7 +325,7 @@ NPN和PNP的小信号电路模型一样
 *   忽略$r_{b'c}$、$r_{ce}$
 *   低频时：忽略$C_{b'c}$、$C_{b'e}$
 
-![](../index/2/04.png)
+![](./index/2/04.png)
 
 #### 参数计算
 
@@ -441,7 +441,7 @@ $\beta(\omega)=\frac{\beta}{\sqrt{1+(\omega/\omega_\beta)^2}}$
 
 #### 放大器
 
-![](../index/2/16.png)
+![](./index/2/16.png)
 
 **偏置电路**
 *   输入工作点偏低：截止失真——信号最小值低于0V
@@ -449,7 +449,7 @@ $\beta(\omega)=\frac{\beta}{\sqrt{1+(\omega/\omega_\beta)^2}}$
 
 **分压式偏置电路**
 
-![](../index/2/17.png)
+![](./index/2/17.png)
 
 #### 跨导线性环电路
 
@@ -479,11 +479,11 @@ $\prod_{CW}i_{Ck}=\lambda\prod_{CCW}i_{Ck},\lambda=\prod_{CW}S_k/\prod_{CCW}S_K$
 
 栅极靠近源极
 
-![](../index/3/00.png)
+![](./index/3/00.png)
 
 源极/漏极可互换
 
-![](../index/3/08.png)
+![](./index/3/08.png)
 
 栅长：l；栅宽：w
 
@@ -516,7 +516,7 @@ $v_{DS}$为正，使得沟道中靠近漏极的电压较小，靠近漏极的沟
 
 **转移特性曲线**：漏源电压固定时，漏极电流与栅源电压间的关系。其斜率反映了栅源电压对漏极电流的控制作用，称为*跨导*$g_m=\Delta{I_D}/\Delta{U_{GS}}|_{U_{DS}=const}$
 
-![](../index/3/09.png)
+![](./index/3/09.png)
 
 **衬底效应**
 
@@ -528,7 +528,7 @@ $v_{DS}$为正，使得沟道中靠近漏极的电压较小，靠近漏极的沟
 
 **伏安特性**
 
-![](../index/3/12.png)
+![](./index/3/12.png)
 
 #### 主要参数
 
@@ -552,7 +552,7 @@ $v_{DS}$为正，使得沟道中靠近漏极的电压较小，靠近漏极的沟
 *   非饱和区：$i_D=\frac{\mu_nC_{ox}W}{l}(v_{GS}-V_{GS(th)})V_{DS}$
 *   饱和区：$i_D=\frac{\mu_nC_{OX}W}{2l}(|v_{GS}|-V_{GS(th)})^2(1+{\lambda}V_{DS})$，λ：沟道长度调制效应参数，不考虑时取0
 
-![](../index/3/13.png)
+![](./index/3/13.png)
 
 **小信号模型**
 *   饱和区小信号模型：$i_D=\frac{\mu_nC_{OX}W}{2l}(v_{GS}-V_{GS(th)})^2(1+{\lambda}V_{DS}),g_m\approx2\sqrt{\frac{\mu_nC_{OX}W}{2l}I_{DQ}}$
@@ -561,11 +561,11 @@ $v_{DS}$为正，使得沟道中靠近漏极的电压较小，靠近漏极的沟
 *   考虑衬底效应：在上一个模型的基础上在ds间接$g_{mb}v_{bs}$的电流源，方向与原有的相同，$g_{mb}=\eta{g_m}$
 *   高频小信号模型：
 
-![](../index/3/14.png)
+![](./index/3/14.png)
 
 *   源极与衬底相连时：
 
-![](../index/3/15.png)
+![](./index/3/15.png)
 
 >   MOS管截止频率：$\omega_T=\frac{g_m}{C_{gs}+C_{gd}}$
 
@@ -577,14 +577,14 @@ $v_{DS}$为正，使得沟道中靠近漏极的电压较小，靠近漏极的沟
 
 #### 结型场效应三极管的结构
 
-![](../index/3/05.png)
+![](./index/3/05.png)
 
 N、P互换，成为P沟道场效应管，箭头从P到N
 *   g：gate
 *   d：drip
 *   s：source
 
-![](../index/3/06.png)
+![](./index/3/06.png)
 
 #### 结型场效应三极管的工作原理
 
@@ -598,7 +598,7 @@ $i_D=i_S$
 
 **漏极输出特性曲线**
 
-![](../index/3/07.png)
+![](./index/3/07.png)
 
 **非饱和区**：$I_D\approx2I_{DSS}\frac{V_{GS}-V_{GS(off)}}{V_{GS(off)}}\frac{V_{DS}}{V_{GS(off)}}$
 
@@ -637,13 +637,13 @@ $i_D=\frac{\mu_nC_{OX}W}{2l}(v_{GS}-V_{GS(th)})^2$
 
 交流阻值：$\frac{1}{g_m}$
 
-![](../index/3/16.png)
+![](./index/3/16.png)
 
 **N沟道DMOS**：GS相连
 
 交流阻值：$r_{ds}$
 
-![](../index/3/17.png)
+![](./index/3/17.png)
 
 **有源电阻组成的分压器**：
 
@@ -653,11 +653,11 @@ $V_2=\frac{V_{DD}+(\sqrt{\frac{(W/l)_2}{(W/l)_1}}-1)V_{GS(th)}}{\sqrt{\frac{(W/l
 
 **NMOS开关**：
 
-![](../index/3/18.png)
+![](./index/3/18.png)
 
 **CMOS开关**：
 
-![](../index/3/19.png)
+![](./index/3/19.png)
 
 #### 逻辑门电路
 
@@ -665,20 +665,20 @@ NMOS看作栅极高时断开的开关，PMOS看作栅极低时断开的开关。
 
 **CMOS反相器**：
 
-![](../index/3/20.png)
+![](./index/3/20.png)
 
 **CMOS或非门**：
 
-![](../index/3/21.png)
+![](./index/3/21.png)
 
 **CMOS与非门**：
 
-![](../index/3/22.png)
+![](./index/3/22.png)
 
 **CMOS传输门**：
 
-![](../index/3/23.png)
+![](./index/3/23.png)
 
 **锁存器**：
 
-![](../index/3/24.png)
+![](./index/3/24.png)

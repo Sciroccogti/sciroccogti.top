@@ -2,7 +2,7 @@
 title: 计网总复习
 date: 2020-08-11T10:30:00+08:00
 categories: 计算机网络
-tags:		["学习"]
+# tags:		["学习"]
 ---
 
 # 拾遗
@@ -17,7 +17,7 @@ tags:		["学习"]
 |链路层 Data Link||帧 frame|节点|以太|
 |物理层 Physical|
 
-![](tcp-ieee-osi.jpg)
+![](cn-0/tcp-ieee-osi.jpg)
 
 socket：
 - 相当于操作系统的 API 罢了
@@ -112,7 +112,7 @@ get 返回信息中的 content length 单位是字节
 - 首部 8 字节，总长不超过 64KB（$2^{16}$）
 - 服务端一个套接字可接收多个客户端连接
 
-![](/2020/04/09/计网/cn-3/udp.png)
+![](cn-0/../cn-3/udp.png)
 
 ### 校验
 
@@ -180,7 +180,7 @@ rdt 是没有窗口的
 - 像 GBN 一样只为最老的数据包计时
 - 像 SR 一样支持不连续的ACK，即：支持累积确认，总是传 ACK 请求的包
 
-![](/2020/04/09/%E8%AE%A1%E7%BD%91/cn-3/tcp-header.jpg)
+![](cn-0/../cn-3/tcp-header.jpg)
 
 #### ACK
 
@@ -188,7 +188,7 @@ rdt 是没有窗口的
 
 序列号是当前字节在文件中的偏移量，确认号是希望收到的下一个字节的偏移量
 
-![](/2020/04/09/%E8%AE%A1%E7%BD%91/cn-3/tcp-example.jpg)
+![](cn-0/../cn-3/tcp-example.jpg)
 
 > 只有 TCP 的 ACK 会超前，GBN、SR 的ACK 都不超前
 
@@ -220,7 +220,7 @@ rdt 是没有窗口的
 
 #### 三次握手
 
-![](/2020/04/09/%E8%AE%A1%E7%BD%91/cn-3/tcp-establish.jpg)
+![](cn-0/../cn-3/tcp-establish.jpg)
 
 第一、第二次握手的 seq 都是随机生成的，第一次握手无 ACK，其他正常。
 
@@ -232,7 +232,7 @@ rdt 是没有窗口的
 
 #### 四次挥手
 
-![](TCP-close.png)
+![](cn-0/TCP-close.png)
 
 第一、第二次挥手可以携带数据，第三第四次不行（因为连接已断开）
 
@@ -243,9 +243,9 @@ rdt 是没有窗口的
 
 加性增加，乘性减少
 
-![](/2020/04/09/%E8%AE%A1%E7%BD%91/cn-3/slow-start.jpg)
+![](cn-0/../cn-3/slow-start.jpg)
 
-![](/2020/04/09/%E8%AE%A1%E7%BD%91/cn-3/tcp-congestion-control.jpg)
+![](cn-0/../cn-3/tcp-congestion-control.jpg)
 
 **TCP congestion-control algorithm**: (cwnd = congestion window, ssthresh = slow start threshold)
 
@@ -268,7 +268,7 @@ rdt 是没有窗口的
 - Tahoe：有重复三个 ACK 时将窗口设置为1（旧版）
 - Reno：有重复三个 ACK 时将阈值设为先前窗口的一半，窗口为阈值（+3MSS）（常用）
 
-![](tcp-reno&tahoe.jpg)
+![](cn-0/tcp-reno&tahoe.jpg)
 
 > 窗口减半后，即进入快速恢复后，若窗口指数增长，则还是快速恢复；若窗口线性增长，则是拥塞避免
 
@@ -276,7 +276,7 @@ TCP 平均吞吐率：3 / 4 W，W 为拥塞窗口大小
 
 TCP 公平性：
 
-![](/2020/04/09/%E8%AE%A1%E7%BD%91/cn-3/tcp-fairness.jpg)
+![](cn-0/../cn-3/tcp-fairness.jpg)
 
 从 A 开始，到 B 时丢包，减半至 C（C 为 B 与原点的中点），如此反复不断逼近最优点
 
@@ -339,7 +339,7 @@ HOL（Head of the line）Blocking 是一个 由于其队伍前面的数据报被
 - 无连接，不可靠
 - 首部 20~24 字节
 
-![](/2020/04/09/%E8%AE%A1%E7%BD%91/cn-4/ipv4.png)
+![](cn-0/../cn-4/ipv4.png)
 
 - Time to live：每转发一次就减一，减到 0 时路由器必须抛弃该数据包
 - Upper layer protocol：上层协议，仅会在到达终点的时候用到，6 = TCP，17 = UDP
@@ -363,7 +363,7 @@ HOL（Head of the line）Blocking 是一个 由于其队伍前面的数据报被
 
 IP 地址分给网卡而不是主机
 
-![](/2020/04/09/%E8%AE%A1%E7%BD%91/cn-4/ipv4-addr.jpg)
+![](cn-0/../cn-4/ipv4-addr.jpg)
 
 - 全 0 为该网络的该主机
 - 主机全 0 为网络地址，路由器路由表现
@@ -425,7 +425,7 @@ ICMP通常被认为是IP的一部分，但从体系结构看是在IP之上，是
 
 traceroute就基于ICMP
 
-![](/2020/04/09/%E8%AE%A1%E7%BD%91/cn-4/icmp.png)
+![](cn-0/../cn-4/icmp.png)
 
 ### IPv6
 
@@ -434,7 +434,7 @@ traceroute就基于ICMP
 - 不再分片，要是过大就用 ICMP 发个“Packet Too Big”给发送方
 - 可以用 Tunnel 把ipv6的报文封装在ipv4的里，需要人工配置隧道
 
-![](/2020/04/09/%E8%AE%A1%E7%BD%91/cn-4/ipv6.png)
+![](cn-0/../cn-4/ipv6.png)
 
 # 5 网络层2：控制
 
@@ -479,7 +479,7 @@ DV：Distance vector，距离向量
 
 好消息更新快，坏消息更新慢：因为坏消息之前的状态会残留在邻居的通知内
 
-![](/2020/04/09/%E8%AE%A1%E7%BD%91/cn-5/dv.jpg)
+![](cn-0/../cn-5/dv.jpg)
 
 出现路由黑洞，通过毒性逆转解决，即当 C 通过 B 选路到达 A 时，C 告诉 B：C 到 A 的成本为无穷大
 （然而该协议在环路内失效）
@@ -533,7 +533,7 @@ OSPF 将AS再细分为了多个区域（area），其中有一个主干（backbo
 
 BGP 是全互联网使用的 自治系统间选路算法
 
-![](/2020/04/09/%E8%AE%A1%E7%BD%91/cn-5/routing.png)
+![](cn-0/../cn-5/routing.png)
 
 - eBGP：在AS之间传播可达信息，网关路由器用eBGP向其他网关路由器通告所在网络能够到达的其他网络
 - iBGP：在AS内部传播可达信息，网关路由器用iBGP向所在网络的其他路由器通告eBGP获得的信息

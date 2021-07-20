@@ -2,7 +2,7 @@
 title: "Chapter 4 - The Network Layer: Data Plane"
 date: 2020-04-09T17:34:00+08:00
 categories: 计算机网络
-tags:		["学习"]
+# tags:		["学习"]
 ---
 
 # Chapter 4 - The Network Layer: Data Plane
@@ -26,7 +26,7 @@ Two important network-layer functions to move packets:
 
 #### Control Plane: The Traditional Approach
 
-![](plane-traditional.png)
+![](cn-4/plane-traditional.png)
 
 A routing algorithm runs in each and every router and both forwarding and routing function are contained within a router. The algorithm communicates with the routing algorithm in other routers to compute the values of its forwarding table.
 
@@ -34,7 +34,7 @@ The forwarding and routing functions can be configured directly by human network
 
 #### Control Plane: The SDN Approach
 
-![](plane-sdn.png)
+![](cn-4/plane-sdn.png)
 
 A physically separate (from the routers) remove controller computes and distributes the forwarding tables to be used by each and every router. The routing device performs forwarding only while the remote controller computes and distributes forwarding tables.
 
@@ -86,7 +86,7 @@ Ex：11001000 00010111 00011000 00011000 10101010 -> 1
 
 ## 4.3 What’s Inside a Router?
 
-![](router-architecture.png)
+![](cn-4/router-architecture.png)
 
 *   **Input ports**
     *   Performs the physical layer function of terminating an incoming physical link at a router.
@@ -102,7 +102,7 @@ Input ports, output ports and switching fabric are almost always implemented in 
 
 ### 4.3.1 Input Port Processing and Destination-Based Forwarding
 
-![](input-processing.png)
+![](cn-4/input-processing.png)
 
 The router matches a prefix of the packet’s destination address with the entries in the table. When there are multiple matches, the router uses the longest prefix matching rule.
 
@@ -120,21 +120,21 @@ Line termination | Data link processing | Lookup, fowarding, queuing|
 
 ### 4.3.2 Switching
 
-![](switch-memory.png)
+![](cn-4/switch-memory.png)
 
 **Switching via memory**: simplest, earliest method, where input and output ports functioned as traditional I/O devices in a traditional operating system. If memory bandwidth allows a maximum of $B$ packets per second to be written into or read from memory, then the overall forwarding throughput must be less then $B/2$. Two packets cannot be forwarded at the same time.（受限于内存速度）
 
-![](switch-bus.png)
+![](cn-4/switch-bus.png)
 
 **Switching via a bus**: an input port transfers a packet directly to the output port over a shared bus, without intervention by the routing processor. This is typically done by having the input port pre-pend a switch a switch-internal label (header) to the packet indicating the local output port. All output port receive the packet, but only the port that matches the label will keep the packet. The label is then removed at the output port. Only one packet can cross the bus at a time.（受限于总线带宽）
 
-![](switch-crossbar.png)
+![](cn-4/switch-crossbar.png)
 
 **Switching via an interconnection network**: A crossbar switch is an interconnection network consisting of $2N$ buses that connect $N$ input ports to $N$ output ports. Crossbar switches are capable of forwardning multiple packets in parallel, which is **non-blocking** (not blocked as long as no other packet is being forwarded to the same output port).
 
 ### 4.3.3 Output Port Processing
 
-![](output-processing.png)
+![](cn-4/output-processing.png)
 
 Output port takes packets from output port’s memory and transmits them over the output link. This includes selecting and de-queueing packets for transmission, and performing the needed link-layer and physical-layer transmission functions.
 
@@ -150,13 +150,13 @@ Define $R_{switch}$ as the rate at which packets can be moved from input port to
 
 If switch fabric is not fast enough, packet queuing can also occur at the input ports as packets must join input port queues to wait their turn to cross the fabric.
 
-![](hol.png)
+![](cn-4/hol.png)
 
 **Head-of-the-line (HOL) blocking** is a queued packet in an input queue must wait for transfer through the fabric (even though its output port is free) because it is blocked by another packet at the head of the line.
 
 #### Output Queueing
 
-![](output-queueing.png)
+![](cn-4/output-queueing.png)
 
 When the output port cannot transmit all packets, the rest packets must be queued. The number of queued packets can grow large enough to exhaust available memory at the output port.
 
@@ -168,19 +168,19 @@ recommended buffer size with N flows: $\frac{RTT\cdot{C}}{\sqrt{N}}$
 
 #### First-In-First-Out (FIFO)
 
-![](schedule-fifo.png)
+![](cn-4/schedule-fifo.png)
 
 Also known as first-come-first served (FCFS), the output port delects packets for link transmission in the same order in which they arrived at the output link queue.
 
 #### Priority Queueing
 
-![](schedule-pq.png)
+![](cn-4/schedule-pq.png)
 
 The priority queuing discipline will transmit a packet from the highest priority class that has a nonempty queue. The choice among packets in the same priority class is typically done in a FIFO manner.
 
 #### Round Robin and Weighted Fair Queueing (WFQ)
 
-![](schedule-rr.png)
+![](cn-4/schedule-rr.png)
 
 A round robin scheduler alternates service among priority classes. The work-conserving queuing discipline will never allow the link to remain idle whenever there are packets queued. A work-conversing round robin discipline looks for a packet of a given class but finds none will immediately check the next class in the round robin sequence.
 
@@ -190,7 +190,7 @@ WFQ differs from RR that each class may receive a differential amount of service
 
 ### 4.4.1 IPv4 Datagram Format
 
-![](ipv4.png)
+![](cn-4/ipv4.png)
 
 *   **Version number**: IP protocol version of datagram.
 *   **Header length**: determine where in the IP datagram the payload actually begins (typical IP datagram has a 20-byte header).
@@ -216,7 +216,7 @@ The maximum amout of data that a link-layer frame can carry is called the **maxi
 
 Because each IP datagram is encapsulated within the link-layer frame for transport from one router to the next router, the MTU of the link-layer protocol places a hard limit on the length of an IP datagram.
 
-![](ip-fragmentation.png)
+![](cn-4/ip-fragmentation.png)
 
 When a destination host receives a series of datagrams from the same source, it needs to determine whether any of these datagrams are fragments of some original, larger datagram. If some datagram are fragments, it must further determine when it has received the last fragment and how the fragments should be pieced back together. IPv4 put **identification**, **flag** and **fragmentation offsets** in the IP datagram header.
 
@@ -233,7 +233,7 @@ _An IP address is technically associated with an interface, rather than with the
 
 Each IP address is 32 bits long (4 bytes), are written in so-called **dotted-decimal notation**. Each interface on every host and router in the global Internet must have an IP address that is globally unique (except behind NATs).
 
-![](subnet.png)
+![](cn-4/subnet.png)
 
 Interfaces interconnected to each other by a network that contains no routers (Ethernet switch or wireless access point) along with one router interface forms a **subnet**. For example, the upper-left subnet shares an address `223.1.1.0/24`, where the `/24` notation (**subnet mask**) indicates that the leftmost 24 btis define the subnet address. The `223.1.1.0/24` subnet consists of the three host interfaces and one router interface.
 
@@ -243,7 +243,7 @@ The Internet’s address assignment strategy is known as **Classless Interdomain
 
 The xxx most significant bits of an address constitude the network portion of the IP address (referred to as **prefix** of the address). IP addresses of devices within the organization will share the common prefix. The remaining 32-x32-x32-x bits can be thought of as distinguishing among devices within the organization, all of which have the same prefix.
 
-![](ipv4-addr.jpg)
+![](cn-4/ipv4-addr.jpg)
 
 Before CIDR was adopted, the network portions of an IP address were constrained to be 8, 16, or 24 bits in length, an addressing scheme known as **classful addressing**. Subnets with 8, 16, and 24-bit subnet addresses were known as class A, B, and C networks respectively.
 
@@ -263,7 +263,7 @@ A 类 126个，127专用；B 类 $2^{14}-2$ 个；C 类主机号只有8位
 - 例如 255.255.240.0 （240=11110000）从B类网络的16位主机号借了4位作为子网号，即
 - 子网号中全0全1保留，故子网至少要2位，主机号也至少2位
 
-![](addr-loose.png)
+![](cn-4/addr-loose.png)
 
 Addresses are loose by subnet
 
@@ -283,7 +283,7 @@ DHCP allows a host to obtain an IP address automatically. A given host receives 
 
 DHCP is referred to as a **plug-and-play** or **zeroconf** protocol.
 
-![](dhcp.png)
+![](cn-4/dhcp.png)
 
 *   **DHCP server discovery**: a newly arriving host finds a DHCP server using a **DHCP discover message**, which sends (broadcasts) within a UDP packet to port `67`.
 *   **DHCP server offer**: A DHCP server receiving a DHCP discover message responds to the client with a **DHCP offer message** that is broadcast to all nodes on the subnet, containing the transaction ID, the proposed IP address, network mask and an IP **address lease time** (the amount of time for which the IP address will be valid).
@@ -292,7 +292,7 @@ DHCP is referred to as a **plug-and-play** or **zeroconf** protocol.
 
 ### 4.4.4 Network Address Translation (NAT)
 
-![](nat.png)
+![](cn-4/nat.png)
 
 The NAT router behaves to the outside world as a single device with a single IP address.
 
@@ -317,7 +317,7 @@ ICMP通常被认为是IP的一部分，但从体系结构看是在IP之上，是
 
 traceroute就基于ICMP
 
-![](icmp.png)
+![](cn-4/icmp.png)
 
 ### 4.4.6 IPv6
 
@@ -329,7 +329,7 @@ traceroute就基于ICMP
 
 > in ipv4: Datagram: five turple: {ip_src, ip_des, port_src, port_des, protocol_transport}
 
-![](ipv6.png)
+![](cn-4/ipv6.png)
 
 *   **Version**: value `6`.
 *   **Traffic class**: 8 bits, priority, like TOS in IPv4 but more precise.
@@ -350,11 +350,11 @@ Several fields in IPv4 are no longer present in IPv6 datagram:
 
 Tunneling:把ipv6的报文封装在ipv4的里，需要人工配置隧道
 
-![](tunnel.png)
+![](cn-4/tunnel.png)
 
 ## 4.5 Generalized Forwarding and SDN
 
-![](generalized-forwarding.png)
+![](cn-4/generalized-forwarding.png)
 
 Packet switch contains a match-plus-action table (**flow table**) that is computed and distributed by a remote controller:
 

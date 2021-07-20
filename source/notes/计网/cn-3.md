@@ -2,7 +2,7 @@
 title: Chapter 3 - Transport Layer
 date: 2020-04-09T17:33:00+08:00
 categories: 计算机网络
-tags:		["学习"]
+# tags:		["学习"]
 ---
 
 # Chapter 3 - Transport Layer
@@ -32,7 +32,7 @@ TCP offers several additional services:
 
 ## 3.2 Multiplexing and Demultiplexing
 
-![](multiplex.png)
+![](cn-3/multiplex.png)
 
 At the receiving end, the transport layer examines the fields to identify the receiving socket and then directs the segment to that socket. The job of delivering the data in a transport-layer segment to the correct socket is called **demultiplexing**.
 
@@ -46,7 +46,7 @@ UDP sockets are connectionless: socket is fully identified by a two-tuple consis
 
 TCP sockets are connection-oriented: socket is identified by a four-tuple (source IP + port, destination IP + port). Two arriving TCP segments with different IP address/port will be directed to two different sockets.
 
-![](tcp.png)
+![](cn-3/tcp.png)
 
 The server host may support many simultaneous TCP connection sockets, with each socket attached to a process and with each socket identified by its own four-tuple. When a TCP segment arrives at the host, all four fields are used to direct the segment to the appropriate socket.
 
@@ -66,7 +66,7 @@ It _is_ possible for an application to have reliable data transfer when using UD
 
 ### 3.3.1 UDP Segment Structure
 
-![](udp.png)
+![](cn-3/udp.png)
 
 ### 3.3.2 UDP Checksum
 
@@ -115,19 +115,19 @@ If a packet experiences a particulary large delay, the sender may retransmit the
 
 Implementing a time-based retransmission mechanism requires a **countdown timer** that can interrupt the sender after a given amount of time has expired. The sender will thus need to be able to (1) start the timer each time a packet is sent, (2) respond to a timer interrupt and (3) stop the timer.
 
-![](rdt-a.jpg)
+![](cn-3/rdt-a.jpg)
 
-![](rdt-b.jpg)
+![](cn-3/rdt-b.jpg)
 
-![](rdt-c.jpg)
+![](cn-3/rdt-c.jpg)
 
-![](rdt-d.jpg)
+![](cn-3/rdt-d.jpg)
 
 ### 3.4.2 Pipelined Reliable Data Transfer Protocols
 
-![](stop-and-wait.jpg)
+![](cn-3/stop-and-wait.jpg)
 
-![](pipelined.jpg)
+![](cn-3/pipelined.jpg)
 
 Pipelining has the following consequences for reliable data transfer protocols:
 
@@ -139,13 +139,13 @@ Two basic approaches: **Go-Back-N** and **selective repeat**.
 
 ### 3.4.3 Go-Back-N (GBN)
 
-![](gbn.png)
+![](cn-3/gbn.png)
 
 In GBN, the sender is allowed to transmit multiple packets without waiting for an acknowledgement, but is constrained to have no more than some maximum allowable number NNN of unacknowledged packets in the pipeline.
 
 NNN is refereed to as the **window size** and the GBN protocol is a **sliding-window protocol**. If kkk is the number of bits in the packet sequence number field, the range of sequence numbers is thus $[0, 2^k-1]$.
 
-![](gbn-example.jpg)
+![](cn-3/gbn-example.jpg)
 
 The GBN sender must respond to three types of events:
 
@@ -157,17 +157,17 @@ The receiver’s action is simple: if a packet with sequence number nnn is recei
 
 ### 3.4.4 Selective Repeat (SR)
 
-![](sr.jpg)
+![](cn-3/sr.jpg)
 
 Retransmission will require that the receiver indicidually acknowledge correctly received packets. The SR receiver will acknowledge a correctly received packet whether or not it is in order. Out-of-order packets are buffered until any missing packets are received.
 
-![](sr-operation.jpg)
+![](cn-3/sr-operation.jpg)
 
 Problem of SR with a too large window: a packet can be new data or a retransmission (an example with window size = 4):
 
-![](sr-window-a.jpg)
+![](cn-3/sr-window-a.jpg)
 
-![](sr-window-b.jpg)
+![](cn-3/sr-window-b.jpg)
 
 **Window size of SR must be less than or equal to half the size of the sequence number space. ($\leq2^{k-1})$.**
 
@@ -191,7 +191,7 @@ The maximum amount of data that can be grabbed and placed in a segment is limite
 
 ### 3.5.2 TCP Segment Structure
 
-![](tcp-header.jpg)
+![](cn-3/tcp-header.jpg)
 
 TCP header is 20 bytes long.
 
@@ -215,7 +215,7 @@ The acknowledgment number that Host A puts in its segment is the sequence number
 > 
 > As another example, suppose that Host A has received one segment from Host B containing bytes 0 through 535 and another segment containing bytes 900 through 1,000. For some reason Host A has not yet received bytes 536 through 899. In this example, Host A is still waiting for byte 536 (and beyond) in order to re-create B’s data stream. Thus, A’s next segment to B will contain 536 in the acknowledgment number field. Because TCP only acknowledges bytes up to the first missing byte in the stream, TCP is said to provide **cumulative acknowledgments**.
 
-![](tcp-example.jpg)
+![](cn-3/tcp-example.jpg)
 
 Note that the acknowledgment for client-to-server data is carried in a segment carrying server-to-client data; this acknowledgment is said to be **piggybacked** （捎带） on the server-to-client data segment.
 
@@ -231,25 +231,25 @@ Note that the acknowledgment for client-to-server data is carried in a segment c
 
 三种丢包重传的情况：（注意图二中只重传第一个没有确认的包，后面的不会重传）
 
-![](tcp-re-a.jpg)
+![](cn-3/tcp-re-a.jpg)
 
-![](tcp-re-b.jpg)
+![](cn-3/tcp-re-b.jpg)
 
-![](tcp-re-c.jpg)
+![](cn-3/tcp-re-c.jpg)
 
 TCP Fast Retransmit (by detecting **duplicate ACK** -> packet loss)
 
-![](tcp-fr.jpg)
+![](cn-3/tcp-fr.jpg)
 
 ### 3.5.5 Flow Control
 
-![](rwnd.jpg)
+![](cn-3/rwnd.jpg)
 
 TCP provides flow control by having the sender maintain a **receive window** (rwnd). By keeping the amount of unacknowledged data less than the value of rwnd , Host A is assured that it is not overflowing the receive buffer at Host B.
 
 ### 3.5.6 TCP Connection Management
 
-![](tcp-establish.jpg)
+![](cn-3/tcp-establish.jpg)
 
 Connection establishment:
 
@@ -264,9 +264,9 @@ Connection closement:
 *   Step 3: the client acknowledges the server’s shutdown segment. And then it waits for 30 seconds before releasing resources (in case that ACK is lost).
 *   Step 4: the server receives ACK and releases all resources.
 
-![](tcp-states-client.jpg)
+![](cn-3/tcp-states-client.jpg)
 
-![](tcp-states-server.jpg)
+![](cn-3/tcp-states-server.jpg)
 
 > Port scanning: sending a TCP SYN segment
 > 
@@ -285,9 +285,9 @@ Connection closement:
 
 加性增加，乘性减少
 
-![](slow-start.jpg)
+![](cn-3/slow-start.jpg)
 
-![](tcp-congestion-control.jpg)
+![](cn-3/tcp-congestion-control.jpg)
 
 **TCP congestion-control algorithm**: (cwnd = congestion window, ssthresh = slow start threshold)
 
@@ -314,6 +314,6 @@ TCP 平均吞吐率：3 / 4 W，W 为拥塞窗口大小
 
 TCP 公平性：
 
-![](tcp-fairness.jpg)
+![](cn-3/tcp-fairness.jpg)
 
 从 A 开始，到 B 时丢包，减半至 C（C 为 B 与原点的中点），如此反复不断逼近最优点

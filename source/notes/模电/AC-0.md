@@ -2,7 +2,7 @@
 title: 模电小结
 date: 2020-01-26T21:12:31+08:00
 categories: 模电
-tags:		["学习"]
+# tags:		["学习"]
 ---
 
 # 模电小结
@@ -101,7 +101,7 @@ $\beta=g_mr_{b'e}$：反映三极管的放大能力
 
 **跨导**$g_m=\frac{\alpha}{r_e}=\frac{αI_{EQ}}{V_T}\approx\frac{I_{CQ}}{V_T}$
 
-![](../index/2/04.png)
+![](./index/2/04.png)
 
 NPN和PNP的小信号模型一样
 
@@ -121,7 +121,7 @@ $\beta(j\omega)\approx\frac{\beta}{1+j\omega/\omega_\beta},\omega_\beta=\frac{1}
 
 #### 分压式偏置电路
 
-![](../index/2/17.png)
+![](./index/2/17.png)
 
 **放大模式**：
 *   $V_{BB}=V_{CC}\frac{R_{B2}}{R_{B1}+R_{B2}}$（由戴维宁）
@@ -154,13 +154,13 @@ N沟道：$v_{GS}<0$；P沟道相反
 
 在生产时已经制作了沟道，因此$v_{GS}=0$时就有沟道
 
-![](../index/3/10.png)
+![](./index/3/10.png)
 
 **非饱和区**：$I_D=\frac{\mu_nC_{OX}W}{2l}[2(V_{GS}-V_{GS(th)})V_{DS}-V_{DS}^2]$
 *   $v_{DS}$很小时：$I_D=\frac{\mu_nC_{OX}W}{l}(V_{GS}-V_{GS(th)})V_{DS}$
 *   计及沟道长度调制效应时：$I_D=\frac{\mu_nC_{OX}W}{2l}(V_{GS}-V_{GS(th)})(1-\frac{V_{DS}}{V_A})=\frac{\mu_nC_{OX}W}{2l}(V_{GS}-V_{GS(th)})(1-{\lambda}V_{DS})$（源漏电压差导致漏极电流变化）
 
-![](../index/3/25.png)计及沟道调制效应
+![](./index/3/25.png)计及沟道调制效应
 
 **饱和区**：$I_D=\frac{\mu_nC_{OX}W}{2l}(V_{GS}-V_{GS(th)})^2$
 
@@ -179,7 +179,7 @@ n沟道中所有不等号取反即是p沟道
 
 ### 3-2 结型场效应管
 
-![](../index/3/05.png)
+![](./index/3/05.png)
 
 **非饱和区**：$I_D\approx2I_{DSS}\frac{V_{GS}-V_{GS(off)}}{V_{GS(off)}}\frac{V_{DS}}{V_{GS(off)}}$
 
@@ -205,13 +205,13 @@ $i_D=\frac{\mu_nC_{OX}W}{2l}(v_{GS}-V_{GS(th)})^2$
 
 交流阻值：$\frac{1}{g_m}$
 
-![](../index/3/16.png)
+![](./index/3/16.png)
 
 **N沟道DMOS**：GS相连
 
 交流阻值：$r_{ds}$
 
-![](../index/3/17.png)
+![](./index/3/17.png)
 
 #### 逻辑门电路
 
@@ -271,12 +271,12 @@ vt：三极管；$A_vt$：三极管自身电压增益
 *   **电流增益**：$A_i=\beta\frac{R_o}{R_o+R_L}=g_mr_{b'e}\frac{R_o}{R_o+R_L}$
 *   **电压增益**：$A_v=-g_mR'_L$
 
-![](../index/4/14.png)
+![](./index/4/14.png)
 
 **有源负载放大器**
 *   **电压增益**：$A_v=-g_m\frac{r_{ce}}{2}=-\frac{|V_A|}{2V_T}$
 
-![](../index/4/15.png)
+![](./index/4/15.png)
 
 **发射极接电阻的共射放大器**
 *   **输入电阻**：$R_i=r_{bb'}+r_{b'e}+R_E\frac{(1+\beta)r_{ce}+R'_L}{r_{ce}+R'_L+R_E}$
@@ -292,7 +292,7 @@ vt：三极管；$A_vt$：三极管自身电压增益
 
 ### 4-3 差分放大器
 
-![](../index/4/17.png)
+![](./index/4/17.png)
 
 **共模信号**$v_c=(v_1+v_2)/2$：两信号和的一半，即均值
 
@@ -347,7 +347,7 @@ $I_R=\frac{V_{CC}-V_{BE(on)}}{R}$
 
 $I_O=\frac{I_R}{1+2/\beta}$
 
-![](../index/4/21.png)
+![](./index/4/21.png)
 
 ### 4-5 多级放大器
 
@@ -387,7 +387,7 @@ $I_O=\frac{I_R}{1+2/\beta}$
 
 **密勒定理**
 
-![](../index/4/30.png)
+![](./index/4/30.png)
 
 图(a)为输入输出端跨接阻抗Z(s)(或Y(s)=1/Z(s))的网络，它可以用图(b)来等效:
 $\begin{cases}Y_1(s)=\frac{1}{Z_1(s)}=Y(s)[1-A(s)]\\Y_2(s)=\frac{1}{Z_2(s)}=Y(s)[1-A(s)]\end{cases}$，其中A(s)=V2(s)/V1(s)，即Y(s)可以用分别并接在输入输出端的导纳Y1(s)，Y2(s)来代替
@@ -418,7 +418,7 @@ $C_{b'e}=\frac{g_m}{\omega_T}-C_{b'c}$
 
 环路增益$T=k_fA$，反馈深度$F=1+T=1+k_fA$
 
-![](../index/5/00.png)
+![](./index/5/00.png)
 
 反馈网络的输入端在原输出端侧
 
@@ -528,22 +528,22 @@ $T>>1$或$T_s>>1$
 |反相加法器|同相加法器|
 |---|---|
 |$v_o=-(\frac{v_1}{R_1}+\frac{v_2}{R_2}+\frac{v_3}{R_3})R_F$|${v_o}=(1+\frac{R_F}{R_1})v_+$<br>$v_+=(\frac{v_1}{R'_1}+\frac{v_2}{R'_2}+\frac{v_3}{R'_3})R_P$，其中$R_P=R'_1$、$R'_2$、$R'_3$、$R'$并联|
-|![](../index/6/03.png)|![](../index/6/04.png)|
+|![](./index/6/03.png)|![](./index/6/04.png)|
 
 |加法器实现的减法器|差动减法器|
 |---|---|
 |$v_o=\frac{R_f}{R_2}v_{i2}-\frac{R_f}{R_1}v_{i1}$|$v_{o1}=-\frac{R_f}{R_1}v_{i1}$<br>$v_{o2}=(1+\frac{R_f}{R_1})\frac{R'}{R'+R_2}v_{i2}$<br>当$\frac{R_f}{R_1}=\frac{R'}{R_2}$时，$v_o=\frac{R_f}{R_1}(v_{i2}-v_{i1})$|
-|![](../index/6/05.png)|![](../index/6/06.png)|
+|![](./index/6/05.png)|![](./index/6/06.png)|
 
 |积分运算电路|微分运算电路|
 |---|---|
 |$v_o=-\frac{1}{RC}\int{v_i}dt$|$v_o=-RC\frac{dv_I}{dt}$|
-|![](../index/6/07.png)|![](../index/6/08.png)|
+|![](./index/6/07.png)|![](./index/6/08.png)|
 
 |对数运算电路|指数运算电路
 |---|---|
 |$v_o=V_Tln\frac{v_I}{RI_S}$，其中$i_D\approx{I_S}e^\frac{V_D}{V_T}$|$v_o=-RI_Se^\frac{v_S}{V_T}$|
-|![](../index/6/09.png)|![](../index/6/10.png)|
+|![](./index/6/09.png)|![](./index/6/10.png)|
 
 ##### 有源滤波器
 
@@ -551,18 +551,18 @@ $T>>1$或$T_s>>1$
 
 |带通|带阻|
 |---|---|
-|![](../index/6/15.png)|![](../index/6/16.png)|
+|![](./index/6/15.png)|![](./index/6/16.png)|
 
 #### 开环应用
 
 |电压比较器|单限电压比较器|
 |---|---|
 |$V_+>V_-$时输出高电平|$V_{OH}=V_{Z1}+V_{D2(on)}$<br>$V_{OH}=-(V_{Z2}+V_{D1(on)})$|
-|![](../index/6/17.png)|![](../index/6/18.png)|
+|![](./index/6/17.png)|![](./index/6/18.png)|
 
 ##### 迟滞比较器
 
-![](../index/6/19.png)
+![](./index/6/19.png)
 
 $V_{IH}=\frac{R_2}{R_1+R_2}V_{OH}+\frac{R_1}{R_1+R_2}V_{REF}$
 

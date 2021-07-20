@@ -2,7 +2,7 @@
 title: 模电下
 date: 2020-01-26T21:12:31+08:00
 categories: 模电
-tags:		["学习"]
+# tags:		["学习"]
 ---
 
 # 模电 下
@@ -63,7 +63,7 @@ tags:		["学习"]
 
 正反馈从一管的输出接至同一管的输入
 
-![](../index/7/00.png)
+![](./index/7/00.png)
 
 ### 7-3 LC振荡器的频率稳定性
 
@@ -71,19 +71,19 @@ $\varphi_T(\omega_{osc})=\varphi_z(\omega_{osc})+\varphi_f=0, \varphi_z(\omega)=
 
 #### 7-3-3 克拉泼振荡电路
 
-![](../index/7/01.png)
+![](./index/7/01.png)
 
 ### 7-4 石英晶体振荡器
 
 电压与形变形成正反馈
 
-![](../index/7/06.png)
+![](./index/7/06.png)
 
 有串联、并联两个谐振点，串联谐振：短路；并联谐振：断路
 
 $Z_{cr}(j\omega){\approx}jX_{er}=-j\frac{1}{\omega{C_0}}\frac{1-(\frac{\omega_s}{\omega})^2}{1-(\frac{\omega_p}{\omega})^2}$，$C_0$为石英静态电容、支架、引线组成的电容，$\omega_s=\frac{1}{\sqrt{L_qC_q}},\omega_p=\frac{1}{L_q\frac{C_qC_o}{C_q+C_o}}$，其两者之间的频率中的石英呈感性
 
-![](../index/7/02.png)
+![](./index/7/02.png)
 
 #### 7-4-3 晶体振荡电路
 
@@ -95,7 +95,7 @@ $Z_{cr}(j\omega){\approx}jX_{er}=-j\frac{1}{\omega{C_0}}\frac{1-(\frac{\omega_s}
 
 ### 7-5 RC正弦波振荡器
 
-![](../index/7/03.png)
+![](./index/7/03.png)
 
 一级RC电路实际能提供的最大相移不到90°
 
@@ -103,13 +103,13 @@ $Z_{cr}(j\omega){\approx}jX_{er}=-j\frac{1}{\omega{C_0}}\frac{1-(\frac{\omega_s}
 
 开路增益：$T(\omega_0)=\frac{1}{3}\frac{R_t+R_1}{R_1}$
 
-![](../index/7/04.png)
+![](./index/7/04.png)
 
 RC串并联选频电路应与同相放大器相连
 
 移相为0的电路的虚部为0
 
-![](../index/7/05.png)
+![](./index/7/05.png)
 以上电路：$\omega_{osc}=\frac{1}{\sqrt{6}RC}$
 
 ## 8 功率电子线路
@@ -152,7 +152,7 @@ RC串并联选频电路应与同相放大器相连
 
 ##### 甲类变压器耦合功放
 
-![](../index/8/00.png)
+![](./index/8/00.png)
 
 $R'_L=n^2R_L$
 
@@ -174,7 +174,7 @@ $R'_L=n^2R_L$
 
 ##### 乙类推挽功放
 
-![](../index/8/01.png)
+![](./index/8/01.png)
 
 工作原理：
 未输入信号时，两管截止，输出电压为0。
@@ -212,13 +212,13 @@ $V_{BB}=2V_Tln(I_R/I_S)$
 
 复合管类型由第一个管的类型决定。例如图中T2类型与T1一致。
 
-![](../index/8/02.png)
+![](./index/8/02.png)
 
 **保护电路**
 
 $T_1,T_2$为保护管
 
-![](../index/8/03.png)
+![](./index/8/03.png)
 
 **输入激励电路**
 

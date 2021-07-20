@@ -2,7 +2,7 @@
 title: "第6章 - 链路层和局域网"
 date: 2020-04-09T18:36:00+08:00
 categories: 计算机网络
-tags:		["学习"]
+# tags:		["学习"]
 ---
 
 # 第6章 - 链路层和局域网
@@ -26,7 +26,7 @@ tags:		["学习"]
 
 ### 链路层在何处实现
 
-![](nic.png)
+![](cn-6/nic.png)
 
 *   主体部分：网络适配器（network adapter）/网络接口卡（Network Interface Card, NIC）
 *   网络适配器核心是链路层控制器，一个实现了许多链路层服务的专用芯片
@@ -162,7 +162,7 @@ G 的各项系数为 1 或 0，所有运算均模 2
 
 假设有$N$个节点，则一个给定节点成功传送的概率是$p(1-p)^{N-1}$，任意一个结点成功传送的概率是$Np(1-p)^{N-1}$。因此，时隙 ALOHA 的效率是 $Np(1-p)^{N-1}$。协议的最大效率为 $1/e=0.371$。
 
-![](slottedALOHA.png)
+![](cn-6/slottedALOHA.png)
 
 #### 载波侦听多路访问（CSMA）
 
@@ -439,7 +439,7 @@ PPPoE：PPP over Ethernet
 
 将不同的物理层的网络连接起来的技术，IP over Everything
 
-![](VN.png)
+![](cn-6/VN.png)
 
 ### ATM 异步传输模式
 

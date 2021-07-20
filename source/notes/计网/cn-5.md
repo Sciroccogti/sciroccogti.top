@@ -2,7 +2,7 @@
 title: "Chapter 5 - The Network Layer: Control Plane"
 date: 2020-04-09T18:35:00+08:00
 categories: 计算机网络
-tags:		["学习"]
+# tags:		["学习"]
 ---
 
 # Chapter 5 - The Network Layer: Control Plane
@@ -11,11 +11,11 @@ tags:		["学习"]
 
 How to compute, maintain and install flow tables?
 
-![](intro-per-router.png)
+![](cn-5/intro-per-router.png)
 
 *   **Per-router control**: a routing algorithm runs in each and every router, e.g. OSPF and BGP protocols
 
-![](intro-logical.png)
+![](cn-5/intro-logical.png)
 
 *   **Logically centralized control**: a logically centralized controller computes and distributes the forwarding tables, interacts with a control agent (CA) in each of the routers via a well-defined protocol.
 
@@ -76,7 +76,7 @@ Each node xxx maintains the following routing information:
 *   Node xxx's distance vector $D_x=[D_x(y)]$ , containing xxx's estimate of its cost to all destinations yyy,
 *   The distance vectors of each of its neighbors $D_y$.
 
-![](dv.png)
+![](cn-5/dv.png)
 
 From time to time, each node sends a copy of its distance vector to each of its neighbors. When a node xxx receives a new distance vector from any of its neighbors www, it saves www's distance vector and then uses the Bellman-Ford equation to update its own vector.
 
@@ -94,7 +94,7 @@ DV：Distance vector，距离向量
 
 好消息更新快，坏消息更新慢：因为坏消息之前的状态会残留在邻居的通知内
 
-![](dv.jpg)
+![](cn-5/dv.jpg)
 
 出现路由黑洞，通过毒性逆转解决，即当C通过B选路到达A时，C告诉B C到A的成本为无穷大
 （然而该协议在环路内失效）
@@ -170,7 +170,7 @@ OSPF 将AS再细分为了多个区域（area），其中有一个主干（backbo
 - 主干路由器（非边界路由器）：内部路由器通过所在区域的主干路由器知晓通往其他区域的路由
 - 边界路由器：与其它AS的路由器交流
 
-![](OSPF.png)
+![](cn-5/OSPF.png)
 
 ## 5.4 Routing Among the ISPs: BGP
 
@@ -187,11 +187,11 @@ As a inter-AS routing protocol, BGP provides each router a means to:
 
 ### 5.4.2 Advertising BGP Route Information
 
-![](bgp.png)
+![](cn-5/bgp.png)
 
 For each AS, each router is either a **gateway router** or an **internal router**. A gateway router is a router on the edge of an AS that directly connects to one or more routers in other ASs. An internal router connects only to hosts and routers within its own AS.
 
-![](ebgp-ibgp.png)
+![](cn-5/ebgp-ibgp.png)
 
 Pairs of routers exchange routing information over semi-permanent TCP connections using port 179. Each such TCP connection, along with all the BGP messages sent over the connection, is called a **BGP connection**. Furthermore, a BGP connection that spans two ASs is called an **external BGP (eBGP)** (vice versa, **internal BGP (iBGP)**). In order to propagate the reachability information, both iBGP and eBGP sessiona re used.
 
@@ -258,7 +258,7 @@ Next-Hop 不会保留源路由器的端口号，而是改为发布者的端口�
 
 #### Hot Potato Routing
 
-![](hot-potato.png)
+![](cn-5/hot-potato.png)
 
 In hot potato routing, the route chosen is that route with the least cost to the NEXT-HOP router beginning that route.
 
@@ -275,7 +275,7 @@ In pratice, BGP uses an algorithm that is more complicated than hot potato routi
 
 BGP is often used to implement the IP-anycast serice, which is commonly used in DNS.
 
-![](ip-anycast.png)
+![](cn-5/ip-anycast.png)
 
 During the IP-anycast configuration stage, the CDN company assigns the _same_ IP address to each of its servers and uses standard BGP to advertise this IP address from each of the servers.
 
@@ -291,7 +291,7 @@ When a BGP router receives multiple route advertisements for this address, it tr
 *   Domain name and DNS
 *   BGP propagation
 
-![](routing.png)
+![](cn-5/routing.png)
 
 ## 广播和多播选路
 
@@ -373,7 +373,7 @@ Four key characteristics of an SDN architecture:
 
 ### 5.5.1 SDN Controller and SDN Network-control APplications
 
-![](sdn.png)
+![](cn-5/sdn.png)
 
 A SDN controller’s functionality can be broadly organized into three layers.
 
@@ -381,7 +381,7 @@ A SDN controller’s functionality can be broadly organized into three layers.
 *   **A network-wide state-management layer.**
 *   **The interface to the network-control application layer.** The northbound API allows network-control applications to read/write network state and flow tables within the state-management layer.
 
-![](sdn-components.png)
+![](cn-5/sdn-components.png)
 
 ### 5.5.2 OpenFlow Protocol
 
@@ -402,7 +402,7 @@ Among the messages flowing from the switch to the controller are the following:
 
 An example in link-state change:
 
-![](sdn-change.png)
+![](cn-5/sdn-change.png)
 
 ### 5.5.4 SDN: Past and Future
 
@@ -432,7 +432,7 @@ Network management includes the deployment, integration, and coordination of the
 *   SNMP = Simple Network Management Protocol
 *   PDU = Protocol Data Unit
 
-![](network-management.png)
+![](cn-5/network-management.png)
 
 The Simple Network Management Protocol version 2 (SNMPv2) is an application-layer protocol used to convey network-management control and information messages between a managing server and an agent executing on behalf of that managing server.
 
