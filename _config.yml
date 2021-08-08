@@ -98,7 +98,15 @@ theme: butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: ''
+- type: rss3
+  endpoint: https://hub.rss3.io
+  privateKey: 26fdb84c494d92ade1738f4b2e3d2d010b98bede301b3172be08a1f96c9ea380
+  ipfs:
+    deploy: false
+    gateway: pinata
+    api:
+      key: d693df715d3631e489d6
+      secret: ee8b74626f12b61c1a4bde3b8c331ad390567c86ba779c9b18561ee92c1cbff0
 
 offline:
   maximumFileSizeToCacheInBytes: 10485760 # 缓存的最大文件大小，以字节为单位
