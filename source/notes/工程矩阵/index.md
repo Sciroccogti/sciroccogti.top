@@ -9,3 +9,6 @@ comments: false
 - [第〇章](matrix-0.html)
 - [第一章](matrix-1.html)
 - [第二章](matrix-2.html)
+- [第三章](matrix-3.html)
+- [第四章](matrix-4.html)
+

@@ -2,6 +2,7 @@
 title: 第〇章 - 复习与引申
 date: 2021-07-20T22:30:00+08:00
 categories: 工程矩阵
+layout: note
 ---
 
 # 第0章 复习与引申
@@ -19,7 +20,7 @@ categories: 工程矩阵
 
 矩阵乘法中的 **非零零因子** ： $A\neq0$，$B\neq0$，但 $AB=0$，则 $A$ 为左零因子，$B$ 为右零因子
 
-常见的类对角矩阵：
+==常见的类对角矩阵：==
 ${N}_{n\times n}=\left(\begin{array}{ccccc}0& 1& & & \\ & 0& 1& & \\ & & 0& \ddots & \\ & & & \ddots & 1\\ & & & & 0\end{array}\right),$ ${N}^{2}=\left(\begin{array}{ccccc}0& 0& 1& & \\ & 0& 0& \ddots & \\ & & 0& \ddots & 1\\ & & & \ddots & 0\\ & & & & 0\end{array}\right),$ $\dots,$ ${N}^{n-1}=\left(\begin{array}{cccc}\ddots & & 0& 1\\ & \ddots & 0& 0\\ & & \ddots & \\ & & & \ddots \end{array}\right),$ ${N}^{n}=0$
 
 #### 可交换
@@ -118,7 +119,7 @@ $x_1a_{i_1}+\dots+x_ra_{i_r}=\vec{0}$
 
 ### 矩阵的秩
 
-**有关秩的不等式**：
+==**有关秩的不等式**：==
 1. $r(A+B)\leq r(A)+r(B)$
 2. $r(AB)\leq r(A),r(B)$
 3. 若 $A_{s\times x}B_{n\times t}=0$，则 $r(A)+r(B)\leq n$

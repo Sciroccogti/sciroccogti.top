@@ -2,6 +2,7 @@
 title: 第二章 - 内积空间和等距变换
 date: 2021-08-08T16:00:00+08:00
 categories: 工程矩阵
+layout: note
 ---
 
 ## 2-1 内积空间的概念
@@ -115,9 +116,9 @@ $$(\gamma_1,\gamma_2,\dots,\gamma_n)=(\alpha_1,\alpha_2,\dots,\alpha_n)U$$
 
 #### Schmidt正交化方法的应用
 
-$(AB)^H=B^HA^H$
+==$(AB)^H=B^HA^H$==
 
-1. 若 A,B 是同阶酉矩阵，则 $A^{-1},AB$ 都是酉矩阵
+1. 若 A,B 是同阶酉矩阵，==则 $A^{-1},AB$ 都是酉矩阵==
 2. 假设 A 是上（下）三角矩阵，若 A 是酉矩阵，则 A 是对角阵，且其主对角元的模均等于1.
 
 如果 $\alpha_1,\alpha_2,\dots,\alpha_n$ 是 V 的基，则有标准正交基 $\gamma_1,\gamma_2,\dots,\gamma_n$ 使
@@ -145,7 +146,7 @@ $(\gamma_1,\gamma_2,\dots,\gamma_n)=(\alpha_1,\alpha_2,\dots,\alpha_n)T$
 
 **定义**：
 设 $W\leq V$，记
-$$W^\perp=\{a\in V|\alpha\perp W\}$$
+$$W^\perp=\{\alpha\in V|\alpha\perp W\}$$
 易证这是 V 的子空间，称是 W 在 V 中的正交补空间
 
 **定理**：
@@ -182,14 +183,14 @@ $$d(\alpha,\eta)=\min_{\xi\in W}d(\alpha,\xi)$$
 ## 2-3 等距变换
 
 **定义**：
-设 V 是内积空间，$f\in Hom(V，V)$，若
+设 V 是内积空间，$f\in Hom(V,V)$，若
 $$\langle f(\alpha),f(\beta)\rangle=\langle\alpha,\beta\rangle,\forall\alpha\beta\in V$$
 称 $f$ 是等距变换
 若 $F=R$，称 $f$ 是正交变换
 若 $F=C$，称 $f$ 是酉变换
 
 **充要条件**：
-设 V 是内积空间，$f\in Hom(V，V)$，下述条件等价：
+设 V 是内积空间，$f\in Hom(V,V)$，下述条件等价：
 1. $f$ 保持长度不变
 2. $f$ 保持内积不变
 3. $f$ 将标准正交基变为标准正交基
@@ -198,5 +199,5 @@ $$\langle f(\alpha),f(\beta)\rangle=\langle\alpha,\beta\rangle,\forall\alpha\bet
 ### 镜像变换
 
 假设 V 是一个欧氏空间，$\omega\in V$ 是一个单位向量，映射
-$$f:V\rightarrow V，\alpha\rightarrow\alpha-2\langle\alpha,\omega\rangle\omega$$
+$$f:V\rightarrow V,\alpha\rightarrow\alpha-2\langle\alpha,\omega\rangle\omega$$
 则是 V 上的等距变换（正交变换）

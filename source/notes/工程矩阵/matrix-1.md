@@ -2,6 +2,7 @@
 title: 第一章 - 线性空间和线性变换
 date: 2021-07-31T14:00:00+08:00
 categories: 工程矩阵
+layout: note
 ---
 
 ## 1-1 线性空间
@@ -136,7 +137,7 @@ $(\beta_1,\beta_2,\dots,\beta_n)=(\alpha_1,\alpha_2,\dots,\alpha_n)A$
 
 #### 坐标变换公式
 
-设 $\eta\in V$在基$\alpha_1,\alpha_2,\dots,\alpha_n$下的坐标是X，在基$\beta_1,\beta_2,\dots,\beta_n$下的坐标是Y，而从基$\alpha_1,\alpha_2,\dots,\alpha_n$到基$\beta_1,\beta_2,\dots,\beta_n$的过渡矩阵是$P$，则==$X=PY$，或$Y=P^{-1}X$==
+设 $\eta\in V$在基$\alpha_1,\alpha_2,\dots,\alpha_n$下的坐标是X，在基$\beta_1,\beta_2,\dots,\beta_n$下的坐标是Y，而从基$\alpha_1,\alpha_2,\dots,\alpha_n$到基$\beta_1,\beta_2,\dots,\beta_n$的过渡矩阵是$P$，==则$X=PY$，或$Y=P^{-1}X$==
 
 ## 1-3 子空间
 
@@ -239,10 +240,11 @@ S在映射 $f$ 下的全体象记为 $f(S)$，称为 $f$ 的值域
 $f:S\rightarrow S$ 是双射 $\Leftrightarrow f$是可逆映射
 （即，存在映射$g:T\rightarrow S$，使得$gf=I_S$，fg=I_T）
 
-**线性映射**
+==**线性映射**==
 设 V,U 是数域 F 上的线性空间，若映射$f:V\rightarrow U$满足条件：
 1. $\forall\in V,k\in F,f(kx)=kf(x)$ 齐性
 2. $\forall x,y\in V,f(x+y)=f(x)+f(y)$ 可加性
+
 则称 $f$ 是从 V 到 U 的**线性映射**，
 从 V 到 U 的线性映射全体记为 $Hom(V,U)$
 V 到 V 自身的线性映射称为 V 上的**线性变换**
