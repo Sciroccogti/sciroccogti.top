@@ -17,6 +17,7 @@ menu:
     Bangumis: /bangumis/ || iconfont icon-bilibili-fill
     Tieba-Sign: http://tieba.sciroccogti.top || iconfont icon-tieba
     NAS: https://nas.sciroccogti.top || iconfont icon-ts-tubiao_naservice
+    Snapdrop: https://snapdrop.sciroccogti.top || iconfont icon-airdrop
     # - Music || /music/ || fas fa-music
     # - Movie || /movies/ || fas fa-video
   About: /about/ || fas fa-heart
@@ -861,7 +862,7 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    - <link rel="stylesheet" href="/css/iconfont.css">
+    - <link rel="stylesheet" href="//at.alicdn.com/t/font_1933138_c8e4ncmn8ro.css">
     - '<style type="text/css">.app-refresh{position:fixed;top:-2.2rem;left:0;right:0;z-index:99999;padding:0 1rem;font-size:15px;height:2.2rem;transition:all .3s ease}.app-refresh-wrap{display:flex;color:#fff;height:100%;align-items:center;justify-content:center}.app-refresh-wrap a{color:#fff;text-decoration:underline;cursor:pointer}</style>'
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
