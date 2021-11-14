@@ -58,4 +58,10 @@ sudo pam-auth-update
 
 > 此节参考：https://zhuanlan.zhihu.com/p/267160188 https://www.cnblogs.com/qingchuwudi/p/13359417.html
 
+## Ubuntu 配置
+
+不显示挂载的硬盘：
+```bash
+gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
+```
 

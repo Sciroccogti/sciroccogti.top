@@ -21,7 +21,7 @@ sudo apt install gnome-tweaks
 sudo apt install chrome-gnome-shell
 ```
 
-打开 `https://extensions.gnome.org/` ，根据提示安装 Firefox 浏览器的 gnome 扩展
+打开 `https://extensions.gnome.org/` ，根据提示安装 Firefox 浏览器的 gnome 扩展（事实证明 Chrome 系支持更好）
 
 ### 安装主题
 
