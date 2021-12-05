@@ -27,8 +27,9 @@ m3u8 视频在线提取工具
 ## 软件类
 
 #### Mooc_Downloader
-[Mooc_Downloader](https://github.com/PyJun/Mooc_Downloader)：
-学无止下载器，慕课下载器，Mooc下载，中国大学下载，爱课程下载，网易云课堂下载，学堂在线下载；
+~~[Mooc_Downloader](https://github.com/PyJun/Mooc_Downloader)：~~
+~~学无止下载器，慕课下载器，Mooc下载，中国大学下载，爱课程下载，网易云课堂下载，学堂在线下载；~~
+这个作者竟然开始收费，真的是绝了。还好还有新的项目：[mooc-downloader](https://github.com/xixixixixiao/mooc-downloader)
 支持视频，课件同时下载
 
 #### docker-easyconnect
