@@ -58,6 +58,14 @@ sudo pam-auth-update
 
 > 此节参考：https://zhuanlan.zhihu.com/p/267160188 https://www.cnblogs.com/qingchuwudi/p/13359417.html
 
+## 类 Windows Hello 的人脸识别
+
+同样使用红外和相机进行识别，还是很方便的。
+
+这里使用 [Howdy](https://github.com/Boltgolt/howdy)
+
+[如何确定 device_path](https://github.com/boltgolt/howdy/issues/533#issuecomment-829116906)
+
 ## Ubuntu 配置
 
 不显示挂载的硬盘：
@@ -65,3 +73,4 @@ sudo pam-auth-update
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 ```
 
+添加休眠模式：参考[gnome-shell-extension-hibernate-status](https://github.com/arelange/gnome-shell-extension-hibernate-status) 的介绍，并安装[该插件](https://extensions.gnome.org/extension/755/hibernate-status-button/)

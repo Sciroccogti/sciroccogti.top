@@ -26,45 +26,21 @@ sudo apt install chrome-gnome-shell
 ### 安装主题
 
 - [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
-- [Mcmojave 主题](https://github.com/vinceliuice/Mojave-gtk-theme)：
-建议源码安装以获得最新更新
-- [Firefox 主题](https://github.com/vinceliuice/Mojave-gtk-theme/blob/master/src/other/firefox)：
-是上面那个主题配套的“Safari”主题
-- [模糊效果 blyr 插件](https://extensions.gnome.org/extension/1251/blyr/)
+- [WhiteSur 主题](https://github.com/vinceliuice/WhiteSur-gtk-theme)：
+建议源码安装以获得最新更新。WhiteSur 主题目前自带 `tweak.sh` 来提供 firefox、dash-to-dock、锁屏 gdm 的对应风格主题
+- ~~[模糊效果 blyr 插件](https://extensions.gnome.org/extension/1251/blyr/)~~
 
 ### 安装图标
 
-- [Cupertino iCons Collection](https://www.gnome-look.org/p/1102582/)：
-解压到 `~/.icons` 目录
+- [WhiteSur 图标](https://github.com/vinceliuice/WhiteSur-icon-theme)
 
 ### 安装光标
 
-- [OSX El Capitan](https://www.gnome-look.org/p/1084939/)：
-也解压到 `~/.icons` 目录
+- [WhiteSur 光标](https://github.com/vinceliuice/WhiteSur-cursors)：目前好像大小不对劲
 
 ### 更换 dock
-- [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 
-在 Ubuntu 20.04 上存在无法替换原有的 *Ubuntu-dash* 的问题。解决方法：
-```Bash
-cd /usr/share/gnome-shell/extensions/
-sudo mv ubuntu-dock@ubuntu.com{,.bak}
-```
-
-### 锁屏
-
-- [High Ubunterra](https://www.gnome-look.org/p/1207015/)
-
-~~其中的右键设为壁纸脚本似乎有问题，建议运行：~~实测好像没问题，别改了
-
-```Bash
-mv your_picture ~/.cache/SetAsWallpaper/huwallpaper.jpg
-gsettings set org.gnome.desktop.background picture-uri "file:///$HOME/.cache/SetAsWallpaper/huwallpaper.jpg"
-pkexec convert -resize 1440 -quality 100 -brightness-contrast -10x-15 -blur 0x30 $HOME/.cache/SetAsWallpaper/* /usr/share/backgrounds/gdmlock.jpg
-gsettings set org.gnome.desktop.screensaver picture-uri "file:///usr/share/backgrounds/gdmlock.jpg"
-```
-
-***
+- ~~[Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)~~Dash to Dock 目前对 Gnome 40 支持不好，推荐用 [Floating Dock](https://extensions.gnome.org/extension/3730/floating-dock/)
 
 以上文件安装后均需在 *tweaks* 软件中设置，如图：
 ![](tweaks.png)
