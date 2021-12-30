@@ -72,3 +72,9 @@ sudo update-alternatives --config default.plymouth
 # 选择对应主题
 sudo update-initramfs -u
 ```
+
+### 自动深色模式
+
+[night theme switcher](https://extensions.gnome.org/extension/2236/night-theme-switcher/)
+
+自动切换终端配色：[参考此处](https://gitlab.com/rmnvgr/nightthemeswitcher-gnome-shell-extension/-/issues/33)，注销后登录即可生效。
