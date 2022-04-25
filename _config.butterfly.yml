@@ -1,4 +1,5 @@
 # Main menu navigation (導航目錄)
+# see https://butterfly.js.org/posts/4aa8abbe/#導航菜單
 # --------------------------------------
 
 # format: name: link || icon
@@ -22,8 +23,8 @@ menu:
     # - Movie || /movies/ || fas fa-video
   About: /about/ || fas fa-heart
 
-# Hide the child menu items in mobile sidebar
-hide_sidebar_menu_child: false
+# # Hide the child menu items in mobile sidebar
+# hide_sidebar_menu_child: false
 
 # Code Blocks (代碼相關)
 # --------------------------------------
@@ -178,13 +179,18 @@ index_post_content:
   method: 2
   length: 500 # if you set method to 2 or 3, the length need to config
 
+# anchor
+# when you scroll in post, the URL will update according to header id.
+anchor: false
 # Post
 # --------------------------------------
 
 # toc (目錄)
 toc:
-  enable: true
+  post: true
+  page: false
   number: true
+  expand: false
   style_simple: false
 
 post_copyright:
@@ -227,10 +233,6 @@ photofigcaption: false
 # 2: The 'next post' will link to new post
 # false: disable pagination
 post_pagination: false
-
-# anchor
-# when you scroll in post, the URL will update according to header id.
-anchor: true
 
 # Displays outdated notice for a post (文章過期提醒)
 noticeOutdate:
@@ -283,6 +285,7 @@ comments:
 # https://disqus.com/
 disqus:
   shortname:
+  apikey: # For newest comments widget
 
 # Alternative Disqus - Render comments with Disqus API
 # DisqusJS 評論系統，可以實現在網路審查地區載入 Disqus 評論列表，兼容原版
@@ -372,6 +375,17 @@ twikoo:
   visitor: false
   option:
 
+# Giscus
+# https://giscus.app/
+giscus:
+  repo:
+  repo_id:
+  category_id:
+  theme:
+    light: light
+    dark: dark
+  option:
+
 # Chat Services
 # --------------------------------------
 
@@ -420,11 +434,11 @@ footer:
     since: 2018
   custom_text: <a href="http://www.beian.miit.gov.cn"> 苏ICP备20000268号-1 </a>
   copyright: true # Copyright of theme and framework
-  ICP: # Chinese ICP License
-    enable: true
-    url: http://www.beian.miit.gov.cn
-    text: 苏ICP备20000268号-1
-    icon: /img/icp.png
+  # ICP: # Chinese ICP License
+  #   enable: true
+  #   url: http://www.beian.miit.gov.cn
+  #   text: 苏ICP备20000268号-1
+  #   icon: /img/icp.png
 
 # Analysis
 # --------------------------------------
@@ -436,10 +450,6 @@ baidu_analytics:
 # Google Analytics
 # https://analytics.google.com/analytics/web/
 google_analytics:
-
-# Tencent Analytics ID
-# https://mta.qq.com
-tencent_analytics:
 
 # CNZZ Analytics
 # https://www.umeng.com/
@@ -474,9 +484,9 @@ google_adsense:
 # --------------------------------------
 
 site_verification:
-  # - name: google_site_verification
+  # - name: google-site-verification
   #   content: xxxxxx
-  # - name: baidu_site_verification
+  # - name: baidu-site-verification
   #   content: xxxxxxx
 
 # Beautify/Effect (美化/效果)
@@ -757,6 +767,14 @@ darkmode:
   # autoChangeMode: false
   autoChangeMode: 1
 
+# Don't modify the following settings unless you know how they work (非必要請不要修改 )
+# Choose: readmode,translate,darkmode,hideAside,toc,chat,comment
+# Don't repeat 不要重複
+rightside_item_order:
+  enable: false
+  hide: # readmode,translate,darkmode,hideAside
+  show: # toc,chat,comment
+
 # Lightbox (圖片大圖查看模式)
 # --------------------------------------
 # You can only choose one, or neither (只能選擇一個 或者 兩個都不選)
@@ -773,11 +791,13 @@ fancybox: true
 # --------------------------------------
 
 # mermaid
-# see https://github.com/knsv/mermaid
+# see https://github.com/mermaid-js/mermaid
 mermaid:
   enable: true
   # built-in themes: default/forest/dark/neutral
-  theme: default
+  theme:
+    light: default
+    dark: dark
 
 # Note (Bootstrap Callout)
 note:
@@ -831,7 +851,7 @@ pangu:
   field: site # site/post
 
 # Lazyload (圖片懶加載)
-# https://github.com/verlok/lazyload
+# https://github.com/verlok/vanilla-lazyload
 lazyload:
   enable: true
   field: post # site/post
@@ -844,7 +864,6 @@ lazyload:
 pwa:
   enable: true
   manifest: manifest.json
-  theme_color: "#fff"
   apple_touch_icon: /image/pwa/apple-touch-icon.png
   favicon_32_32: /img/pwaicons/32.png
   favicon_16_16: /img/pwaicons/16.png

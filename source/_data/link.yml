@@ -1,17 +1,26 @@
 - class_name:
   link_list:
     - name:   doowzs
-      avatar: link/doowzs.png
+      avatar: /link/doowzs.png
       link:   "https://doowzs.com/"
+      descr: 张天昀的个人博客
 
     - name:   scp10086
-      avatar: link/scp10086.jpg
+      avatar: /link/scp10086.jpg
       link:   "https://scp10086.github.io/"
+      descr: 我一定要参加挑战杯的博客
 
     - name:   CoDe_BlooD
-      avatar: link/codebloo-d.png
+      avatar: /link/codebloo-d.png
       link:   "https://codebloo-d.github.io/"
+      descr: CoDe_BlooD的博客
       
     - name:   Evan-Zhangyf
-      avatar: link/Evan-Zhangyf.jpg
+      avatar: /link/Evan-Zhangyf.jpg
       link:   "https://evan-zhangyf.github.io/"
+      descr: Yifan Zhang’s Blog
+    
+    - name: LZY
+      avatar: https://avatars.githubusercontent.com/u/43703357
+      link: https://blog.luzy.top/
+      descr: 江风引雨の小po站
