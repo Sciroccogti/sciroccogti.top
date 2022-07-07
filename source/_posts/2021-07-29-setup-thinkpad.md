@@ -74,3 +74,8 @@ gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 ```
 
 添加休眠模式：参考[gnome-shell-extension-hibernate-status](https://github.com/arelange/gnome-shell-extension-hibernate-status) 的介绍，并安装[该插件](https://extensions.gnome.org/extension/755/hibernate-status-button/)
+
+不同显示器配置不同缩放比例：
+```bash
+gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']" # 我怀疑只要启用 fractional scaling 就行了
+```

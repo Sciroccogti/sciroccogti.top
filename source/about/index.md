@@ -5,7 +5,7 @@ lastmod:    2020-01-03T20:00:00+08:00
 comments: false
 ---
 
-[查看简历](https://onedrive.live.com/View.aspx?resid=C3D5F75DA67AC03A!8169&authkey=!AAqzWjX3Wwncgok)
+[查看简历](https://1drv.ms/b/s!AjrAeqZd99XDwUTynTL6FAG8Tpqs?e=W5OO87)
 
 ## 兴趣爱好
 
@@ -47,3 +47,10 @@ comments: false
 |2020-08-18~10-23|2020年全国人工智能大赛 AI+无线通信||
 |2020-11-12~11-15|2020RoboCup 机器人世界杯中国赛季军|全国二等奖|
 |2020-12-10|本科生单项奖|社会实践优秀奖|
+|2021-01-25~2021-05-14|参与某公司Raptor Code相关项目，负责并行加速和算法优化|
+|2021-04-17|东南大学无锡校友会教育奖励基金||
+|||
+|21-22学年||
+|2021-09-23~|参与东南大学紫金山实验室5G开源平台项目，负责cuda函数封装至MATLAB|
+|2021-09-28~|参与某公司 LDPC 光通信相关项目，负责SIMD加速和算法复现及优化|
+|2022-03-01|偶然被SegmentFault 思否评为[2021中国开源码力榜](https://segmentfault.com/a/1190000041478447)前百开发者:[@Sciroccogti](https://github.com/OpenSourceWin/OpenSourceWin.github.io/blob/175734a692c565aa3aab967905ddbd7b5e7f6902/source/Sciroccogti/index.md)|
