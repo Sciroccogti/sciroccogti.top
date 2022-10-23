@@ -432,7 +432,7 @@ footer:
   owner:
     enable: true
     since: 2018
-  custom_text: <a href="http://www.beian.miit.gov.cn"> 苏ICP备20000268号-1 </a>
+  custom_text: <a href="https://beian.miit.gov.cn"> 苏ICP备20000268号-1 </a>
   copyright: true # Copyright of theme and framework
   # ICP: # Chinese ICP License
   #   enable: true

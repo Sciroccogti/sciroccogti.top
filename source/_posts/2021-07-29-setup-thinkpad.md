@@ -75,7 +75,39 @@ gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 
 添加休眠模式：参考[gnome-shell-extension-hibernate-status](https://github.com/arelange/gnome-shell-extension-hibernate-status) 的介绍，并安装[该插件](https://extensions.gnome.org/extension/755/hibernate-status-button/)
 
+### 显示器
+
+#### Wayland
+
+测试下来好像直接用 wayland 就好了，然后开启 分数比例缩放，就既没有鼠标闪烁，又能设置不同缩放比例了，而且 vscode 也不卡。看来 wayland 性能提升很多啊
+
+某些软件缩放后清晰度下降，可以在 `/usr/share/applications/xxx.desktop` 里加上 `--enable-features=UseOzonePlatform --ozone-platform=wayland` 来改善
+
+#### X11
+
+以下的 X11 设置已经弃用
+
 不同显示器配置不同缩放比例：
 ```bash
 gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']" # 我怀疑只要启用 fractional scaling 就行了
 ```
+
+启用 X11 而非 wayland（不然就没法不同显示器不同缩放比例）：
+在 `/etc/gdm3/custom.conf` 中设置 `WaylandEnable=false`
+
+解决外接显示器时内置显示器上鼠标闪烁的问题：[参考](https://askubuntu.com/a/1231443/1085627)
+编辑 `/etc/X11/xorg.conf.d/20-intel.conf`
+```
+Section "Device"
+
+Identifier "Intel Graphics"
+Driver "intel"
+Option "AccelMethod" "sna"
+Option "TearFree" "true"
+
+EndSection
+```
+
+### Gnome 插件
+
+声音输出切换：[Audio-selector](https://extensions.gnome.org/extension/5135/audio-selector/)
