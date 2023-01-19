@@ -1,6 +1,6 @@
 [submodule "notes"]
-    path = notes
-    url = https://github.com/Sciroccogti/blog-notes.git
+	path = notes
+	url = https://github.com/Sciroccogti/blog-notes.git
 [submodule "themes/hugo-theme-stacked"]
 	path = themes/hugo-theme-stacked
 	url = https://github.com/Sciroccogti/hugo-theme-stacked/

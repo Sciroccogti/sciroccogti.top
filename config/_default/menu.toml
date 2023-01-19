@@ -1,11 +1,11 @@
 # Configure main menu and social menu
-# [[main]]
-#     identifier = "home"
-#     name = "Home"
-#     url = "/"
-#     [main.params]
-#         icon = "home"
-#         newtab = true
+[[main]]
+    identifier = "notes"
+    name = "Notes"
+    url = "/notes/html/"
+    [main.params]
+        icon = "notebook"
+        newtab = true
 
 [[social]]
     identifier = "mail"
