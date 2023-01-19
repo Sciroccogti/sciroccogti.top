@@ -2,7 +2,7 @@
 title:      在全新 ThinkPad X13 Yoga 上配置 Ubuntu
 date:       2021-07-029T11:45:00+08:00
 tags:       ["软件"]
-cover:      /img/covers/thinkpad.webp
+image:      /img/covers/thinkpad.webp
 show_author_profile: true
 ---
 

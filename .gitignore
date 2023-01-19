@@ -1,4 +1,6 @@
 .DS_Store
+
+# hexo
 Thumbs.db
 db.json
 *.log
@@ -12,4 +14,7 @@ _config.yml
 .posts.json
 bangumis.json
 
-notesbk
+# hugo
+resources
+.hugo_build.lock
+assets/jsconfig.json
