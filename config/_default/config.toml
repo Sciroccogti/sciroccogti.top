@@ -15,3 +15,6 @@ hasCJKLanguage = true
 
 # Change it to your Disqus shortname before using
 disqusShortname = "hugo-theme-stacked"
+
+# https://gohugo.io/getting-started/configuration/#all-configuration-settings
+enableEmoji = true

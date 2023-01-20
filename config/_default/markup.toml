@@ -1,0 +1,24 @@
+# https://gohugo.io/getting-started/configuration-markup
+# Markdown renderer configuration
+
+# https://discourse.gohugo.io/t/render-some-files-using-pandoc/42400
+defaultMarkdownHandler = "pandoc"
+
+# [goldmark.renderer]
+# unsafe = false
+
+[tableOfContents]
+endLevel = 4
+ordered = true
+startLevel = 2
+
+[highlight]
+anchorLineNos = true # 每行的链接
+codeFences = true
+guessSyntax = true
+noClasses = false
+lineNoStart = 1
+lineNos = true
+lineNumbersInTable = true
+style = "github"
+tabWidth = 4
