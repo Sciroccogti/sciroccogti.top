@@ -1,16 +1,18 @@
-
 // LXGW WenKai Screen
 @import url("https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.6.0/style.min.css"); // https://github.com/lxgw/LxgwWenKai/issues/24
+
 @font-face {
     font-family: "LXGW WenKai Screen R";
     src: url("/fonts/LXGWWenKaiGBScreenR.woff") format("woff");
     font-weight: normal;
 }
+
 @font-face {
     font-family: "LXGW WenKai GB";
     src: url("/fonts/LXGWWenKaiGB-Regular.woff") format("woff");
     font-weight: normal;
 }
+
 :root {
     // --zh-font-family: "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei";
     --article-font-family: "LXGW WenKai GB", var(--base-font-family);
@@ -19,4 +21,74 @@
 // color
 :root {
     --body-text-color: #707070; // 页面字体颜色
+    --bilibili_pink_thin: #FFECF1;
+    // --bilibili_pink_thin: #FF6699;
+}
+
+[data-scheme="dark"] {
+    --bilibili_pink_thin: #D44E7D;
+}
+
+.links {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.links-item {
+    box-shadow: var(--shadow-l1);
+    margin: .5rem;
+    border-radius: var(--card-border-radius);
+}
+
+.links-item:hover {
+    box-shadow: var(--shadow-l3);
+}
+
+.article-content {
+    .bangumi-season {
+        border-top-left-radius: var(--card-border-radius);
+        border-top-right-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l2);
+        background-color: var(--card-background);
+
+        .bangumi-tbody {
+            border-top: .4rem solid var(--pre-background-color);
+        }
+
+        .bangumi-tbody:hover {
+            box-shadow: var(--shadow-l3);
+            position: relative; // to show bottom shadow in table
+            z-index: 10; // to show bottom shadow in table
+        }
+
+        table {
+            margin: 0;
+        }
+
+        td {
+            border: none;
+        }
+
+        th {
+            border: none;
+        }
+
+        .bangumi-rate {
+            width: 6rem;
+            text-align: center;
+            margin: auto;
+        }
+        td.bangumi-rate {
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .bangumi-name {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .bangumi-info {
+            background-color: var(--bilibili_pink_thin); // bilibili --brand_pink_thin
+        }
+    }
 }

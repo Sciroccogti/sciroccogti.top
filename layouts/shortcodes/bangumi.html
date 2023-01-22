@@ -1,0 +1,35 @@
+{{/*<!--
+example:
+  {{< bangumi
+    rate="❤️"
+    name="某科学的超电磁炮"
+    link="https://zh.moegirl.org.cn/某科学的超电磁炮"
+    review="唯我超电磁炮永世长存"
+  >}}
+if rate not set, then rate = "⏳"
+-->*/}}
+
+<tbody class="bangumi-tbody">
+    <tr class="bangumi-info">
+        <td class="bangumi-rate">
+            {{ if .Get "rate" }}
+            {{ .Get "rate" }}
+            {{ else }}
+            ⏳
+            {{ end }}
+        </td>
+        <td class="bangumi-name">
+            {{ if .Get "name" }}
+            <a {{ with .Get "link" }} href="{{.}}" {{ end }}>{{.Get "name"}}</a>
+            {{ end }}
+        </td>
+    </tr>
+
+    {{ with .Get "review" }}
+    <tr class="bangumi-review">
+        <td colspan="1001">
+            {{.}}
+        </td>
+    </tr>
+    {{ end }}
+</tbody>

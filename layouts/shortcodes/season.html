@@ -1,0 +1,16 @@
+{{/*<!--
+example:
+    {{< season 春 >}}
+        {{< bangumi ... >}}
+    {{</ season >}}
+-->*/}}
+
+<div class="bangumi-season">
+    <table>
+        <tr class="bangumi-header">
+            <th class="bangumi-rate">评分</th>
+            <th class="bangumi-name">片名</th>
+        </tr>
+        {{ .Inner }}
+    </table>
+</div>

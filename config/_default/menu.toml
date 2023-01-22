@@ -7,6 +7,45 @@
         icon = "notebook"
         newtab = true
 
+[[main]]
+    identifier = "others"
+    name = "Others"
+
+[[main]]
+    parent = "others"
+    identifier = "Minecraft"
+    name = "Minecraft"
+    url = "https://mc.sciroccogti.top"
+    [main.params]
+        icon = "minecraft"
+        newtab = true
+
+[[main]]
+    parent = "others"
+    identifier = "Pokemon"
+    name = "Pokemon"
+    url = "http://ps.sciroccogti.top-7653.psim.us/"
+    [main.params]
+        icon = "pokemon"
+        newtab = true
+
+[[main]]
+    parent = "others"
+    identifier = "Bangumis"
+    name = "Bangumis"
+    url = "/page/bangumis/"
+    [main.params]
+        icon = "brand-bilibili"
+
+[[main]]
+    parent = "others"
+    identifier = "Tieba-Sign"
+    name = "Tieba-Sign"
+    url = "http://tieba.sciroccogti.top"
+    [main.params]
+        icon = "tieba"
+        newtab = true
+
 [[social]]
     identifier = "mail"
     name = "mail"
