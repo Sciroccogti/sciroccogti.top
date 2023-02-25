@@ -83,6 +83,8 @@ gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 
 某些软件缩放后清晰度下降，可以在 `/usr/share/applications/xxx.desktop` 里加上 `--enable-features=UseOzonePlatform --ozone-platform=wayland` 来改善
 
+要支持 fctix5，可以在上述参数中附加：`--gtk-version=4`
+
 #### X11
 
 以下的 X11 设置已经弃用
