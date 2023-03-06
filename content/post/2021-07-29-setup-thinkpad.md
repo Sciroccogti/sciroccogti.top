@@ -85,6 +85,8 @@ gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 
 要支持 fctix5，可以在上述参数中附加：`--gtk-version=4`
 
+dash-to-dock 在外界屏幕下遇到electron的最大化窗口时会反复横跳，可以通过安装[该插件](https://extensions.gnome.org/extension/1873/disable-unredirect-fullscreen-windows/)解决。
+
 #### X11
 
 以下的 X11 设置已经弃用
