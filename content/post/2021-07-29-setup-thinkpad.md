@@ -81,9 +81,10 @@ gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 
 测试下来好像直接用 wayland 就好了，然后开启 分数比例缩放，就既没有鼠标闪烁，又能设置不同缩放比例了，而且 vscode 也不卡。看来 wayland 性能提升很多啊
 
-某些软件缩放后清晰度下降，可以在 `/usr/share/applications/xxx.desktop` 里加上 `--enable-features=UseOzonePlatform --ozone-platform=wayland` 来改善
+某些软件缩放后清晰度下降，可以在 `/usr/share/applications/xxx.desktop` 里加上 `--enable-features=WaylandWindowDecorations --ozone-platform-hint=auto` 来改善
+> 参考 https://wiki.archlinux.org/title/Wayland#Electron
 
-要支持 fctix5，可以在上述参数中附加：`--gtk-version=4`
+要支持 fctix5，可以在上述参数中附加：`--enable-wayland-ime` 或 `--gtk-version=4`
 
 dash-to-dock 在外界屏幕下遇到electron的最大化窗口时会反复横跳，可以通过安装[该插件](https://extensions.gnome.org/extension/1873/disable-unredirect-fullscreen-windows/)解决。
 

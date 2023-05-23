@@ -24,7 +24,7 @@
     parent = "others"
     identifier = "Pokemon"
     name = "Pokemon"
-    url = "http://ps.sciroccogti.top/"
+    url = "http://ps.sciroccogti.top-7653.psim.us/"
     [main.params]
         icon = "pokemon"
         newtab = true
