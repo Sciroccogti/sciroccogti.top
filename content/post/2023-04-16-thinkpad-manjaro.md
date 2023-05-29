@@ -29,6 +29,10 @@ AUR 中可以安装 `fcitx5-pinyin-moegirl`
 
 ### Wayland
 
+目前 wayland 对多屏的缩放支持比X11好，尤其是 kde，支持应用程序自行缩放和系统强制缩放
+
+但是由于 [Electron 对 gtk4 的支持半吊子](https://github.com/electron/electron/issues/33690)，导致现在如果用 wayland 打开 vscode 或者 Chromium 系浏览器，无论用什么方法都不能输入中文。因此只能通过 kde 的应用程序自行缩放，来在 xwayland 模式下实现不糊的同时调用 fcitx5。
+
 #### zotero
 
 参考 [Revisiting Wayland for ArchLinux](https://rgoswami.me/posts/revisiting-wayland-2021-archlinux/#reference-management)：
@@ -37,6 +41,8 @@ AUR 中可以安装 `fcitx5-pinyin-moegirl`
 ```js
 user_pref('layout.css.devPixelsPerPx', '2');
 ```
+
+zotero 7.0.0 已经原生支持 wayland 了，只需按照 [Firefox#Wayland](https://wiki.archlinux.org/title/Firefox#Wayland)，在 `~/.config/environment.d/envvars.conf` 中添加：`MOZ_ENABLE_WAYLAND=1`
 
 ### KDE
 

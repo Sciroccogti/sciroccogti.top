@@ -81,8 +81,12 @@ gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 
 测试下来好像直接用 wayland 就好了，然后开启 分数比例缩放，就既没有鼠标闪烁，又能设置不同缩放比例了，而且 vscode 也不卡。看来 wayland 性能提升很多啊
 
-某些软件缩放后清晰度下降，可以在 `/usr/share/applications/xxx.desktop` 里加上 `--enable-features=WaylandWindowDecorations --ozone-platform-hint=auto` 来改善
-> 参考 https://wiki.archlinux.org/title/Wayland#Electron
+某些软件缩放后清晰度下降，可以在 `xxx.desktop` 里加上 `--enable-features=WaylandWindowDecorations --ozone-platform-hint=auto` 来改善
+> 参考 [ArchLinux Wayland 手册](https://wiki.archlinux.org/title/Wayland#Electron)
+
+直接原文件会在软件更新时被覆盖，建议把文件从 `/usr/share/applications` 或 `/var/lib/snapd/desktop/applications/` （snap软件）中复制到 `~/.local/share/applications` 里，再进行修改
+
+> vscode 的话需要把参数写在 `~/.config/code-flags.conf` 里面
 
 要支持 fctix5，可以在上述参数中附加：`--enable-wayland-ime` 或 `--gtk-version=4`
 

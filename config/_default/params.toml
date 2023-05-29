@@ -21,7 +21,7 @@ subtitle = "菜是原罪"
 [sidebar.avatar]
     enabled = true
     local = true
-    src = "img/avatar.jpg"
+    src = "/img/avatar.jpg"
 
 [article]
 math = true
@@ -52,6 +52,9 @@ type = "tag-cloud"
 
 [[widgets.page]]
 type = "toc"
+
+[[widgets.page]]
+type = "navbar"
 
 [opengraph.twitter]
 site = ""
