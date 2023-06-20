@@ -8,7 +8,12 @@ show_author_profile: true
 
 ## 安装
 
-安装 Manjaro 就遇到了挺大的麻烦
+目前来说，在 wayland下使用X11应用时，kde 支持*由系统进行缩放*和*由应用程序进行缩放*两种缩放模式，选择由应用进行缩放时，支持缩放的应用就会自己缩放，不支持的就不会缩放，这就非常舒适了。
+而 gnome 方面则还没有这个功能。
+对于目前 wayland 和 x11 青黄不接的情形，kde 显然是更优解。
+
+分区建议把 ESP 分区挂载为 `/boot/efi`，然后新建一个 1GB 的 `/boot` 分区用来在不同 Linux 系统间共享 grub。
+
 
 ### fcitx5
 
@@ -16,7 +21,7 @@ show_author_profile: true
 sudo pacman -S fcitx5-im fcitx5-pinyin-zhwiki fcitx5-chinese-addons
 ```
 
-在 `/etc/profile` 中添加：
+新建 `/etc/profile.d/fcitx.sh` 并添加：
 ```sh
 export XMODIFIERS=@im=fcitx
 export GTK_IM_MODULE=fcitx
@@ -43,6 +48,10 @@ user_pref('layout.css.devPixelsPerPx', '2');
 ```
 
 zotero 7.0.0 已经原生支持 wayland 了，只需按照 [Firefox#Wayland](https://wiki.archlinux.org/title/Firefox#Wayland)，在 `~/.config/environment.d/envvars.conf` 中添加：`MOZ_ENABLE_WAYLAND=1`
+
+#### 字体
+
+kde 下例如 times.ttf 的默认替换字体显示极其奇怪，即便用 `ttf-ms-win10-cdn` 安装 `Times New Roman`，kde 也还会用别的乖乖的字体替代 times.ttf。解决方法是安装 `gsfonts`：`sudo pacman -S gsfonts`
 
 ### KDE
 
