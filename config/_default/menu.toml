@@ -13,6 +13,16 @@
 
 [[main]]
     parent = "others"
+    weight = 1
+    identifier = "Features"
+    name = "Features"
+    url = "/features/"
+    [main.params]
+        icon = "notice/tip"
+        # newtab = true
+
+[[main]]
+    parent = "others"
     identifier = "Minecraft"
     name = "Minecraft"
     url = "https://mc.sciroccogti.top"
