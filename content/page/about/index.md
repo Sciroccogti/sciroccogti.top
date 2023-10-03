@@ -66,4 +66,4 @@ comments: false
 |2022-03-01|偶然被SegmentFault 思否评为[2021中国开源码力榜](https://segmentfault.com/a/1190000041478447)前百开发者:[Sciroccogti](https://github.com/OpenSourceWin/OpenSourceWin.github.io/blob/175734a692c565aa3aab967905ddbd7b5e7f6902/source/Sciroccogti/index.md)|
 |2022-05-31|参与校企合作无线AI创新技术合作研究，负责优化信道估计、算法研发|
 |2023-05-29~07-05|2023 华为杯 无线通信算法菁英赛|三等奖|
-|2023-06-28~09-01|华为上海研究所MBB研究部实习||
+|2023-06-28~09-01|华为上海研究所MBB研究部实习|问天社区月度优秀贡献奖|
