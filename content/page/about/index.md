@@ -2,7 +2,7 @@
 title:      About
 date:       2018-10-05T22:00:00+08:00
 license:    CC BY-NC-ND
-lastmod:    2023-01-19T23:00:00+08:00
+lastmod:    2024-02-29T16:00:00+08:00
 menu:
     main: 
         weight: 100
@@ -11,7 +11,7 @@ menu:
 comments: false
 ---
 
-[查看简历](https://1drv.ms/b/s!AjrAeqZd99XDwUTynTL6FAG8Tpqs?e=W5OO87)
+[查看简历](https://1drv.ms/b/s!AjrAeqZd99XDgoxALPh1tfMAKefLRw?e=wXIscS)
 
 ## 兴趣爱好
 
@@ -65,5 +65,7 @@ comments: false
 |2021-09-28~2022-11|参与校企合作低复杂度LDPC 编译码研究项目，负责SIMD加速和算法复现及优化|
 |2022-03-01|偶然被SegmentFault 思否评为[2021中国开源码力榜](https://segmentfault.com/a/1190000041478447)前百开发者:[Sciroccogti](https://github.com/OpenSourceWin/OpenSourceWin.github.io/blob/175734a692c565aa3aab967905ddbd7b5e7f6902/source/Sciroccogti/index.md)|
 |2022-05-31|参与校企合作无线AI创新技术合作研究，负责优化信道估计、算法研发|
+|22-23学年||
+|2023-01-05~09-16|东南大学GitLab站长（首任），组织开发维护小组部署和维护校内GitLab站|
 |2023-05-29~07-05|2023 华为杯 无线通信算法菁英赛|三等奖|
 |2023-06-28~09-01|华为上海研究所MBB研究部实习|问天社区月度优秀贡献奖|
