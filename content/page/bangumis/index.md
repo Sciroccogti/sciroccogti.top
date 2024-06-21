@@ -21,6 +21,11 @@ article: false
 <!-- 4月 -->
 {{<season>}}
 {{<bangumi
+	rate="❤️❤️"
+	name="迷宫饭"
+	review="世界观和设定都很奇妙，并不是纯纯吃饭番，而是在做饭中引入迷宫的完整生态链设定。"
+>}}
+{{<bangumi
 	rate="⏳"
 	name="夜晚的水母不会游泳"
 	review=""
@@ -32,12 +37,12 @@ article: false
 >}}
 {{<bangumi
 	rate="⏳"
-	name="老夫老妻重返青春"
+	name="怪兽8号"
 	review=""
 >}}
 {{<bangumi
 	rate="⏳"
-	name="怪兽8号"
+	name="摇曳露营 第三季"
 	review=""
 >}}
 {{</season>}}
@@ -54,11 +59,6 @@ article: false
 	rate="❤️"
 	name="葬送的芙莉莲"
 	review="“人生中，有好几次必须做出重要决断的时刻，而他们不能把这些决断往后拖延” “流着泪道别不适合我们，因为再见面时会很难为情”"
->}}
-{{<bangumi
-	rate="⏳"
-	name="迷宫饭"
-	review=""
 >}}
 {{<bangumi
 	rate="✔️"
