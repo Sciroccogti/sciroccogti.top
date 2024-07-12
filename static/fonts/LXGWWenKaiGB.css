@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "LXGW WenKai GB";
+  font-weight: normal;
+  font-display: swap;
+  src: url("./LXGWWenKaiGB-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "LXGW WenKai GB";
+  font-weight: bold;
+  font-display: swap;
+  src: url("./LXGWWenKaiGB-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "LXGW WenKai GB";
+  font-weight: lighter;
+  font-display: swap;
+  src: url("./LXGWWenKaiGB-Light.woff") format("woff");
+}

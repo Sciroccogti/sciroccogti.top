@@ -1,5 +1,6 @@
 ---
-image:      https://images.samsung.com.cn/cn/galaxy-watch5/feature/galaxy-watch5-design.jpg
+# image:      https://images.samsung.com.cn/cn/galaxy-watch5/feature/galaxy-watch5-design.jpg
+image:      https://cdn.sciroccogti.top/static/img/covers/galaxy-watch5-design.jpg
 show_author_profile: true
 date:       2024-04-18T14:00:00+08:00
 tags:       ["折腾"]
@@ -20,7 +21,8 @@ draft:      false
 
 只需要手动给 *三星健康* 和 *Watch 5 Manager* 自启动权限即可，其它权限如有需要，应用会自己申请的。
 
-> 无需启用谷歌套件（毕竟是国行）
+~~> 无需启用谷歌套件（毕竟是国行）~~
+建议启用谷歌套件，实测启用后才能正常更新App。
 
 ## 2 更新手表系统
 
@@ -45,11 +47,13 @@ https://github.com/ITDev93/SHM-MOD
 
 ## 5 *三星智能穿戴* 提示更新但是无法安装
 
-一般来说就是需要更新 *Watch 5 Manager* 了。对于 HyperOS 来说似乎不管是关闭 *安全守护* 还是 *系统优化* 都无法正常安装。这里暂且给一个个人提取的版本：
+~~一般来说就是需要更新 *Watch 5 Manager* 了。对于 HyperOS 来说似乎不管是关闭 *安全守护* 还是 *系统优化* 都无法正常安装。这里暂且给一个个人提取的版本：~~
 
-|版本号|下载链接|
+<!-- |版本号|下载链接|
 |---|---|
-|`24032551`|[watch5manager24032551.apk](/post/2024-04-03-galaxy-watch5/watch5manager24032551.apk)|
+|`24032551`|[watch5manager24032551.apk](/post/2024-04-03-galaxy-watch5/watch5manager24032551.apk)| -->
+
+如果无法安装，则可能是没有启用谷歌套件所致。
 
 ## 6 其它有用的App
 
