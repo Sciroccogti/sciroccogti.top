@@ -81,12 +81,12 @@
         icon = "brand-bilibili"
 
 [[social]]
-    identifier = "twitter"
-    name = "Twitter"
-    url = "https://twitter.com/scirocco_gte"
+    identifier = "x"
+    name = "X"
+    url = "https://x.com/scirocco_gte"
     weight = 3
     [social.params]
-        icon = "brand-twitter"
+        icon = "brand-x"
 
 [[social]]
     identifier = "zhihu"
@@ -95,6 +95,14 @@
     weight = 3
     [social.params]
         icon = "brand-zhihu"
+
+[[social]]
+    identifier = "xlog"
+    name = "xLog"
+    url = "https://sciroccogti.xlog.app/portfolios"
+    weight = 3
+    [social.params]
+        icon = "xlog"
 
 [[social]]
     identifier = "rss"
