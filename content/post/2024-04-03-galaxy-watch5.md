@@ -57,6 +57,8 @@ https://github.com/ITDev93/SHM-MOD
 
 用来通过无线调试给手表安装Apk，还自带一个应用商店，比较方便：[WearOS 工具箱](https://wearosbox.com/)
 
+而工具箱的官网提供的文档也相当实用：[三星手表玩表技巧](https://help.wearosbox.com/faq/device/samsung.html)
+
 ### 6-2 米屋
 
 第三方手表版米家「米屋」：[MiWu](https://github.com/sky130/MiWu)

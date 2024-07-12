@@ -85,3 +85,11 @@ AppletOrder=26;50;51;56;48;30;42 # 容器 25 中挂件的排序
 kquitapp5 plasmashell
 kstart plasmashell
 ```
+
+### 启用 emoji
+
+如下安装 emoji 字体后，按照 [[HowTo] Enable emoji fonts](https://forum.manjaro.org/t/howto-enable-emoji-fonts/36695) 启用。
+
+```bash
+sudo pacman -S noto-fonts-emoji
+```
