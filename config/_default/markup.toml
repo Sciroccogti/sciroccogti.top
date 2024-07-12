@@ -1,8 +1,8 @@
 # https://gohugo.io/getting-started/configuration-markup
 # Markdown renderer configuration
 
-# https://discourse.gohugo.io/t/render-some-files-using-pandoc/42400
-defaultMarkdownHandler = "pandoc"
+# # https://discourse.gohugo.io/t/render-some-files-using-pandoc/42400
+# defaultMarkdownHandler = "pandoc"
 
 # [goldmark.renderer]
 # unsafe = false
