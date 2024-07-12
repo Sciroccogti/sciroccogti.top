@@ -2,7 +2,7 @@
 # layout: article
 title: 无风引漩的追番笔记
 publishdate:       2020-01-03T22:00:00+08:00
-lastmod:    2024-05-11T11:00:00+08:00
+lastmod:    2024-07-12T11:00:00+08:00
 image: "Toaru_Kagaku_no_Railgun_3.webp"
 comments: false 
 article: false

@@ -1,10 +1,13 @@
 ---
 title:      在 ThinkPad X13 Yoga 上配置 Manjaro
 date:       2023-04-16T00:45:00+08:00
+lastmod:    2024-07-12T11:00:00+08:00
 tags:       ["软件"]
 image:      https://wallpaperaccess.com/full/1995669.png
 show_author_profile: true
 ---
+
+之前已经多次 Ubuntu 升级以后笋干爆炸，听说 arch 系因为滚动升级的缘故，避免了这个问题，并且因为有 AUR 的存在，很多冷门软件都有大佬封装好，因此尝试一下。
 
 ## 安装
 
@@ -53,7 +56,7 @@ zotero 7.0.0 已经原生支持 wayland 了，只需按照 [Firefox#Wayland](htt
 
 kde 下例如 times.ttf 的默认替换字体显示极其奇怪，即便用 `ttf-ms-win10-cdn` 安装 `Times New Roman`，kde 也还会用别的乖乖的字体替代 times.ttf。解决方法是安装 `gsfonts`：`sudo pacman -S gsfonts`
 
-### KDE
+## KDE
 
 KDE 的配置文件位于 `~/.config/plasma-org.kde.plasma.desktop-appletsrc`
 
@@ -86,7 +89,13 @@ kquitapp5 plasmashell
 kstart plasmashell
 ```
 
-### 启用 emoji
+## GNOME
+
+### 启用 onedrive
+
+在 GNOME 在线账户 使用 Microsoft365（这里不用填用户名密码，直接点登录就行，截至GNOME46）登录后，安装 `gvfs-onedrive` 以直接在 nautilus 中访问 onedrive。
+
+## 启用 emoji
 
 如下安装 emoji 字体后，按照 [[HowTo] Enable emoji fonts](https://forum.manjaro.org/t/howto-enable-emoji-fonts/36695) 启用。
 
