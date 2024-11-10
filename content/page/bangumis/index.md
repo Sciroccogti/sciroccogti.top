@@ -20,8 +20,28 @@ article: false
 <!-- 10月 -->
 {{<season>}}
 {{<bangumi
-	rate="🕒"
+	rate="⏳"
 	name="伍六七之记忆碎片"
+	review=""
+>}}
+{{<bangumi
+	rate="⏳"
+	name="地。-关于地球的运动-"
+	review=""
+>}}
+{{<bangumi
+	rate="⏳"
+	name="鹿乃子乃子乃子虎视眈眈"
+	review=""
+>}}
+{{<bangumi
+	rate="⏳"
+	name="胆大党"
+	review=""
+>}}
+{{<bangumi
+	rate="⏳"
+	name="青之箱"
 	review=""
 >}}
 {{</season>}}
