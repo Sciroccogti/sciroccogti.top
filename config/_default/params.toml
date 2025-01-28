@@ -57,7 +57,7 @@ type = "categories"
 [[widgets.homepage]]
 type = "tag-cloud"
 [widgets.homepage.params]
-    limit = 10
+limit = 10
 
 [[widgets.page]]
 type = "toc"
@@ -144,11 +144,11 @@ category = "Announcements"
 categoryID = "DIC_kwDODgW_-c4CTr5O"
 mapping = "title"
 strict = "1"
-reactionsEnabled = 1
-emitMetadata = 1
 inputPosition = "bottom"
 lightTheme = ""
 darkTheme = ""
+reactionsEnabled = 1
+emitMetadata = 1
 loading = "lazy"
 
 [comments.gitalk]

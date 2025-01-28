@@ -8,12 +8,23 @@ comments: false
 article: false
 ---
 
-点此查看 [<i class="fa-fw iconfont icon-bilibili-fill"></i>追番列表](bilibili.html)
+<!-- 点此查看 [{{< icon "brand-bilibili" >}} 追番列表](bilibili.html) -->
 
 ***
 
 作为一个小透明，在接受了各篇番剧带来的快乐与感动后，也只能写下这些小文字来感谢了吧。
 
+## 2025
+
+### 2025 冬
+<!-- 1月 -->
+{{<season>}}
+{{<bangumi
+	rate="⏳"
+	name="坂本日常"
+	review=""
+>}}
+{{</season>}}
 ## 2024
 
 ### 2024 秋

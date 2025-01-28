@@ -96,6 +96,12 @@ kstart plasmashell
 
 在 GNOME 在线账户 使用 Microsoft365（这里不用填用户名密码，直接点登录就行，截至GNOME46）登录后，安装 `gvfs-onedrive` 以直接在 nautilus 中访问 onedrive。
 
+### 缩放
+
+```bash
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+```
+
 ## 启用 emoji
 
 如下安装 emoji 字体后，按照 [[HowTo] Enable emoji fonts](https://forum.manjaro.org/t/howto-enable-emoji-fonts/36695) 启用。
@@ -103,3 +109,4 @@ kstart plasmashell
 ```bash
 sudo pacman -S noto-fonts-emoji
 ```
+

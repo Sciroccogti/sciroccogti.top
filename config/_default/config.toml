@@ -1,8 +1,7 @@
 # Change baseurl before deploy
 baseurl = "https://www.sciroccogti.top"
 languageCode = "zh-cn"
-paginate = 10
-title = "无风引漩的小站"
+title = "无风引漩的日常"
 theme = "hugo-theme-stacked"
 
 # Theme i18n support
