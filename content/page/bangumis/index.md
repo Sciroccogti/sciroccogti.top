@@ -29,6 +29,21 @@ article: false
 	name="记忆缝线"
 	review=""
 >}}
+{{<bangumi
+	rate="⏳"
+	name="末日后酒店"
+	review=""
+>}}
+{{<bangumi
+	rate="⏳"
+	name="拉撒路"
+	review=""
+>}}
+{{<bangumi
+	rate="⏳"
+	name="打了300年的史莱姆，不知不觉就练到了满级 第二季"
+	review=""
+>}}
 {{</season>}}
 
 ### 2025 冬
