@@ -1,11 +1,12 @@
 ---
-# layout: article
 title: 无风引漩的追番笔记
 publishdate:       2020-01-03T22:00:00+08:00
-lastmod:    2024-07-12T11:00:00+08:00
+lastmod:    2025-04-05T11:00:00+08:00
 image: "Toaru_Kagaku_no_Railgun_3.webp"
 comments: false 
-article: false
+article: review
+paginate: 5
+type: list
 ---
 
 <!-- 点此查看 [{{< icon "brand-bilibili" >}} 追番列表](bilibili.html) -->
@@ -16,9 +17,7 @@ article: false
 
 ## 2025
 
-### 2025 春
-<!-- 4月 -->
-{{<season>}}
+{{<season title="2025 春">}}
 {{<bangumi
 	rate="⏳"
 	name="直至魔女消逝"
@@ -46,9 +45,7 @@ article: false
 >}}
 {{</season>}}
 
-### 2025 冬
-<!-- 1月 -->
-{{<season>}}
+{{<season title="2025 冬">}}
 {{<bangumi
 	rate="👍🏻"
 	name="坂本日常"
@@ -65,11 +62,10 @@ article: false
 	review=""
 >}}
 {{</season>}}
+***
 ## 2024
 
-### 2024 秋
-<!-- 10月 -->
-{{<season>}}
+{{<season title="2024 秋">}}
 {{<bangumi
 	rate="👍🏻"
 	name="伍六七之记忆碎片"
@@ -97,9 +93,7 @@ article: false
 >}}
 {{</season>}}
 
-### 2024 夏
-<!-- 7月 -->
-{{<season>}}
+{{<season title="2024 夏">}}
 {{<bangumi
 	rate="👍🏻"
 	name="我的三体 第四季"
@@ -127,9 +121,7 @@ article: false
 >}}
 {{</season>}}
 
-### 2024 春
-<!-- 4月 -->
-{{<season>}}
+{{<season title="2024 春">}}
 {{<bangumi
 	rate="❤️❤️"
 	name="迷宫饭"
@@ -157,9 +149,7 @@ article: false
 >}}
 {{</season>}}
 
-### 2024 冬
-<!-- 1月 -->
-{{<season>}}
+{{<season title="2024 冬">}}
 {{<bangumi
 	rate="👍🏻"
 	name="狩龙人拉格纳"
@@ -181,12 +171,10 @@ article: false
 	review="看的时候很好笑，看完了好像也就这么一回事"
 >}}
 {{</season>}}
-
+***
 ## 2023
 
-### 2023 秋
-<!-- 10月 -->
-{{<season>}}
+{{<season title="2023 秋">}}
 {{<bangumi
 	rate="👍🏻"
 	name="格莱普尼尔 （2020）"
@@ -214,9 +202,7 @@ article: false
 >}}
 {{</season>}}
 
-### 2023 夏
-<!-- 7月 -->
-{{<season>}}
+{{<season title="2023 夏">}}
 {{<bangumi
 	rate="👍🏻"
 	name="无神世界的神明活动"
@@ -249,9 +235,7 @@ article: false
 >}}
 {{</season>}}
 
-### 2023 春
-<!-- 4月 -->
-{{<season>}}
+{{<season title="2023 春">}}
 {{<bangumi
 	rate="👍🏻"
 	name="希德尼娅的骑士 第九行星战役（2015）"
@@ -284,10 +268,7 @@ article: false
 >}}
 {{</season>}}
 
-### 2023 冬
-<!-- 1月 -->
-
-{{<season>}}
+{{<season title="2023 冬">}}
 {{<bangumi
 	rate="👍🏻"
 	name="大雪海的卡纳"
@@ -314,13 +295,10 @@ article: false
 	review="铺垫了这么久（4年）的剧情终于开始进入真正的高潮"
 >}}
 {{</season>}}
-
+***
 ## 2022
 
-### 2022 秋
-
-<!-- 10月 -->
-{{<season>}}
+{{<season title="2022 秋">}}
 {{<bangumi
     rate="❤️❤️"
     name="夏日重现"
@@ -363,11 +341,7 @@ article: false
 >}}
 {{</season>}}
 
-### 2022 夏
-
-<!-- 7月 -->
-
-{{<season>}}
+{{<season title="2022 夏">}}
 {{<bangumi
 	rate="👍🏻"
 	name="来自深渊 深沉灵魂的黎明（2020）"
@@ -380,10 +354,7 @@ article: false
 >}}
 {{</season>}}
 
-### 2022 春
-<!-- 4月 -->
-
-{{<season>}}
+{{<season title="2022 春">}}
 {{<bangumi
 	rate="✔️"
 	name="食锈末世录"
@@ -406,10 +377,7 @@ article: false
 >}}
 {{</season>}}
 
-### 2022 冬
-<!-- 1月 -->
-
-{{<season>}}
+{{<season title="2022 冬">}}
 {{<bangumi
 	rate="⏳"
 	name="擅长捉弄的高木同学 第三季"
@@ -436,9 +404,7 @@ article: false
 
 ## 2021
 
-### 2021 秋
-
-{{<season>}}
+{{<season title="2021 秋">}}
 {{<bangumi
 	rate="👍🏻"
 	name="国王排名"
@@ -462,9 +428,7 @@ article: false
 {{</season>}}
 
 
-### 2021 夏
-
-{{<season>}}
+{{<season title="2021 夏">}}
 {{<bangumi
 	rate="👍🏻"
 	name="86-不存在的战区（前半）"
@@ -492,9 +456,7 @@ article: false
 >}}
 {{</season>}}
 
-### 2021 春
-
-{{<season>}}
+{{<season title="2021 春">}}
 {{<bangumi
 	rate="⏳"
 	name="工作细胞第二季"
@@ -532,9 +494,7 @@ article: false
 >}}
 {{</season>}}
 
-### 2021 冬
-
-{{<season>}}
+{{<season title="2021 冬">}}
 {{<bangumi
 	rate="👍🏻️"
 	name="咒术回战"
@@ -566,9 +526,7 @@ article: false
 
 ## 2020
 
-### 2020 秋
-
-{{<season>}}
+{{<season title="2020 秋">}}
 {{<bangumi
 	rate="✔️"
 	name="我立于百万生命之上"
@@ -581,9 +539,7 @@ article: false
 >}}
 {{</season>}}
 
-### 2020 夏
-
-{{<season>}}
+{{<season title="2020 夏">}}
 {{<bangumi
 	rate="❤️️"
 	name="某科学的超电磁炮T"
@@ -591,9 +547,7 @@ article: false
 >}}
 {{</season>}}
 
-### 2020 春
-
-{{<season>}}
+{{<season title="2020 春">}}
 {{<bangumi
 	rate="❤️️"
 	name="辉夜大小姐想让我告白～天才们的恋爱头脑战～ 第二季"
@@ -606,9 +560,7 @@ article: false
 >}}
 {{</season>}}
 
-### 2020 冬
-
-{{<season>}}
+{{<season title="2020 冬">}}
 {{<bangumi
 	rate="✔️️"
 	name="因为太怕痛就全点防御力了"
@@ -630,9 +582,7 @@ article: false
 
 ## 2019
 
-### 2019 秋
-
-{{<season>}}
+{{<season title="2019 秋">}}
 {{<bangumi
 	rate="✔️️"
 	name="我，不是说了能力要平均值么！"
@@ -685,9 +635,7 @@ article: false
 >}}
 {{</season>}}
 
-### 2019 夏
-
-{{<season>}}
+{{<season title="2019 夏">}}
 {{<bangumi
 	rate="❤️️"
 	name="某科学的超电磁炮S（2013）"
@@ -705,9 +653,7 @@ article: false
 >}}
 {{</season>}}
 
-### 2019 春
-
-{{<season>}}
+{{<season title="2019 春">}}
 {{<bangumi
 	rate="❤️️"
 	name="辉夜大小姐想让我告白～天才们的恋爱头脑战～"
@@ -724,9 +670,7 @@ article: false
 
 ## 2018
 
-### 2018 秋
-
-{{<season>}}
+{{<season title="2018 秋">}}
 {{<bangumi
 	rate="❤️️"
 	name="青春猪头少年不会梦到兔女郎学姐"
@@ -739,9 +683,7 @@ article: false
 >}}
 {{</season>}}
 
-### 2018 夏
-
-{{<season>}}
+{{<season title="2018 夏">}}
 {{<bangumi
 	rate="👍🏻️"
 	name="ISLAND"

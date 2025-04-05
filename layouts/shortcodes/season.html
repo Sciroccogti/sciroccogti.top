@@ -6,6 +6,11 @@ example:
 -->*/}}
 
 <div class="bangumi-season">
+    <h3>
+        {{ if .Get "title" }}
+        {{ .Get "title" }}
+        {{ end }}
+    </h3>
     <table>
         <tr class="bangumi-header">
             <th class="bangumi-rate">评分</th>

@@ -1,0 +1,52 @@
+<article class="{{ if .Params.image }}has-image {{ end }}main-article">
+    {{ partial "article/components/header" . }}
+    
+    {{ if eq .Params.article "review" }}
+        <section class="article-content">
+            {{ partial "article/components/inline-toc" . }}
+            <!-- Refer to https://discourse.gohugo.io/t/responsive-tables-in-markdown/10639/5 -->
+            {{ $wrappedTable := printf "<div class=\"table-wrapper\">${1}</div>" }}
+            
+            <!-- {{ .Content | replaceRE "(<table>(?:.|\n)+?</table>)" $wrappedTable | safeHTML }} -->
+            {{ $seasons := findRE `(?s)<div class=\"bangumi-season\".*?>.*?</div>` .Content}}
+            
+            <!-- 每页显示的季节数量 -->
+            {{ $itemsPerPage := 1 }} <!-- 修改为你想要每页显示的季节数量 -->
+            
+            <!-- 当前页码 -->
+            {{ $currentPage := 1 | default "1" | int }}
+
+            <!-- 计算分页的起始和结束索引 -->
+            {{ $startIndex := mul (sub $currentPage 1) $itemsPerPage }}
+            {{ $endIndex := add $startIndex $itemsPerPage }}
+            
+            <!-- 获取当前页的季节内容 -->
+            {{ $currentSeasons := slice $seasons 0 1 }}
+            
+            <!-- 渲染当前页的季节内容 -->
+            {{ range $i, $currentSeason := $currentSeasons }}
+                {{ $currentSeason | safeHTML }}
+            {{ end }}
+
+            <!-- 分页链接 -->
+            <div class="pagination">
+                <!-- 上一页 -->
+                {{ if gt $currentPage 1 }}
+                    <a href="{{ .Page.Permalink | relURL }}?page={{ sub $currentPage 1 }}" class="prev">上一页</a>
+                {{ end }}
+                <!-- 下一页 -->
+                {{ if lt $endIndex (len $seasons) }}
+                    <a href="{{ .Page.Permalink | relURL }}?page={{ add $currentPage 1 }}" class="next">下一页</a>
+                {{ end }}
+            </div>
+        </section>
+    {{ else }}
+        {{ partial "article/components/content" . }}
+    {{ end }}
+
+    {{ partial "article/components/footer" . }}
+
+    {{ if or .Params.math .Site.Params.article.math }}
+        {{ partialCached "article/components/math.html" . }}
+    {{ end }}
+</article>
