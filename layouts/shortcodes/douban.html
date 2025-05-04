@@ -1,0 +1,35 @@
+{{ $dbFetch := dict }}
+{{ $dbType := .Get "type"}}
+{{ $dbID := .Get "id" }}
+{{ $dbUrl := printf "https://%s.douban.com/subject/%s/" $dbType $dbID}}
+{{ $neoApi := printf "https://neodb.social/api/catalog/fetch?url=%s" $dbUrl }}
+
+{{ with try (resources.GetRemote $neoApi) }}
+    {{ with .Err}}
+        {{ errorf "%s" . }}
+    {{ else with .Value }}
+        {{ $dbFetch = . | transform.Unmarshal }}
+    {{ else }}
+        {{ errorf "Douban: Unable to get remote resource %q" $neoApi }}
+    {{ end }}
+{{ end}}
+
+{{ if and $dbFetch (not (eq $dbFetch.message "Fetch in progress")) }}
+    {{ $itemRating := 0 }}
+    {{ with $dbFetch.rating }}{{ $itemRating = . }}{{ end }}
+    <div class="db-card">
+        <div class="db-card-subject">
+            <div class="db-card-post"><img loading="lazy" decoding="async" referrerpolicy="no-referrer" src="{{ replace $dbFetch.cover_image_url "neodb.social" "neodb.prvcy.page" }}"></div>
+            <div class="db-card-content">
+                <div class="db-card-title"><a href="{{ $dbUrl }}" class="cute" target="_blank" rel="noreferrer">{{ $dbFetch.title }}</a></div>
+                <div class="rating"><span class="allstardark"><span class="allstarlight" style="width:{{ mul 10 $itemRating }}%"></span></span><span class="rating_nums">{{ $itemRating }}</span></div>
+                <div class="db-card-abstract">{{ $dbFetch.brief }}</div>
+            </div>
+            <div class="db-card-cate">{{ $dbFetch.category }}</div>
+        </div>
+    </div>
+{{ else if and $dbFetch (eq $dbFetch.message "Fetch in progress") }}
+    <p style="text-align: center;"><small>远程获取内容中...</small></p>
+{{ else }}
+    <p style="text-align: center;"><small>远程获取内容失败，请检查 API 有效性。</small></p>
+{{end}}
