@@ -18,7 +18,6 @@ type: list
 ## 2025
 
 <!-- {{<douban type="movie" id="35366293">}}
-
 {{<douban type="book" id="1449352">}} -->
 
 {{<season title="2025 春">}}
@@ -39,12 +38,17 @@ type: list
 >}}
 {{<bangumi
 	rate="⏳"
-	name="拉撒路"
+	name="摇滚乃是淑女的爱好"
 	review=""
 >}}
 {{<bangumi
-	rate="⏳"
+	rate="✔️"
 	name="打了300年的史莱姆，不知不觉就练到了满级 第二季"
+	review="仍然是看完了也不会记得的番，甚至不能说爽番了，已经是日常番了，女主都轻松超神了吧"
+>}}
+{{<bangumi
+	rate="⏳"
+	name="mono 女孩"
 	review=""
 >}}
 {{</season>}}

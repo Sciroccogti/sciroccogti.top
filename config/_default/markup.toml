@@ -4,7 +4,13 @@
 # # https://discourse.gohugo.io/t/render-some-files-using-pandoc/42400
 # defaultMarkdownHandler = "pandoc"
 
-# [goldmark.renderer]
+# 启用 Markdown render hooks
+# [goldmark.parser]
+# wrapStandAloneImageWithinParagraph = false
+# [goldmark.parser.attribute]
+#     block = true
+#     title = true
+
 # unsafe = false
 
 [tableOfContents]
@@ -22,3 +28,6 @@ lineNos = true
 lineNumbersInTable = true
 style = "github"
 tabWidth = 4
+
+[goldmark.renderHooks.image]
+enableDefault = true

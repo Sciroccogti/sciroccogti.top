@@ -21,3 +21,5 @@ assets/jsconfig.json
 
 db_v2.*
 id_ed25519*
+
+*.bak
