@@ -15,15 +15,12 @@ type: list
 
 作为一个小透明，在接受了各篇番剧带来的快乐与感动后，也只能写下这些小文字来感谢了吧。
 
-## 2025
+## 2026
 
-<!-- {{<douban type="movie" id="35366293">}}
-{{<douban type="book" id="1449352">}} -->
-
-{{<season title="2025 秋">}}
+{{<season title="2026 冬">}}
 {{<bangumi
 	rate="⏳"
-	name="超常技能开启奇幻世界美食之旅 第二季"
+	name="凉宫春日的忧郁 2009（2009）"
 	review=""
 >}}
 <!-- {{<bangumi
@@ -31,6 +28,18 @@ type: list
 	name="间谍过家家 第三季"
 	review=""
 >}} -->
+
+## 2025
+
+<!-- {{<douban type="movie" id="35366293">}}
+{{<douban type="book" id="1449352">}} -->
+
+{{<season title="2025 秋">}}
+{{<bangumi
+	rate="✔️"
+	name="超常技能开启奇幻世界美食之旅 第二季"
+	review="非常悠闲的异世界美食番，剧情依然突出一个爽，这一季加了很多明显的赞助商，观感倒也还不错"
+>}}
 {{<bangumi
 	rate="❤️"
 	name="摇曳露营 第一季（2018）"
