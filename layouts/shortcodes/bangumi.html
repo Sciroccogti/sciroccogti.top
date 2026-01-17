@@ -36,7 +36,6 @@ if rate not set, then rate = "⏳"
       {{ if .Get "name" }}
         <a {{ with .Get "link" }} href="{{ . }}" {{ end }}>{{ .Get "name" }}</a>
       {{ end }}
-      {{ with .Get "year" }}<span class="review-year"> ({{ . }})</span>{{ end }}
     </td>
   </tr>
 
