@@ -1,0 +1,243 @@
+{{ define "main" }}
+<main class="reviews-page">
+    <header class="reviews-header">
+        <h1 class="reviews-title">{{ .Title }}</h1>
+        {{ with .Params.description }}<p class="reviews-desc">{{ . }}</p>{{ end }}
+    </header>
+
+    <section class="reviews-controls" aria-label="Bangumi filters">
+        <div class="reviews-filter">
+            <label for="review-min-rate">最低分</label>
+            <input id="review-min-rate" type="number" step="1" placeholder="0">
+        </div>
+
+        <div class="reviews-filter">
+            <label for="review-max-rate">最高分</label>
+            <input id="review-max-rate" type="number" step="1" placeholder="5">
+        </div>
+
+        <div class="reviews-filter">
+            <label for="review-year">观看年份</label>
+            <select id="review-year">
+                <option value="">全部</option>
+            </select>
+        </div>
+
+        <div class="reviews-filter reviews-filter-inline">
+            <input id="review-include-unrated" type="checkbox" checked>
+            <label for="review-include-unrated">含未看</label>
+        </div>
+
+        <div class="reviews-actions">
+            <button id="review-reset" type="button">重置</button>
+            <span id="review-count" class="reviews-count" aria-live="polite"></span>
+        </div>
+
+    </section>
+
+    <article class="reviews-content">
+        {{ .Content }}
+    </article>
+</main>
+
+<style>
+    .reviews-page {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 1.25rem;
+    }
+
+    .reviews-title {
+        margin: 0 0 0.5rem;
+    }
+
+    .reviews-desc {
+        margin: 0 0 1rem;
+        opacity: 0.85;
+    }
+
+    .reviews-controls {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 0.75rem 1rem;
+        align-items: end;
+        padding: 0.75rem;
+        border: 1px solid rgba(0, 0, 0, .12);
+        border-radius: 10px;
+        margin: 1rem 0 1.25rem;
+    }
+
+    .reviews-filter {
+        grid-column: span 3;
+        display: grid;
+        gap: 0.25rem;
+    }
+
+    .reviews-filter-inline {
+        grid-column: span 3;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .reviews-actions {
+        grid-column: span 3;
+        display: grid;
+        gap: 0.35rem;
+        justify-items: start;
+    }
+
+    .reviews-count {
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+
+    .reviews-controls input[type="number"],
+    .reviews-controls select {
+        width: 100%;
+        padding: 0.45rem 0.6rem;
+        border: 1px solid rgba(0, 0, 0, .2);
+        border-radius: 8px;
+    }
+
+    .reviews-controls button {
+        padding: 0.45rem 0.75rem;
+        border: 1px solid rgba(0, 0, 0, .2);
+        border-radius: 8px;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    /* season block (你的 season shortcode 输出) */
+    .review-season {
+        margin: 1.25rem 0 1.5rem;
+    }
+
+    .review-season h3 {
+        margin: 0 0 0.5rem;
+    }
+
+    .review-season table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .review-season th,
+    .review-season td {
+        padding: 0.6rem 0.5rem;
+        border-bottom: 1px solid rgba(0, 0, 0, .12);
+        vertical-align: top;
+    }
+
+    .review-header th {
+        text-align: left;
+        opacity: 0.85;
+        font-weight: 600;
+    }
+
+    .review-rate {
+        white-space: nowrap;
+    }
+
+    .review-year {
+        opacity: 0.75;
+        margin-left: 0.35rem;
+    }
+
+    .review-comment td {
+        padding-top: 0;
+    }
+
+    .review-comment div {
+        opacity: 0.9;
+        padding: 0.25rem 0 0.6rem;
+    }
+</style>
+
+<script>
+    (function () {
+        const minRateEl = document.getElementById("review-min-rate");
+        const maxRateEl = document.getElementById("review-max-rate");
+        const yearEl = document.getElementById("review-year");
+        const includeUnratedEl = document.getElementById("review-include-unrated");
+        const resetEl = document.getElementById("review-reset");
+        const countEl = document.getElementById("review-count");
+
+        const itemTbodies = Array.from(document.querySelectorAll("tbody.review-tbody"));
+        const seasonBlocks = Array.from(document.querySelectorAll(".review-season"));
+
+        // 生成“观看年份”下拉（从 data-year 收集）
+        if (yearEl) {
+            const years = Array.from(new Set(
+                itemTbodies.map(x => (x.dataset.year || "").trim()).filter(Boolean)
+            )).sort((a, b) => Number(b) - Number(a));
+
+            years.forEach(y => {
+                const opt = document.createElement("option");
+                opt.value = y;
+                opt.textContent = y;
+                yearEl.appendChild(opt);
+            });
+        }
+
+        function apply() {
+            const minRate = parseFloat(minRateEl.value);
+            const maxRate = parseFloat(maxRateEl.value);
+            const year = yearEl.value;
+            const includeUnrated = includeUnratedEl.checked;
+
+            let visibleItems = 0;
+
+            itemTbodies.forEach(tbody => {
+                const rateRaw = (tbody.dataset.rate || "").trim();
+                const yearRaw = (tbody.dataset.year || "").trim();
+
+                const r = parseFloat(rateRaw);
+                const hasRate = Number.isFinite(r);
+
+                // 未看：没有 rate（或 rate 不是数字）
+                const passUnrated = includeUnrated ? true : hasRate;
+
+                // 评分区间：仅对有评分的条目生效；无评分条目只受“包含未看”控制
+                let passRange = true;
+                if (hasRate) {
+                    const passMin = Number.isFinite(minRate) ? (r >= minRate) : true;
+                    const passMax = Number.isFinite(maxRate) ? (r <= maxRate) : true;
+                    passRange = passMin && passMax;
+                }
+
+                const passYear = year ? (yearRaw === year) : true;
+
+                const ok = passUnrated && passRange && passYear;
+                tbody.style.display = ok ? "" : "none";
+                if (ok) visibleItems++;
+            });
+
+            // 隐藏没有可见条目的 season
+            seasonBlocks.forEach(season => {
+                const itemsInSeason = Array.from(season.querySelectorAll("tbody.review-tbody"));
+                const anyVisible = itemsInSeason.some(t => t.style.display !== "none");
+                season.style.display = anyVisible ? "" : "none";
+            });
+
+            if (countEl) countEl.textContent = `${visibleItems} / ${itemTbodies.length}`;
+        }
+
+        function reset() {
+            minRateEl.value = "";
+            maxRateEl.value = "";
+            yearEl.value = "";
+            includeUnratedEl.checked = true;
+            apply();
+        }
+
+        minRateEl && minRateEl.addEventListener("input", apply);
+        maxRateEl && maxRateEl.addEventListener("input", apply);
+        yearEl && yearEl.addEventListener("change", apply);
+        includeUnratedEl && includeUnratedEl.addEventListener("change", apply);
+        resetEl && resetEl.addEventListener("click", reset);
+
+        apply();
+    })();
+</script>
+{{ end }}

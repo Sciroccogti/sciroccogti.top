@@ -1,20 +1,20 @@
 {{/*<!--
 example:
     {{< season 春 >}}
-        {{< bangumi ... >}}
+        {{< review ... >}}
     {{</ season >}}
 -->*/}}
 
-<div class="bangumi-season">
+<div class="review-season">
     <h3>
         {{ if .Get "title" }}
         {{ .Get "title" }}
         {{ end }}
     </h3>
     <table>
-        <tr class="bangumi-header">
-            <th class="bangumi-rate">评分</th>
-            <th class="bangumi-name">片名</th>
+        <tr class="review-header">
+            <th class="review-rate">评分</th>
+            <th class="review-name">片名</th>
         </tr>
         {{ .Inner }}
     </table>

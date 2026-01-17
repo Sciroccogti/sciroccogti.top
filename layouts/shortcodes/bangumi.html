@@ -9,24 +9,39 @@ example:
 if rate not set, then rate = "⏳"
 -->*/}}
 
-<tbody class="bangumi-tbody">
-    <tr class="bangumi-info">
-        <td class="bangumi-rate">
-            {{ if .Get "rate" }}
-            {{ .Get "rate" }}
-            {{ else }}
-            ⏳
-            {{ end }}
-        </td>
-        <td class="bangumi-name">
-            {{ if .Get "name" }}
-            <a {{ with .Get "link" }} href="{{.}}" {{ end }}>{{.Get "name"}}</a>
-            {{ end }}
-        </td>
-    </tr>
+<tbody class="review-tbody" data-rate="{{ .Get "rate" | default "" }}" data-year="{{ .Get "year" | default "" }}">
+    <tr class="review-info">
+    <td class="review-rate">
+      {{- $rate := (strings.TrimSpace (.Get "rate" | default "")) -}}
+      {{- if eq $rate "" -}}
+        ⏳
+      {{- else if eq $rate "0" -}}
+        ❌
+      {{- else if eq $rate "1" -}}
+        👎🏻
+      {{- else if eq $rate "2" -}}
+        ✔️
+      {{- else if eq $rate "3" -}}
+        👍🏻
+      {{- else if eq $rate "4" -}}
+        ❤️
+      {{- else if eq $rate "5" -}}
+        ❤️❤️
+      {{- else -}}
+        {{ $rate }}
+      {{- end -}}
+    </td>
 
-    {{ with .Get "review" }}
-    <tr class="bangumi-review">
+    <td class="review-name">
+      {{ if .Get "name" }}
+        <a {{ with .Get "link" }} href="{{ . }}" {{ end }}>{{ .Get "name" }}</a>
+      {{ end }}
+      {{ with .Get "year" }}<span class="review-year"> ({{ . }})</span>{{ end }}
+    </td>
+  </tr>
+
+    {{ with .Get "comment" }}
+    <tr class="review-comment">
         <td colspan="1001">
             <div>{{.}}</div>
         </td>
