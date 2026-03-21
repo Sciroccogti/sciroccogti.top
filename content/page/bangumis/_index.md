@@ -18,6 +18,15 @@ layout: review
 
 ## 2026
 
+{{<season title="2026 春">}}
+{{<bangumi
+	rate="3"
+	name="异世界食堂 第二季（2021）"
+	comment=""
+	year=2026
+>}}
+{{</season>}}
+
 {{<season title="2026 冬">}}
 {{<bangumi
 	rate="3"
@@ -32,9 +41,9 @@ layout: review
 	year=2026
 >}}
 {{<bangumi
-	rate=""
+	rate="愈发有深度，时长也常规化了，更强调亲情，但是其实不是很有必要非得大多都整得像鬼故事，能摆脱“奇谭”的限制就更好了"
 	name="中国奇谭2"
-	comment=""
+	comment="3"
 	year=2026
 >}}
 {{<bangumi
