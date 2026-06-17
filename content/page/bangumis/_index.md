@@ -22,6 +22,30 @@ layout: review
 {{<bangumi
 	rate="3"
 	name="异世界食堂 第二季（2021）"
+	comment="逐渐开始建立世界观了，但是世界观介绍完了就完结了是怎么个事？"
+	year=2026
+>}}
+{{<bangumi
+	rate=""
+	name="主播女孩重度依赖"
+	comment=""
+	year=2026
+>}}
+{{<bangumi
+	rate=""
+	name="关于我转生变成史莱姆这档事 第四季"
+	comment=""
+	year=2026
+>}}
+{{<bangumi
+	rate=""
+	name="日本三国"
+	comment=""
+	year=2026
+>}}
+{{<bangumi
+	rate=""
+	name="凉宫春日的消失（2010，剧场版）"
 	comment=""
 	year=2026
 >}}
@@ -59,9 +83,9 @@ layout: review
 	year=2026
 >}}
 {{<bangumi
-	rate=""
+	rate="4"
 	name="判处勇者刑"
-	comment=""
+	comment="很独特的背景设定，勇者是刑罚，能复活但是会逐渐掉san，也没有什么太刻意的情感线，美美期待第二季"
 	year=2026
 >}}
 <!-- {{<bangumi
