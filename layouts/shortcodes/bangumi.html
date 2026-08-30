@@ -12,25 +12,29 @@ if rate not set, then rate = "⏳"
 <tbody class="review-tbody" data-rate="{{ .Get "rate" | default "" }}" data-year="{{ .Get "year" | default "" }}">
     <tr class="review-info">
     <td class="review-rate">
-      {{- $rate := (strings.TrimSpace (.Get "rate" | default "")) -}}
-      {{- if eq $rate "" -}}
+      {{- $raw := strings.TrimSpace (.Get "rate" | default "") -}}
+      {{- if eq $raw "" -}}
         ⏳
-      {{- else if eq $rate "0" -}}
-        ❌
-      {{- else if eq $rate "1" -}}
-        👎🏻
-      {{- else if eq $rate "2" -}}
-        ✔️
-      {{- else if eq $rate "3" -}}
-        👍🏻
-      {{- else if eq $rate "4" -}}
-        ❤️
-      {{- else if eq $rate "5" -}}
-        ❤️❤️
       {{- else -}}
-        {{ $rate }}
+        {{- $rate := int $raw -}}
+        {{- if eq $rate 0 -}}
+          ❌
+        {{- else if eq $rate 1 -}}
+          👎🏻
+        {{- else if eq $rate 2 -}}
+          ✔️
+        {{- else if eq $rate 3 -}}
+          👍🏻
+        {{- else if eq $rate 4 -}}
+          ❤️
+        {{- else if eq $rate 5 -}}
+          ❤️❤️
+        {{- else -}}
+          {{ $rate }}
+        {{- end -}}
       {{- end -}}
     </td>
+
 
     <td class="review-name">
       {{ if .Get "name" }}

@@ -1,6 +1,6 @@
 ---
 # image:      https://images.samsung.com.cn/cn/galaxy-watch5/feature/galaxy-watch5-design.jpg
-image:      https://cdn.sciroccogti.top/static/img/covers/galaxy-watch5-design.jpg
+image:      /img/covers/galaxy-watch5-design.jpg
 show_author_profile: true
 date:       2024-04-18T14:00:00+08:00
 tags:       ["折腾"]

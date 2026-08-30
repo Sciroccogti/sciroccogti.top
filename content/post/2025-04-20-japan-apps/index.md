@@ -1,5 +1,5 @@
 ---
-image:      https://cdn.sciroccogti.top/static/img/post/2025-04-20-japan-apps/DSC07771.webp
+image:      /img/post/2025-04-20-japan-apps/DSC07771.webp
 show_author_profile: true
 date:       2025-04-20T12:00:00+08:00
 tags:       ["软件", "旅游"]
@@ -13,7 +13,7 @@ draft:      false
 
 作为一个安卓用户，难得出国一次，也额外装了不少 App，直接卸载了有点可惜（，不如记录一下。
 
-![](https://cdn.sciroccogti.top/static/img/post/2025-04-20-japan-apps/Screenshot_2025-04-20-11-20-28-186_com.miui.home-edit.webp)
+![](/img/post/2025-04-20-japan-apps/Screenshot_2025-04-20-11-20-28-186_com.miui.home-edit.webp)
 
 ## 1 语言学习类
 
@@ -57,7 +57,7 @@ Google 翻译不单翻译准确，还能给出罗马音，对于我这种半吊�
 自然，除了APP版的 Google Maps 之外，网页版的 Google Maps 在前期规划的时候更实用。
 > 说实话，网页版的 Google Maps 比高德、百度地图好用多了，国内这俩的网页版可以说是完全用不了，点一下就要下软件or扫码。
 
-![](https://cdn.sciroccogti.top/static/img/post/2025-04-20-japan-apps/日本交通时间与票价.webp)
+![](/img/post/2025-04-20-japan-apps/日本交通时间与票价.webp)
 
 我们创了两个地图列表，一个是沿途要去的景点列表，另一个是要打卡的圣地巡礼清单，开放给一起去的朋友们，大家可以一起添加。
 
@@ -92,7 +92,7 @@ Agoda 也是一个很不错的订酒店 App，价格也很实惠，就是界面�
 对于没有 felica芯片的国行安卓来说，Suica 卡的余额和消费记录只能通过这个 App 来读取了。
 不过这个 App 能导出 CSV 格式的消费记录，对于我这种轻微的赛博仓鼠综合症患者来说，也是一个小惊喜。
 
-![Suikakeibo](https://cdn.sciroccogti.top/static/img/post/2025-04-20-japan-apps/Screenshot_2025-04-25-23-17-08-485_net.mediavrog.ic_card_expensetracker-edit.webp)
+![Suikakeibo](/img/post/2025-04-20-japan-apps/Screenshot_2025-04-25-23-17-08-485_net.mediavrog.ic_card_expensetracker-edit.webp)
 {width="50%"}
 
 ### 3-3 

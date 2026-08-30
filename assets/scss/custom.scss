@@ -1,8 +1,8 @@
 // LXGW WenKai Screen
-@import url("https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/lxgw-wenkai-screen-webfont/1.6.0/style.min.css"); // https://github.com/lxgw/LxgwWenKai/issues/24
-
-@import url("https://cdn.sciroccogti.top/static/fonts/LXGWWenKaiGB.css");
-@import url("https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/lxgwwenkaigbscreenr.css");
+// Serve the font from the site itself so mobile browsers do not depend on a
+// third-party CDN or reject the stylesheet/font request due to CORS/network
+// restrictions.
+@import url("/fonts/LXGWWenKaiGB.css");
 
 :root {
     // --zh-font-family: "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei";
@@ -109,15 +109,85 @@
     }
 }
 
+// The custom review layout does not use the theme's article header component.
+// Keep its featured image responsive and visually consistent with article pages.
+.reviews-header-image {
+    img {
+        display: block;
+        width: 100%;
+        max-height: 50vh;
+        object-fit: cover;
+    }
+}
+
+.reviews-header {
+    .reviews-title {
+        color: var(--card-text-color-main);
+    }
+
+    .reviews-desc {
+        color: var(--card-text-color-secondary);
+    }
+}
+
+.reviews-content {
+    color: var(--card-text-color-main);
+
+    a {
+        color: var(--accent-color);
+    }
+}
+
 /* ===== dark mode ===== */
-[data-theme="dark"] {
+[data-scheme="dark"] {
+    .reviews-content {
+        color: #e7eaf0;
+
+        a {
+            color: #8fd8ff;
+
+            &:hover {
+                color: #c2edff;
+            }
+        }
+    }
+
+    .reviews-header {
+        .reviews-title {
+            color: #f0f2f5;
+        }
+
+        .reviews-desc {
+            color: rgba(235, 240, 246, .72);
+        }
+    }
+
     .review-season {
+        h3 { color: #f0f2f5; }
+        table { background: transparent; }
+        .review-header th { color: rgba(235, 240, 246, .68); }
+
         tbody.review-tbody {
-            background: rgba(25, 25, 28, .78);
+            background: #25272d;
             box-shadow: 0 3px 14px rgba(0, 0, 0, .35);
 
             &:hover {
                 box-shadow: 0 10px 26px rgba(0, 0, 0, .55);
+            }
+
+            tr.review-info td {
+                background: #493342;
+                color: #f6dce8;
+            }
+
+            tr.review-comment td {
+                background: #25272d;
+                color: rgba(235, 240, 246, .82);
+            }
+
+            a {
+                color: #8fd8ff;
+                &:hover { color: #c2edff; }
             }
         }
     }
@@ -228,7 +298,7 @@
 }
 
 /* ===== Dark mode ===== */
-[data-theme="dark"] {
+[data-scheme="dark"] {
     .reviews-controls {
         background: rgba(25, 25, 28, .65);
         border-color: rgba(255, 255, 255, .1);

@@ -30,4 +30,6 @@ style = "github"
 tabWidth = 4
 
 [goldmark.renderHooks.image]
-enableDefault = true
+# Hugo 0.148+ replacement for the removed enableDefault option.
+# "fallback" preserves the previous enabled/default-hook behavior.
+useEmbedded = "fallback"

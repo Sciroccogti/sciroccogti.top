@@ -1,6 +1,12 @@
 {{ define "main" }}
 <main class="reviews-page">
     <header class="reviews-header">
+        {{- $image := partial "helper/image" (dict "Context" . "Type" "article") -}}
+        {{- if $image.exists }}
+            <div class="article-image reviews-header-image">
+                <img src="{{ $image.permalink }}" loading="lazy" alt="Featured image of post {{ .Title }}" />
+            </div>
+        {{- end }}
         <h1 class="reviews-title">{{ .Title }}</h1>
         {{ with .Params.description }}<p class="reviews-desc">{{ . }}</p>{{ end }}
     </header>

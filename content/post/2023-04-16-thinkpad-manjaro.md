@@ -4,7 +4,7 @@ date:       2023-04-16T00:45:00+08:00
 lastmod:    2024-07-12T11:00:00+08:00
 tags:       ["软件"]
 # image:      https://wallpaperaccess.com/full/1995669.png
-image:      https://cdn.sciroccogti.top/static/img/covers/manjaro.png
+image:      /img/covers/manjaro.png
 show_author_profile: true
 ---
 
@@ -109,4 +109,3 @@ gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffe
 ```bash
 sudo pacman -S noto-fonts-emoji
 ```
-

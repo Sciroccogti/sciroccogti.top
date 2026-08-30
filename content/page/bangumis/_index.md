@@ -17,7 +17,56 @@ layout: review
 作为一个小透明，在接受了各篇番剧带来的快乐与感动后，也只能写下这些小文字来感谢了吧。
 
 ## 2026
-
+{{<season title="2026 夏">}}
+{{<bangumi
+        rate="3"
+        name="青春猪头少年不会梦到娇怜外出妹（2023，剧场版）"
+        comment="几乎没有青春症候症的一部，但是很好地收尾了花枫的症候症，描写了升学的矛盾，也引出了红书包女孩篇（虽然有点生硬"
+        year=2026
+>}}
+{{<bangumi
+        rate=""
+        name="Let's Go 怪奇组"
+        comment=""
+        year=2026
+>}}
+{{<bangumi
+        rate=""
+        name="画完这个再去死"
+        comment=""
+        year=2026
+>}}
+{{<bangumi
+        rate=""
+        name="Let's Go 怪奇组"
+        comment=""
+        year=2026
+>}}
+{{<bangumi
+        rate=""
+        name="雷霆三人行"
+        comment=""
+        year=2026
+>}}
+{{<bangumi
+        rate=""
+        name="猫与龙"
+        comment=""
+        year=2026
+>}}
+{{<bangumi
+        rate=""
+        name="二十世纪电气目录"
+        comment=""
+        year=2026
+>}}
+{{<bangumi
+        rate=""
+        name="穹庐下的魔女"
+        comment=""
+        year=2026
+>}}
+{{</season>}}
 {{<season title="2026 春">}}
 {{<bangumi
 	rate="3"
@@ -26,9 +75,9 @@ layout: review
 	year=2026
 >}}
 {{<bangumi
-	rate=""
+	rate="4"
 	name="主播女孩重度依赖"
-	comment=""
+	comment="说实话前几集完全不知道在说什么，后面我倒也逐渐适应了抽象的风格。然而恐怕有不少人会觉得风格并非抽象而是写实。超天酱穿过无数可能走向终获拯救，可是谁又能来救救他们……看的时候总是把超天酱幻视成一位同学……我会是卡拉马佐夫吗？"
 	year=2026
 >}}
 {{<bangumi
@@ -38,16 +87,22 @@ layout: review
 	year=2026
 >}}
 {{<bangumi
-	rate=""
+	rate="4"
 	name="日本三国"
-	comment=""
+	comment="很少有番能把政治、军事的谋略和心理描写得这么细。整体背景是核战后衰退到明治维新左右的日本，经不起推敲不过无伤大雅。整体全员智商超绝还是很爽的"
 	year=2026
 >}}
 {{<bangumi
-	rate=""
+	rate="4"
 	name="凉宫春日的消失（2010，剧场版）"
-	comment=""
+	comment="凉宫不再霸凌，也把之前的铺垫都圆上了"
 	year=2026
+>}}
+{{<bangumi
+        rate="3"
+        name="从断头台开始，公主重生后的逆转人生～堤亚穆帝国物语（2023）"
+        comment="虽然是异世界爽番，但是各角色智商还是在线的，而且全程贯穿身边人对公主的脑补和自我攻略，公主本身也呆萌但有头脑"
+        year=2026
 >}}
 {{</season>}}
 
