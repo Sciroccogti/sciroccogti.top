@@ -17,12 +17,68 @@ layout: review
 作为一个小透明，在接受了各篇番剧带来的快乐与感动后，也只能写下这些小文字来感谢了吧。
 
 ## 2026
+{{<season title="2026 秋">}}
+{{<bangumi
+        rate=""
+        name="战车椅子"
+        comment=""
+        year=2026
+>}}
+{{<bangumi
+        rate=""
+        name="世界最强的魔女，就此开始"
+        comment=""
+        year=2026
+>}}
+{{<bangumi
+        rate=""
+        name="被放逐的作弊赋予魔术师享受随心所欲的第二人生。"
+        comment=""
+        year=2026
+>}}
+{{<bangumi
+        rate=""
+        name="罗梅莉亚战记"
+        comment=""
+        year=2026
+>}}
+{{<bangumi
+        rate=""
+        name="某暗部的少女共栖"
+        comment=""
+        year=2026
+>}}
+{{<bangumi
+        rate=""
+        name="铁旅！meet with 铁道少女"
+        comment=""
+        year=2026
+>}}
+{{<bangumi
+        rate=""
+        name="FX战士久留美"
+        comment=""
+        year=2026
+>}}
+{{</season>}}
 {{<season title="2026 夏">}}
 {{<bangumi
         rate="3"
         name="青春猪头少年不会梦到娇怜外出妹（2023，剧场版）"
         comment="几乎没有青春症候症的一部，但是很好地收尾了花枫的症候症，描写了升学的矛盾，也引出了红书包女孩篇（虽然有点生硬"
         year=2026
+>}}
+{{<bangumi
+        rate="1"
+        name="二十世纪电气目录"
+        comment="京阿尼对白毛臀部有什么执念吗？还四处渲染BL气氛，整个剧情也乱七八糟"
+        year=2026
+>}}
+{{<bangumi
+	rate="4"
+	name="关于我转生变成史莱姆这档事 第四季"
+	comment="似乎是系列里观感最好的一部，终于把伏笔都和盘托出（虽然很多都忘了），但是最后强行把格兰完全洗白还是有点怪的"
+	year=2026
 >}}
 {{<bangumi
         rate=""
@@ -37,26 +93,14 @@ layout: review
         year=2026
 >}}
 {{<bangumi
-        rate=""
-        name="Let's Go 怪奇组"
-        comment=""
-        year=2026
->}}
-{{<bangumi
-        rate=""
+        rate="0"
         name="雷霆三人行"
-        comment=""
+        comment="实在是看不下去了，本来很好的设定，被拖沓的剧情完全浪费了。雷霆三人主角到快完结了才各打了一拳，不知道这说的雷霆是哪个雷霆"
         year=2026
 >}}
 {{<bangumi
         rate=""
         name="猫与龙"
-        comment=""
-        year=2026
->}}
-{{<bangumi
-        rate=""
-        name="二十世纪电气目录"
         comment=""
         year=2026
 >}}
@@ -78,12 +122,6 @@ layout: review
 	rate="4"
 	name="主播女孩重度依赖"
 	comment="说实话前几集完全不知道在说什么，后面我倒也逐渐适应了抽象的风格。然而恐怕有不少人会觉得风格并非抽象而是写实。超天酱穿过无数可能走向终获拯救，可是谁又能来救救他们……看的时候总是把超天酱幻视成一位同学……我会是卡拉马佐夫吗？"
-	year=2026
->}}
-{{<bangumi
-	rate=""
-	name="关于我转生变成史莱姆这档事 第四季"
-	comment=""
 	year=2026
 >}}
 {{<bangumi
